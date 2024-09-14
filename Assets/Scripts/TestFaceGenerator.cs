@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Collections.LowLevel.Unsafe;
 using Unity.Mathematics;
 using Unity.VisualScripting;
@@ -8,29 +9,30 @@ using UnityEngine.U2D.Animation;
 
 public class TestFaceGenerator : MonoBehaviour
 {
-    Sprite[] eyes;
-    Sprite[] mouths;
-    Sprite[] faceShapes;
-    Sprite[] hair;
-
     public FaceElements[] faces;
-    public Color[] hairColors;
-    public Color[] mouthColors;
+    FaceElements elementSet;
+    public GameObject emptySprite;
 
-    public SpriteRenderer eyeRenderer;
-    public SpriteRenderer mouthRenderer;
-    public SpriteRenderer faceShapeRenderer;
-    public SpriteRenderer hairRenderer;
+    List<SpriteRenderer> spriteHolders;
+
+    int elementsLen;
+
 
     // Start is called before the first frame update
     void Start()
     {
         int elementUpperLimit = faces.Length;
         int elementSelector = UnityEngine.Random.Range(0,elementUpperLimit);
-        eyes = faces[elementSelector].eyes;
-        mouths = faces[elementSelector].mouths;
-        faceShapes = faces[elementSelector].faceShapes;
-        hair = faces[elementSelector].hair;
+        elementSet = faces[elementSelector];
+        spriteHolders = new List<SpriteRenderer>();
+        elementsLen = elementSet.elements.Length;
+        foreach (FaceElements.ElementsStruct sprites in elementSet.elements)
+        {
+            GameObject newObject = Instantiate(emptySprite,gameObject.transform);
+            spriteHolders.Add(newObject.GetComponent<SpriteRenderer>());
+            spriteHolders[spriteHolders.Count-1].sortingOrder = (spriteHolders.Count-1)*-1;
+        }
+
         updateFace();
     }
 
@@ -45,12 +47,15 @@ public class TestFaceGenerator : MonoBehaviour
 
     void updateFace()
     {
-        eyeRenderer.sprite = eyes[GenerateSelector(eyes)];
-        mouthRenderer.sprite = mouths[GenerateSelector(mouths)];
-        faceShapeRenderer.sprite = faceShapes[GenerateSelector(faceShapes)];
-        hairRenderer.sprite = hair[GenerateSelector(hair)];
-        hairRenderer.color = hairColors[GenerateSelector(hairColors)];
-        mouthRenderer.color = mouthColors[GenerateSelector(mouthColors)];
+        for (int i = 0; i < elementsLen; i++)
+        {
+            Sprite itemSprite = elementSet.elements.ElementAt(i).element[GenerateSelector(elementSet.elements.ElementAt(i).element)];
+            spriteHolders[i].sprite = itemSprite;
+            if (elementSet.elementsToBeColored[i] == true)
+            {
+                spriteHolders[i].color = elementSet.colors.ElementAt(i).color[GenerateSelector(elementSet.colors.ElementAt(i).color)];
+            }
+        }
     }
 
     int GenerateSelector<T>(T[] arr)
