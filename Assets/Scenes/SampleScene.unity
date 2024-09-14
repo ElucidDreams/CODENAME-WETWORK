@@ -687,8 +687,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1549746035}
   - component: {fileID: 1549746034}
+  - component: {fileID: 1549746036}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -706,23 +707,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98621aa6c6d1d764d851317ad6817313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eyes:
-  - {fileID: 21300000, guid: 52babf78afb994342aecc29923337100, type: 3}
-  - {fileID: 21300000, guid: 5502bd8748ca8884193c0c93b32abb95, type: 3}
-  - {fileID: 21300000, guid: db626fb4a1f705f43a6620556d578adc, type: 3}
-  mouths:
-  - {fileID: 21300000, guid: 23c374c969ae3694ab5093cc78bec98e, type: 3}
-  - {fileID: 21300000, guid: 37e55d9311ef9574189729a549ef745d, type: 3}
-  - {fileID: 21300000, guid: b8c8ec73d465f524688bd363cfd3cddb, type: 3}
-  faceShapes:
-  - {fileID: 21300000, guid: 7170bfe06def2f2419cc1db27e6d41e0, type: 3}
-  - {fileID: 21300000, guid: e864eb464b75b0640be1d053e226da2b, type: 3}
-  - {fileID: 21300000, guid: 82e04e7b48cd99b48ae7c0b2c8b02a25, type: 3}
-  hair:
-  - {fileID: 21300000, guid: e369d718e284b5241baf98714d6c3c44, type: 3}
-  - {fileID: 21300000, guid: dbb1cd70b031d0648aef43034df36c99, type: 3}
-  - {fileID: 21300000, guid: 2a7a52ac38f9610408cefec1519d2601, type: 3}
-  - {fileID: 21300000, guid: e1858f1a3c068744093bfc7257152177, type: 3}
+  faces:
+  - {fileID: 6256809046460573143, guid: f991cc02c32906541b5fcd5f959202b8, type: 3}
+  hairColors:
+  - {r: 1, g: 0.10849059, b: 0.10849059, a: 1}
+  - {r: 1, g: 0.109803915, b: 0.7580714, a: 1}
+  - {r: 0.5679122, g: 0.109803915, b: 1, a: 1}
+  - {r: 0.22349201, g: 0.109803915, b: 1, a: 1}
+  - {r: 0.109803915, g: 0.76456463, b: 1, a: 1}
+  - {r: 0.109803915, g: 1, b: 0.80262214, a: 1}
+  - {r: 0.109803915, g: 1, b: 0.40279517, a: 1}
+  - {r: 0.7324884, g: 1, b: 0.109803915, a: 1}
+  - {r: 1, g: 0.8781124, b: 0.109803915, a: 1}
+  - {r: 1, g: 0.52943385, b: 0.109803915, a: 1}
+  - {r: 0.7075472, g: 0.33351344, b: 0, a: 1}
+  - {r: 0.8679245, g: 0.6410496, b: 0.43805626, a: 1}
+  - {r: 0.8666667, g: 0.7896181, b: 0.4392157, a: 1}
+  mouthColors:
+  - {r: 0.8313726, g: 0.41960788, b: 0.43529415, a: 1}
+  - {r: 0.83137256, g: 0.41960785, b: 0.5570957, a: 1}
+  - {r: 0.83137256, g: 0.5455629, b: 0.41960785, a: 1}
+  - {r: 1, g: 0.6622192, b: 0.514151, a: 1}
+  - {r: 1, g: 0.2971698, b: 0.3162494, a: 1}
   eyeRenderer: {fileID: 1391860388}
   mouthRenderer: {fileID: 360672306}
   faceShapeRenderer: {fileID: 937008424}
@@ -746,6 +752,20 @@ Transform:
   - {fileID: 197215898}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1549746036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549746033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29cff538c195c249b69c6f2236de67b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library: []
+  m_SpriteLibraryAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

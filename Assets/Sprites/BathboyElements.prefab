@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4448169681231292801
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4762804821551781653}
+  - component: {fileID: 6256809046460573143}
+  m_Layer: 0
+  m_Name: BathboyElements
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4762804821551781653
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4448169681231292801}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.008865544, y: 0.028305251, z: 0.0936683}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6256809046460573143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4448169681231292801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae9af4b318e62444b9d67db0882f49c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eyes:
+  - {fileID: 21300000, guid: fd0f50d81cdce0546b17b59f3221d028, type: 3}
+  - {fileID: 21300000, guid: ee1fc7f934a24964b9519a0e5aafca0b, type: 3}
+  - {fileID: 21300000, guid: c4a568d3e9c05a2488d07a6d8c76f5a1, type: 3}
+  mouths:
+  - {fileID: 21300000, guid: 115ecce42db9af44db6aff1daa80b936, type: 3}
+  - {fileID: 21300000, guid: 31f702e97182ee24fb7cdaedc06732d7, type: 3}
+  - {fileID: 21300000, guid: f55036e2398ad6a439b3abddee86be95, type: 3}
+  faceShapes:
+  - {fileID: 21300000, guid: 91c79d8890ee4e14cbf59509c08437ce, type: 3}
+  - {fileID: 21300000, guid: 47ef3f5818e9e354394a45aef94384a2, type: 3}
+  - {fileID: 21300000, guid: abf4292d4eea2fa47b4ce0a4ba0ccae3, type: 3}
+  hair:
+  - {fileID: 21300000, guid: 10f4d42c172f56d42ae52b07098735bd, type: 3}
+  - {fileID: 21300000, guid: 1c31ee416df35c548bd8fa93495464a6, type: 3}
+  - {fileID: 21300000, guid: ce7858e28637ab54abfc926c6f42a90e, type: 3}
+  - {fileID: 21300000, guid: 443ae8659ab4e9249970f625de2f54ae, type: 3}

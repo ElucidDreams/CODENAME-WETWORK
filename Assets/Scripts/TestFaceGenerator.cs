@@ -8,11 +8,14 @@ using UnityEngine.U2D.Animation;
 
 public class TestFaceGenerator : MonoBehaviour
 {
-    public Sprite[] eyes;
-    public Sprite[] mouths;
-    public Sprite[] faceShapes;
+    Sprite[] eyes;
+    Sprite[] mouths;
+    Sprite[] faceShapes;
+    Sprite[] hair;
 
-    public Sprite[] hair;
+    public FaceElements[] faces;
+    public Color[] hairColors;
+    public Color[] mouthColors;
 
     public SpriteRenderer eyeRenderer;
     public SpriteRenderer mouthRenderer;
@@ -22,6 +25,12 @@ public class TestFaceGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        int elementUpperLimit = faces.Length;
+        int elementSelector = UnityEngine.Random.Range(0,elementUpperLimit);
+        eyes = faces[elementSelector].eyes;
+        mouths = faces[elementSelector].mouths;
+        faceShapes = faces[elementSelector].faceShapes;
+        hair = faces[elementSelector].hair;
         updateFace();
     }
 
@@ -36,17 +45,16 @@ public class TestFaceGenerator : MonoBehaviour
 
     void updateFace()
     {
-        int eyeUpperLimit = eyes.Length;
-        int mouthUpperLimit = mouths.Length;
-        int faceShapeUpperLimit = faceShapes.Length;
-        int hairUpperLimit = hair.Length - 1;
-        int eyeSelector = UnityEngine.Random.Range(0,eyeUpperLimit);
-        int mouthSelector = UnityEngine.Random.Range(0,mouthUpperLimit);
-        int faceShapeSelector = UnityEngine.Random.Range(0,faceShapeUpperLimit);
-        int hairSelector = UnityEngine.Random.Range(0,hairUpperLimit);
-        eyeRenderer.sprite = eyes[eyeSelector];
-        mouthRenderer.sprite = mouths[mouthSelector];
-        faceShapeRenderer.sprite = faceShapes[faceShapeSelector];
-        hairRenderer.sprite = hair[hairSelector];
+        eyeRenderer.sprite = eyes[GenerateSelector(eyes)];
+        mouthRenderer.sprite = mouths[GenerateSelector(mouths)];
+        faceShapeRenderer.sprite = faceShapes[GenerateSelector(faceShapes)];
+        hairRenderer.sprite = hair[GenerateSelector(hair)];
+        hairRenderer.color = hairColors[GenerateSelector(hairColors)];
+        mouthRenderer.color = mouthColors[GenerateSelector(mouthColors)];
+    }
+
+    int GenerateSelector<T>(T[] arr)
+    {
+        return UnityEngine.Random.Range(0, arr.Length);
     }
 }
