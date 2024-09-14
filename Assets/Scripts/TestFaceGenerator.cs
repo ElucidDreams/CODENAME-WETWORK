@@ -12,9 +12,12 @@ public class TestFaceGenerator : MonoBehaviour
     public Sprite[] mouths;
     public Sprite[] faceShapes;
 
+    public Sprite[] hair;
+
     public SpriteRenderer eyeRenderer;
     public SpriteRenderer mouthRenderer;
     public SpriteRenderer faceShapeRenderer;
+    public SpriteRenderer hairRenderer;
 
     // Start is called before the first frame update
     void Start()
@@ -33,14 +36,17 @@ public class TestFaceGenerator : MonoBehaviour
 
     void updateFace()
     {
-        int eyeUpperLimit = eyes.Length - 1;
-        int mouthUpperLimit = mouths.Length - 1;
-        int faceShapeUpperLimit = faceShapes.Length - 1;
+        int eyeUpperLimit = eyes.Length;
+        int mouthUpperLimit = mouths.Length;
+        int faceShapeUpperLimit = faceShapes.Length;
+        int hairUpperLimit = hair.Length - 1;
         int eyeSelector = UnityEngine.Random.Range(0,eyeUpperLimit);
         int mouthSelector = UnityEngine.Random.Range(0,mouthUpperLimit);
         int faceShapeSelector = UnityEngine.Random.Range(0,faceShapeUpperLimit);
+        int hairSelector = UnityEngine.Random.Range(0,hairUpperLimit);
         eyeRenderer.sprite = eyes[eyeSelector];
         mouthRenderer.sprite = mouths[mouthSelector];
         faceShapeRenderer.sprite = faceShapes[faceShapeSelector];
+        hairRenderer.sprite = hair[hairSelector];
     }
 }

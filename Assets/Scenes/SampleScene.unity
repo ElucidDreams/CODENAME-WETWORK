@@ -122,6 +122,90 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &197215896
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 197215898}
+  - component: {fileID: 197215897}
+  m_Layer: 0
+  m_Name: Hair
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &197215897
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197215896}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &197215898
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197215896}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1549746035}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &360672305
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,20 +707,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eyes:
-  - {fileID: 21300000, guid: e4050ff0ba5f1964e8f78d6d57a4702a, type: 3}
-  - {fileID: 21300000, guid: fc95d2e75f0ba81438d7bd7e2f0ab6c0, type: 3}
-  - {fileID: 21300000, guid: 290935dc666a8cf43a02b63fad7f8c91, type: 3}
+  - {fileID: 21300000, guid: 52babf78afb994342aecc29923337100, type: 3}
+  - {fileID: 21300000, guid: 5502bd8748ca8884193c0c93b32abb95, type: 3}
+  - {fileID: 21300000, guid: db626fb4a1f705f43a6620556d578adc, type: 3}
   mouths:
-  - {fileID: 21300000, guid: 0bd9e2fc8d070564bb0caa83cbf50040, type: 3}
-  - {fileID: 21300000, guid: a129f467c846d4d44b0397b1cf7dbc9f, type: 3}
-  - {fileID: 21300000, guid: ce34cbd3cf55a5d47ad7084c8ae6687e, type: 3}
+  - {fileID: 21300000, guid: 23c374c969ae3694ab5093cc78bec98e, type: 3}
+  - {fileID: 21300000, guid: 37e55d9311ef9574189729a549ef745d, type: 3}
+  - {fileID: 21300000, guid: b8c8ec73d465f524688bd363cfd3cddb, type: 3}
   faceShapes:
-  - {fileID: 21300000, guid: 66d6eddb952d2934f969cd471e0f6821, type: 3}
-  - {fileID: 21300000, guid: 3c3e3117eb4cbb04eade743f2b95bbc5, type: 3}
-  - {fileID: 21300000, guid: a2a7aa810a767dc4a8cec2f5a4581465, type: 3}
+  - {fileID: 21300000, guid: 7170bfe06def2f2419cc1db27e6d41e0, type: 3}
+  - {fileID: 21300000, guid: e864eb464b75b0640be1d053e226da2b, type: 3}
+  - {fileID: 21300000, guid: 82e04e7b48cd99b48ae7c0b2c8b02a25, type: 3}
+  hair:
+  - {fileID: 21300000, guid: e369d718e284b5241baf98714d6c3c44, type: 3}
+  - {fileID: 21300000, guid: dbb1cd70b031d0648aef43034df36c99, type: 3}
+  - {fileID: 21300000, guid: 2a7a52ac38f9610408cefec1519d2601, type: 3}
+  - {fileID: 21300000, guid: e1858f1a3c068744093bfc7257152177, type: 3}
   eyeRenderer: {fileID: 1391860388}
   mouthRenderer: {fileID: 360672306}
   faceShapeRenderer: {fileID: 937008424}
+  hairRenderer: {fileID: 197215897}
 --- !u!4 &1549746035
 Transform:
   m_ObjectHideFlags: 0
@@ -653,6 +743,7 @@ Transform:
   - {fileID: 1391860389}
   - {fileID: 360672307}
   - {fileID: 937008425}
+  - {fileID: 197215898}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
