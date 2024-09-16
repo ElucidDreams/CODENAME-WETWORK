@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.EditorTools;
 using UnityEngine;
 
 public class FaceElements : MonoBehaviour
@@ -15,6 +16,8 @@ public class FaceElements : MonoBehaviour
     {
         [SerializeField] public Color[] color;
     }
+    [Tooltip("Use this to designate the Factopn of this set of face elements")]
+    public Faction setFaction;
     
     [Tooltip("Higher position in the editor correlates to higher in the render order")]
     public ElementsStruct[] elements;
