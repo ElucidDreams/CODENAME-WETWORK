@@ -9,7 +9,7 @@ using UnityEngine.U2D.Animation;
 
 public class Face : MonoBehaviour
 {
-    public FaceElements[] faces;
+    public List<FaceElements> faces;
     FaceElements elementSet;
     public GameObject emptySprite;
 
@@ -17,31 +17,31 @@ public class Face : MonoBehaviour
 
     int elementsLen;
 
-
-    // Start is called before the first frame update
-    void Start()
+    public void CreateFace(Faction faction)
     {
-        int elementUpperLimit = faces.Length;
+        List<FaceElements> factionSet = new();
+        foreach (FaceElements set in faces)
+        {
+            if (faction.IdCheck(set.setFaction))
+            {
+                factionSet.Add(set);
+            }
+        }
+        int elementUpperLimit = factionSet.Count;
         int elementSelector = UnityEngine.Random.Range(0,elementUpperLimit);
-        elementSet = faces[elementSelector];
+        elementSet = factionSet[elementSelector];
         spriteHolders = new List<SpriteRenderer>();
         elementsLen = elementSet.elements.Length;
-        foreach (FaceElements.ElementsStruct sprites in elementSet.elements)
+        foreach (FaceElements.ElementsStruct sprites in elementSet.elements)//Create sprite renderers to hold the items of the face
         {
             GameObject newObject = Instantiate(emptySprite,gameObject.transform);
             spriteHolders.Add(newObject.GetComponent<SpriteRenderer>());
             spriteHolders[spriteHolders.Count-1].sortingOrder = (spriteHolders.Count-1)*-1;
         }
-
-        updateFace();
+        GenerateFace();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
-    void updateFace()
+    public void GenerateFace()
     {
         for (int i = 0; i < elementsLen; i++)
         {

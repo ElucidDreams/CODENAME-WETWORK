@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static GameConstants;
 
 public class Faction : MonoBehaviour
 {
+    public AvailableFactions id;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +16,10 @@ public class Faction : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public bool IdCheck(AvailableFactions testId)
+    {
+        return id == testId;
     }
 }

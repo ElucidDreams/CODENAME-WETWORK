@@ -5,4 +5,15 @@ using UnityEngine;
 
 public class GameConstants : MonoBehaviour
 {
+    public enum AvailableFactions
+    {
+        Army,
+        Robot,
+        Bath
+    }
+    public enum AvailableSkills
+    {
+        LockPicking,
+        Sharpshooter
+    }
 }
