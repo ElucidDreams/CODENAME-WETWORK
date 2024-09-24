@@ -11,10 +11,13 @@ public class Person : MonoBehaviour
     public string givenName;
     public string familyName;
     public Faction faction;//TODO implement faction
+    [Space(10)]
     public bool isHired;
     public bool isPayroll;
     public float salary;
+    [Space(10)]
     public float personReputation;
+    [Space(10)]
     public Face personFace;
     
     public void GenerateFace()

@@ -56,5 +56,8 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "CODENAME-WETWORK.sln"
+    "dotnet.defaultSolution": "CODENAME-WETWORK.sln",
+    "cSpell.words": [
+        "Rigidbody"
+    ]
 }

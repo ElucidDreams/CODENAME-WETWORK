@@ -8,21 +8,26 @@ using UnityEngine;
 public class Operator : Person
 {
     [Header("Operator Properties")]
-    public int Level;    
+    public int Level;
+    public float maxSpeed = 10f;
+    [Space(10)]
     public float baseHealth;
     public float baseArmour;
     public float baseSpeed;
     public float baseStrength;
     public float baseAccuracy;
-    [NonSerialized] public float effectiveHealth;
-    [NonSerialized] public float effectiveArmour;
-    [NonSerialized] public float effectiveSpeed;
-    [NonSerialized] public float effectiveStrength;
-    [NonSerialized] public float effectiveAccuracy;
+    [Space(10)]
+    public float effectiveHealth;
+    public float effectiveArmour;
+    public float effectiveSpeed;
+    public float effectiveStrength;
+    public float effectiveAccuracy;
+    [Space(10)]
     [SerializeReference]
     public OperatorSkill[] skills;
-
+    [Space(10)]
     public float rating;
+
     // Start is called before the first frame update
     void Start()
     {
