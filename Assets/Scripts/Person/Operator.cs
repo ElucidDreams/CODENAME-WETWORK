@@ -8,8 +8,13 @@ using UnityEngine;
 public class Operator : Person
 {
     [Header("Operator Properties")]
-    public int Level;
+    public int Level; 
+    public bool inMission = true;
     public float maxSpeed = 10f;
+    [NonSerialized] public Animator animComp;
+    [NonSerialized] public Transform transformComp;
+    [NonSerialized] public Vector2 movementInput;
+    [NonSerialized] public Rigidbody2D rb;
     [Space(10)]
     public float baseHealth;
     public float baseArmour;
@@ -31,7 +36,10 @@ public class Operator : Person
     // Start is called before the first frame update
     void Start()
     {
-        GenerateFace();
+        if (!inMission)
+        {
+            GenerateFace();
+        }
         InitEffectiveValues();
         InitSkills();
     }
@@ -56,10 +64,16 @@ public class Operator : Person
             }
         }
     }
-
-    // Update is called once per frame
-    void Update()
+    public void InitComponents()
     {
-        
+        animComp = GetComponentInChildren<Animator>();
+        transformComp = GetComponent<Transform>();
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    public void RotateToPoint(Vector2 point)
+    {
+        float angle = Mathf.Atan2(point.y,point.x) * Mathf.Rad2Deg;
+        transformComp.Rotate(0,0,angle);
     }
 }

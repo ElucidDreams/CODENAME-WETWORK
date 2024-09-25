@@ -6,22 +6,29 @@ using UnityEngine.InputSystem;
 
 public class Player : Operator
 {
-    private Vector2 movementInput;
-    private Rigidbody2D rb;
-
     // Start is called before the first frame update
     void Start()
     {
-        GenerateFace();
+        if (!inMission)
+        {
+            GenerateFace();
+        }
         InitEffectiveValues();
         InitSkills();
-        rb = GetComponent<Rigidbody2D>();
+        InitComponents();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (movementInput == Vector2.zero)
+        {
+            animComp.SetBool("isWalking",false);
+        }
+        else
+        {
+            animComp.SetBool("isWalking",true);
+        }
     }
 
     void FixedUpdate()
@@ -38,5 +45,11 @@ public class Player : Operator
     public void Walk(InputAction.CallbackContext context)
     {
         movementInput = context.ReadValue<Vector2>();
+    }
+
+    public void Look(InputAction.CallbackContext context)
+    {
+        Debug.Log(context.ReadValue<Vector2>());
+        RotateToPoint(context.ReadValue<Vector2>());
     }
 }
