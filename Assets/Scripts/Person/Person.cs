@@ -17,9 +17,7 @@ public class Person : MonoBehaviour
     public float salary;
     [Space(10)]
     public float personReputation;
-    [Space(10)]
-    public Face personFace;
-    
+    [NonSerialized] public Face personFace;
     public void GenerateFace()
     {
         personFace = GetComponent<Face>();

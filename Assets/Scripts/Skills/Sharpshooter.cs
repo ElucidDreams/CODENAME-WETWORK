@@ -10,9 +10,7 @@ public class Sharpshooter : OperatorSkill
     
     public override void RunSkill()
     {
-        Debug.Log("Pre-Skill effective accuracy: " + SkillUser.effectiveAccuracy);
         SkillUser.effectiveAccuracy = SkillUser.baseAccuracy + staticBump + (levelBump * Level);
-        Debug.Log("Skill Ran\nPost-Skill effective accuracy: " + SkillUser.effectiveAccuracy);
     }
 
     public override bool RunSkill(float difficulty)

@@ -30,6 +30,7 @@ public class Operator : Person
     [Space(10)]
     [SerializeReference]
     public OperatorSkill[] skills;
+    public Weapon activeWeapon;
     [Space(10)]
     public float rating;
 
@@ -73,7 +74,18 @@ public class Operator : Person
 
     public void RotateToPoint(Vector2 point)
     {
-        float angle = Mathf.Atan2(point.y,point.x) * Mathf.Rad2Deg;
-        transformComp.Rotate(0,0,angle);
+        Vector2 difference = (Vector3)point - transform.position;
+        float angle = Mathf.Atan2(difference.y,difference.x) * Mathf.Rad2Deg;
+        transformComp.rotation = Quaternion.Euler(0,0, angle);
     }
+    public void WeaponThrow()
+    {
+        /*activeWeapon.weaponCollider.enabled = true;
+        activeWeapon.weaponRB.WakeUp();
+        activeWeapon.transform.SetParent(activeWeapon.transform, true);
+        float wielderFacing = transform.eulerAngles.z;
+        Vector2 throwDirection = new(Mathf.Cos(wielderFacing * Mathf.Deg2Rad), Mathf.Sin(wielderFacing * Mathf.Deg2Rad));
+        activeWeapon.weaponRB.AddForce(throwDirection * effectiveStrength, ForceMode2D.Impulse);
+        StartCoroutine(activeWeapon.CheckForStop());
+    */}
 }

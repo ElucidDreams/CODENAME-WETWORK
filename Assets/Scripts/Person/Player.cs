@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 
 public class Player : Operator
 {
+    [Header("Player Properties")]
+    public Transform reticleTransform;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,14 +23,8 @@ public class Player : Operator
     // Update is called once per frame
     void Update()
     {
-        if (movementInput == Vector2.zero)
-        {
-            animComp.SetBool("isWalking",false);
-        }
-        else
-        {
-            animComp.SetBool("isWalking",true);
-        }
+        animComp.SetBool("isWalking", movementInput != Vector2.zero);
+        RotateToPoint(reticleTransform.position);
     }
 
     void FixedUpdate()
@@ -51,5 +47,18 @@ public class Player : Operator
     {
         Debug.Log(context.ReadValue<Vector2>());
         RotateToPoint(context.ReadValue<Vector2>());
+    }
+
+    public void Attack(InputAction.CallbackContext context)
+    {
+
+    }
+    public void Throw(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Debug.Log("Thrown");
+            WeaponThrow();
+        }
     }
 }

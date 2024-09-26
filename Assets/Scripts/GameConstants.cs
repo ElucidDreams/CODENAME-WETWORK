@@ -16,4 +16,11 @@ public class GameConstants : MonoBehaviour
         LockPicking,
         Sharpshooter
     }
+
+    public enum WeaponType
+    {
+        Melee,
+        Projectile,
+        Hitscan
+    }
 }
