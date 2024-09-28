@@ -13,8 +13,9 @@ public class Operator : Person
     public float maxSpeed = 10f;
     [NonSerialized] public Animator animComp;
     [NonSerialized] public Transform transformComp;
-    [NonSerialized] public Vector2 movementInput;
+
     [NonSerialized] public Rigidbody2D rb;
+    [NonSerialized] public FixedJoint2D activeWeaponJoint;
     [Space(10)]
     public float baseHealth;
     public float baseArmour;
@@ -31,6 +32,7 @@ public class Operator : Person
     [SerializeReference]
     public OperatorSkill[] skills;
     public Weapon activeWeapon;
+    
     [Space(10)]
     public float rating;
 
@@ -70,6 +72,7 @@ public class Operator : Person
         animComp = GetComponentInChildren<Animator>();
         transformComp = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
+        activeWeaponJoint = GetComponent<FixedJoint2D>();
     }
 
     public void RotateToPoint(Vector2 point)
@@ -80,12 +83,16 @@ public class Operator : Person
     }
     public void WeaponThrow()
     {
-        /*activeWeapon.weaponCollider.enabled = true;
-        activeWeapon.weaponRB.WakeUp();
-        activeWeapon.transform.SetParent(activeWeapon.transform, true);
+        activeWeapon.transform.SetParent(null);
+        activeWeapon.weaponCollider.enabled = true;
+        activeWeaponJoint.connectedBody = null;
         float wielderFacing = transform.eulerAngles.z;
         Vector2 throwDirection = new(Mathf.Cos(wielderFacing * Mathf.Deg2Rad), Mathf.Sin(wielderFacing * Mathf.Deg2Rad));
         activeWeapon.weaponRB.AddForce(throwDirection * effectiveStrength, ForceMode2D.Impulse);
+        activeWeapon.weaponRB.AddTorque(UnityEngine.Random.Range(0f,1f));
+        activeWeapon.inAir = true;
         StartCoroutine(activeWeapon.CheckForStop());
-    */}
+        StartCoroutine(activeWeapon.ThrowFrictionCalc());
+        activeWeapon = null;
+    }
 }
