@@ -122,6 +122,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &353191151
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 353191152}
+  m_Layer: 0
+  m_Name: Muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &353191152
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353191151}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.138, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 839098271}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,10 +487,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 839098271}
+  - component: {fileID: 839098272}
   - component: {fileID: 839098276}
   - component: {fileID: 839098275}
   - component: {fileID: 839098274}
-  - component: {fileID: 839098272}
   - component: {fileID: 839098277}
   m_Layer: 0
   m_Name: Pistol
@@ -480,7 +511,8 @@ Transform:
   m_LocalPosition: {x: 0.10172826, y: 0.277, z: -0.016123015}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 353191152}
   m_Father: {fileID: 2060782463}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &839098272
@@ -497,9 +529,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponType: 2
   checkDelay: 0.1
+  weaponMass: 1
   velocityThreshold: 0.1
-  hangTimeMax: 2
+  hangTimeMax: 1
   groundedFriction: 5
+  muzzle: {fileID: 353191152}
+  muzzleEffect: {fileID: 4406290772584999679, guid: 1840f3f19c60cc54ea02788285ea63a1, type: 3}
 --- !u!61 &839098274
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -555,7 +590,7 @@ Animator:
   m_GameObject: {fileID: 839098270}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5e087aadbbbf5684387a5a58b9999565, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -630,7 +665,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.027387103
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -1170,7 +1205,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.011343837, y: 0.00050488114}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1181,7 +1216,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5642638, y: 0.18301561}
   m_EdgeRadius: 0
 --- !u!255 &2060782469
 FixedJoint2D:

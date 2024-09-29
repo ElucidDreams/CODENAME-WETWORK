@@ -65,14 +65,17 @@ public class Player : Operator
     void Update()
     {
         animComp.SetBool("isWalking", movementInput != Vector2.zero);
+        aimPoint = _lookAction.ReadValue<Vector2>();
+        reticleTransform.position = mainCamera.ScreenToWorldPoint(new Vector3(aimPoint.x, aimPoint.y, mainCamera.nearClipPlane));
+        RotateToPoint(reticleTransform.position);
     }
 
     void FixedUpdate()
     {
+
+
         movementInput = _moveAction.ReadValue<Vector2>();
-        aimPoint = _lookAction.ReadValue<Vector2>();
-        reticleTransform.position = mainCamera.ScreenToWorldPoint(new Vector3(aimPoint.x, aimPoint.y, mainCamera.nearClipPlane));
-        RotateToPoint(reticleTransform.position);
+        Debug.Log($"Movement Input: {movementInput}");
         movementVector = movementInput * effectiveSpeed;
         rb.AddForce(movementVector);
 
@@ -84,14 +87,19 @@ public class Player : Operator
 
     public void OnAttack(InputAction.CallbackContext context)
     {
-        if(context.performed)
+        if (context.performed)
         {
-            Debug.Log("Shoot");
-            activeWeapon.weaponAnimator.SetTrigger("Fire");
+            if (activeWeapon != null)
+            {
+                activeWeapon.Attack();
+            }
         }
     }
     public void OnThrow(InputAction.CallbackContext context)
     {
-        WeaponThrow();
+        if (activeWeapon != null)
+        {
+            WeaponThrow();
+        }
     }
 }

@@ -88,6 +88,7 @@ public class Operator : Person
         activeWeaponJoint.connectedBody = null;
         float wielderFacing = transform.eulerAngles.z;
         Vector2 throwDirection = new(Mathf.Cos(wielderFacing * Mathf.Deg2Rad), Mathf.Sin(wielderFacing * Mathf.Deg2Rad));
+        activeWeapon.weaponRB.mass = activeWeapon.weaponMass;
         activeWeapon.weaponRB.AddForce(throwDirection * effectiveStrength, ForceMode2D.Impulse);
         activeWeapon.weaponRB.AddTorque(UnityEngine.Random.Range(0f,1f));
         activeWeapon.inAir = true;

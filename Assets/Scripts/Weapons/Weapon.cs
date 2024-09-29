@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 using static GameConstants;
 
 [RequireComponent(typeof(Animator))]
@@ -20,6 +21,7 @@ public abstract class Weapon : MonoBehaviour
     public float checkDelay = 0.1f;
     [Space(10)]
     [Header("Throwing Properties")]
+    public float weaponMass = 1f;
     public float velocityThreshold = 0.1f;
     public float hangTimeMax = 1f;
     public float groundedFriction = 10f;
@@ -56,6 +58,7 @@ public abstract class Weapon : MonoBehaviour
                 inAir = false;
             }
         }
+        yield return new WaitForSeconds(0.01f);
         weaponRB.drag = groundedFriction;
         weaponRB.angularDrag = groundedFriction;
         
