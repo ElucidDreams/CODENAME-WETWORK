@@ -9,7 +9,7 @@ public class GameConstants : MonoBehaviour
     {
         Army,
         Robot,
-        Bath
+        Beach
     }
     public enum AvailableSkills
     {

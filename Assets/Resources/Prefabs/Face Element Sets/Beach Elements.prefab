@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4762804821551781653}
   - component: {fileID: 4325245315045107325}
   m_Layer: 0
-  m_Name: Bathboy Elements
+  m_Name: Beach Elements
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
