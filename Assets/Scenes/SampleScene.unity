@@ -534,7 +534,8 @@ MonoBehaviour:
   hangTimeMax: 1
   groundedFriction: 5
   muzzle: {fileID: 353191152}
-  muzzleEffect: {fileID: 4406290772584999679, guid: 1840f3f19c60cc54ea02788285ea63a1, type: 3}
+  muzzleEffect: {fileID: 0}
+  hitEffect: {fileID: 3059991819991754046, guid: b60f5904ad9569f479b4fa76a7f4b472, type: 3}
 --- !u!61 &839098274
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1128,7 +1129,7 @@ MonoBehaviour:
   salary: 0
   personReputation: 0
   Level: 1
-  inMission: 1
+  inMission: 0
   maxSpeed: 10
   baseHealth: 10
   baseArmour: 10

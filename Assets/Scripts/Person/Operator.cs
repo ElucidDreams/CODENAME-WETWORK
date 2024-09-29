@@ -85,7 +85,7 @@ public class Operator : Person
     {
         activeWeapon.transform.SetParent(null);
         activeWeapon.weaponCollider.enabled = true;
-        activeWeaponJoint.connectedBody = null;
+        activeWeaponJoint.connectedBody = rb;
         float wielderFacing = transform.eulerAngles.z;
         Vector2 throwDirection = new(Mathf.Cos(wielderFacing * Mathf.Deg2Rad), Mathf.Sin(wielderFacing * Mathf.Deg2Rad));
         activeWeapon.weaponRB.mass = activeWeapon.weaponMass;

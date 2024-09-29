@@ -72,13 +72,9 @@ public class Player : Operator
 
     void FixedUpdate()
     {
-
-
         movementInput = _moveAction.ReadValue<Vector2>();
-        Debug.Log($"Movement Input: {movementInput}");
         movementVector = movementInput * effectiveSpeed;
         rb.AddForce(movementVector);
-
         if (rb.velocity.magnitude > maxSpeed)
         {
             rb.velocity = rb.velocity.normalized * maxSpeed;
