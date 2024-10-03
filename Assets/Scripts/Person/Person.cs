@@ -18,8 +18,18 @@ public class Person : MonoBehaviour
     [Space(10)]
     public float personReputation;
     [NonSerialized] public Face personFace;
+    private Transform spawnPoint;
+    public Transform SpawnPoint
+    {
+        get{return spawnPoint;}
+        set{spawnPoint = value;}
+    }
     public void GenerateFace()
     {
+        if (SpawnPoint == null)
+        {
+            SpawnPoint = gameObject.transform;
+        }
         personFace = GetComponent<Face>();
         GameObject[] g = Resources.LoadAll<GameObject>("Prefabs/Face Element Sets");
         foreach (GameObject set in g)
@@ -35,6 +45,6 @@ public class Person : MonoBehaviour
             Debug.LogError("Empty Sprite prefab has been moved from its hard-linked position");
             Debug.LogException(e);
         }
-        personFace.CreateFace(faction);
+        personFace.CreateFace(faction, spawnPoint);
     }
 }

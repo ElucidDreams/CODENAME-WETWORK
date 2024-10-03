@@ -36,6 +36,7 @@ public abstract class Weapon : MonoBehaviour
         weaponSprite = GetComponent<SpriteRenderer>();
         weaponCollider = GetComponent<BoxCollider2D>();
         weaponRB = GetComponent<Rigidbody2D>();
+        weaponCollider.enabled = false;
     }
 
     public IEnumerator CheckForStop()

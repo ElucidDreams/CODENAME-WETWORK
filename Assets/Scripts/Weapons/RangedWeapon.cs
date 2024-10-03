@@ -22,11 +22,9 @@ public class RangedWeapon : Weapon
     public override void Attack()
     {
         weaponAnimator.SetTrigger("Fire");
-        RaycastHit2D hit = Physics2D.Raycast(muzzle.position, new Vector2(muzzle.rotation.x,muzzle.rotation.y));
-        Instantiate(hitEffect, hit.point, Quaternion.Euler(0,0,0));
-        Debug.DrawLine(muzzle.position, (Vector3)hit.point, Color.red, 10f,false);
-        Debug.Log((Vector3)hit.point);
+        Instantiate(muzzleEffect,muzzle.position, Quaternion.Euler(0,0,0));
     }
+
     public override void Reload()
     {
     }

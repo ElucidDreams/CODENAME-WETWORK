@@ -64,7 +64,7 @@ public class Player : Operator
     // Update is called once per frame
     void Update()
     {
-        animComp.SetBool("isWalking", movementInput != Vector2.zero);
+        AnimateBody();
         aimPoint = _lookAction.ReadValue<Vector2>();
         reticleTransform.position = mainCamera.ScreenToWorldPoint(new Vector3(aimPoint.x, aimPoint.y, mainCamera.nearClipPlane));
         RotateToPoint(reticleTransform.position);
@@ -74,10 +74,10 @@ public class Player : Operator
     {
         movementInput = _moveAction.ReadValue<Vector2>();
         movementVector = movementInput * effectiveSpeed;
-        rb.AddForce(movementVector);
-        if (rb.velocity.magnitude > maxSpeed)
+        rbComp.AddForce(movementVector);
+        if (rbComp.velocity.magnitude > maxSpeed)
         {
-            rb.velocity = rb.velocity.normalized * maxSpeed;
+            rbComp.velocity = rbComp.velocity.normalized * maxSpeed;
         }
     }
 

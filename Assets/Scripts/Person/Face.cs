@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,13 +12,12 @@ public class Face : MonoBehaviour
 {
     public List<FaceElements> faces;
     FaceElements elementSet;
-    public GameObject emptySprite;
-
+    [NonSerialized] public GameObject emptySprite;
     List<SpriteRenderer> spriteHolders;
 
     int elementsLen;
 
-    public void CreateFace(Faction faction)
+    public void CreateFace(Faction faction, Transform spawnPoint)
     {
         List<FaceElements> factionSet = new();
         foreach (FaceElements set in faces)
@@ -32,9 +32,11 @@ public class Face : MonoBehaviour
         elementSet = factionSet[elementSelector];
         spriteHolders = new List<SpriteRenderer>();
         elementsLen = elementSet.elements.Length;
+        GameObject faceObject = Instantiate(emptySprite,spawnPoint);
+        faceObject.name = "Face";
         foreach (FaceElements.ElementsStruct sprites in elementSet.elements)//Create sprite renderers to hold the items of the face
         {
-            GameObject newObject = Instantiate(emptySprite,gameObject.transform);
+            GameObject newObject = Instantiate(emptySprite,faceObject.transform);
             spriteHolders.Add(newObject.GetComponent<SpriteRenderer>());
             spriteHolders[spriteHolders.Count-1].sortingOrder = (spriteHolders.Count-1)*-1;
         }

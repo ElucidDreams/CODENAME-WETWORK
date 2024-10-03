@@ -7,7 +7,7 @@ public class HitscanWeapon : RangedWeapon
     // Start is called before the first frame update
     void Start()
     {
-        
+        InitWeapon();
     }
 
     // Update is called once per frame
@@ -19,5 +19,10 @@ public class HitscanWeapon : RangedWeapon
     public override void Attack()
     {
         base.Attack();
+        RaycastHit2D hit = Physics2D.Raycast(muzzle.position, muzzle.up);
+        if (hit.collider != null)
+        {
+            Instantiate(hitEffect, hit.point, Quaternion.Euler(0,0,0));
+        }
     }
 }
