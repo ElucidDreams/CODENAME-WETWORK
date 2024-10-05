@@ -18,17 +18,13 @@ public class Person : MonoBehaviour
     [Space(10)]
     public float personReputation;
     [NonSerialized] public Face personFace;
-    private Transform spawnPoint;
-    public Transform SpawnPoint
+    public PersonCard UICard;
+    public void SpawnFace()
     {
-        get{return spawnPoint;}
-        set{spawnPoint = value;}
-    }
-    public void GenerateFace()
-    {
-        if (SpawnPoint == null)
+        if (UICard == null)
         {
-            SpawnPoint = gameObject.transform;
+            Debug.Log("UI Card is not set on GameObject: " + gameObject.name);
+            return;
         }
         personFace = GetComponent<Face>();
         GameObject[] g = Resources.LoadAll<GameObject>("Prefabs/Face Element Sets");
@@ -38,13 +34,13 @@ public class Person : MonoBehaviour
             personFace.faces.Add(f);
         }
         try{
-            personFace.emptySprite = (GameObject)Resources.Load("Prefabs/Classless Prefabs/EmptySprite");
+            personFace.emptyImage = (GameObject)Resources.Load("Prefabs/Classless Prefabs/EmptyImage");
         }
         catch(Exception e)
         {
             Debug.LogError("Empty Sprite prefab has been moved from its hard-linked position");
             Debug.LogException(e);
         }
-        personFace.CreateFace(faction, spawnPoint);
+        personFace.GenerateFace(faction, UICard.imageParent);
     }
 }

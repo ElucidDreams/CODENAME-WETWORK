@@ -41,10 +41,7 @@ public class Operator : Person
     // Start is called before the first frame update
     void Start()
     {
-        if (!inMission)
-        {
-            GenerateFace();
-        }
+        SetMissionUI();
         InitEffectiveValues();
         InitSkills();
         InitComponents();
@@ -88,7 +85,6 @@ public class Operator : Person
         rbComp = GetComponent<Rigidbody2D>();
         activeWeaponJoint = GetComponent<FixedJoint2D>();
     }
-
     public void RotateToPoint(Vector2 point)
     {
         Vector2 difference = (Vector3)point - transform.position;
@@ -109,5 +105,11 @@ public class Operator : Person
         StartCoroutine(activeWeapon.CheckForStop());
         StartCoroutine(activeWeapon.ThrowFrictionCalc());
         activeWeapon = null;
+    }
+    public void SetMissionUI()
+    {
+        SpawnFace();
+        UICard.nameText.text = givenName + " " + familyName;
+        UICard.factionText.text = faction.factionID.ToString();
     }
 }

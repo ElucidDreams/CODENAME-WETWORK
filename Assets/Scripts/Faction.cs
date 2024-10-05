@@ -5,7 +5,7 @@ using static GameConstants;
 
 public class Faction : MonoBehaviour
 {
-    public AvailableFactions id;
+    public AvailableFactions factionID;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +20,6 @@ public class Faction : MonoBehaviour
 
     public bool IdCheck(AvailableFactions testId)
     {
-        return id == testId;
+        return factionID == testId;
     }
 }

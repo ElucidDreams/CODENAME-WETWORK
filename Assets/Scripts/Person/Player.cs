@@ -52,10 +52,7 @@ public class Player : Operator
     // Start is called before the first frame update
     void Start()
     {
-        if (!inMission)
-        {
-            GenerateFace();
-        }
+        SetMissionUI();
         InitEffectiveValues();
         InitSkills();
         InitComponents();

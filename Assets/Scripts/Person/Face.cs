@@ -7,17 +7,18 @@ using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.U2D.Animation;
+using UnityEngine.UI;
 
 public class Face : MonoBehaviour
 {
     public List<FaceElements> faces;
     FaceElements elementSet;
-    [NonSerialized] public GameObject emptySprite;
-    List<SpriteRenderer> spriteHolders;
+    [NonSerialized] public GameObject emptyImage;
+    List<Sprite> sprites;
 
     int elementsLen;
 
-    public void CreateFace(Faction faction, Transform spawnPoint)
+    public void GenerateFace(Faction faction, RectTransform spawnPoint)
     {
         List<FaceElements> factionSet = new();
         foreach (FaceElements set in faces)
@@ -30,28 +31,21 @@ public class Face : MonoBehaviour
         int elementUpperLimit = factionSet.Count;
         int elementSelector = UnityEngine.Random.Range(0,elementUpperLimit);
         elementSet = factionSet[elementSelector];
-        spriteHolders = new List<SpriteRenderer>();
+        List<Image> imageHolders = new();
         elementsLen = elementSet.elements.Length;
-        GameObject faceObject = Instantiate(emptySprite,spawnPoint);
-        faceObject.name = "Face";
         foreach (FaceElements.ElementsStruct sprites in elementSet.elements)//Create sprite renderers to hold the items of the face
         {
-            GameObject newObject = Instantiate(emptySprite,faceObject.transform);
-            spriteHolders.Add(newObject.GetComponent<SpriteRenderer>());
-            spriteHolders[spriteHolders.Count-1].sortingOrder = (spriteHolders.Count-1)*-1;
+            GameObject newObject = Instantiate(emptyImage,spawnPoint);
+            imageHolders.Add(newObject.GetComponent<Image>());
         }
-        GenerateFace();
-    }
-
-    public void GenerateFace()
-    {
+        imageHolders.Reverse();
         for (int i = 0; i < elementsLen; i++)
         {
             Sprite itemSprite = elementSet.elements.ElementAt(i).element[GenerateSelector(elementSet.elements.ElementAt(i).element)];
-            spriteHolders[i].sprite = itemSprite;
+            imageHolders[i].sprite = itemSprite;
             if (elementSet.elementsToBeColored[i] == true)
             {
-                spriteHolders[i].color = elementSet.colors.ElementAt(i).color[GenerateSelector(elementSet.colors.ElementAt(i).color)];
+                imageHolders[i].color = elementSet.colors.ElementAt(i).color[GenerateSelector(elementSet.colors.ElementAt(i).color)];
             }
         }
     }
