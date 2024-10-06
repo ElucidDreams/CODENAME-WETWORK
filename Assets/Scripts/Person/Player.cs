@@ -63,7 +63,9 @@ public class Player : Operator
     {
         AnimateBody();
         aimPoint = _lookAction.ReadValue<Vector2>();
-        reticleTransform.position = mainCamera.ScreenToWorldPoint(new Vector3(aimPoint.x, aimPoint.y, mainCamera.nearClipPlane));
+        Vector3 reticlePos = mainCamera.ScreenToWorldPoint(new Vector3(aimPoint.x, aimPoint.y, 0));
+        reticlePos.z += -1*reticlePos.z;
+        reticleTransform.position = reticlePos;
         RotateToPoint(reticleTransform.position);
     }
 
