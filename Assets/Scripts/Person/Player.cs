@@ -20,15 +20,15 @@ public class Player : Operator
 
     void Awake()
     {
-        _defaultPlayerActions = new DefaultPlayerActions();
+        _defaultPlayerActions = new DefaultPlayerActions();//Sets up input system
         _defaultPlayerActions.Enable();
         if (mainCamera == null)
         {
-            mainCamera = Camera.main;
+            mainCamera = Camera.main;//establishes camera for world point conversions
         }
     }
 
-    private void OnEnable()
+    private void OnEnable()//enables actions for input
     {
         _moveAction = _defaultPlayerActions.TopDown.Move;
         _moveAction.Enable();
@@ -40,7 +40,7 @@ public class Player : Operator
         _defaultPlayerActions.TopDown.Throw.performed += OnThrow;
     }
 
-    private void OnDisable()
+    private void OnDisable()//disables actions for input
     {
         _moveAction.Disable();
         _lookAction.Disable();
@@ -56,28 +56,28 @@ public class Player : Operator
         InitEffectiveValues();
         InitSkills();
         InitComponents();
+        rotTarget = reticleTransform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        AnimateBody();
-        aimPoint = _lookAction.ReadValue<Vector2>();
-        Vector3 reticlePos = mainCamera.ScreenToWorldPoint(new Vector3(aimPoint.x, aimPoint.y, 0));
-        reticlePos.z += -1*reticlePos.z;
-        reticleTransform.position = reticlePos;
-        RotateToPoint(reticleTransform.position);
+        aimPoint = _lookAction.ReadValue<Vector2>();//reads mouse point in screen coordinates
+        Vector3 reticleWorldPos = mainCamera.ScreenToWorldPoint(new Vector3(aimPoint.x, aimPoint.y, 0));//converts screen coordinates to world coordinate 
+        reticleWorldPos.z += -1*reticleWorldPos.z;//removes offset created by pixel perfect camera module
+        reticleTransform.position = reticleWorldPos;//sets reticle to the mouse pos
     }
 
     void FixedUpdate()
     {
-        movementInput = _moveAction.ReadValue<Vector2>();
-        movementVector = movementInput * effectiveSpeed;
-        rbComp.AddForce(movementVector);
-        if (rbComp.velocity.magnitude > maxSpeed)
+        movementInput = _moveAction.ReadValue<Vector2>();//reads the movement inputs
+        movementVector = movementInput * effectiveSpeed;//multiplies the input by the speed of the character
+        rbComp.AddForce(movementVector);//adds said force to the objects rigidbody
+        if (rbComp.velocity.magnitude > maxSpeed)//checks if the speed is exceeding the maximum speed of the character
         {
-            rbComp.velocity = rbComp.velocity.normalized * maxSpeed;
+            rbComp.velocity = rbComp.velocity.normalized * maxSpeed;//if it is, set the speed to the max speed
         }
+        motionVec = rbComp.velocity;
     }
 
     public void OnAttack(InputAction.CallbackContext context)

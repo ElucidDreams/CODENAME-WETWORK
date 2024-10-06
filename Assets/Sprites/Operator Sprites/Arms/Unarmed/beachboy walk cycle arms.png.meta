@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 77efa297e17ecc24bba6c0443ab8c7cf
+guid: 086b400ff6ff0d241b9bc72dd44de44a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 24
+  spritePixelsToUnits: 40
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -136,7 +136,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: beachboy walk cycle feet_0
+      name: beachboy walk cycle arms_0
       rect:
         serializedVersion: 2
         x: 0
@@ -146,26 +146,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: -64}
-        - {x: 64, y: 0}
-        - {x: 0, y: 64}
-        - {x: -64, y: 0}
-      physicsShape:
-      - - {x: 0, y: -64}
-        - {x: 64, y: 0}
-        - {x: 0, y: 64}
-        - {x: -64, y: 0}
+      outline: []
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f37beabde33d1f6469cada8ca0d76c8f
-      internalID: -140168263
+      spriteID: 8687660904b408c46a530063b9a65977
+      internalID: 2102963437
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: beachboy walk cycle feet_1
+      name: beachboy walk cycle arms_1
       rect:
         serializedVersion: 2
         x: 128
@@ -175,26 +167,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: -64}
-        - {x: 64, y: 0}
-        - {x: 0, y: 64}
-        - {x: -64, y: 0}
-      physicsShape:
-      - - {x: 0, y: -64}
-        - {x: 64, y: 0}
-        - {x: 0, y: 64}
-        - {x: -64, y: 0}
+      outline: []
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b49e98e61c86e1b429aba72bbd9e075c
-      internalID: -2023687025
+      spriteID: 840da6e83dd149a4aaa41e603f215e6b
+      internalID: 686028898
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: beachboy walk cycle feet_2
+      name: beachboy walk cycle arms_2
       rect:
         serializedVersion: 2
         x: 256
@@ -204,26 +188,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: -64}
-        - {x: 64, y: 0}
-        - {x: 0, y: 64}
-        - {x: -64, y: 0}
-      physicsShape:
-      - - {x: 0, y: -64}
-        - {x: 64, y: 0}
-        - {x: 0, y: 64}
-        - {x: -64, y: 0}
+      outline: []
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a8077fb514e940468ad293a67d6224e
-      internalID: -777708525
+      spriteID: fb199601c033d4a4794638d3af286976
+      internalID: -177638354
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: beachboy walk cycle feet_3
+      name: beachboy walk cycle arms_3
       rect:
         serializedVersion: 2
         x: 384
@@ -233,26 +209,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: -64}
-        - {x: 64, y: 0}
-        - {x: 0, y: 64}
-        - {x: -64, y: 0}
-      physicsShape:
-      - - {x: 0, y: -64}
-        - {x: 64, y: 0}
-        - {x: 0, y: 64}
-        - {x: -64, y: 0}
+      outline: []
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fbd3619024b0f847933f652c2cb5bff
-      internalID: 245487406
+      spriteID: 4251ac29cde50c544b3283019ac95405
+      internalID: -882747771
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: beachboy walk cycle feet_4
+      name: beachboy walk cycle arms_4
       rect:
         serializedVersion: 2
         x: 512
@@ -262,26 +230,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: -64}
-        - {x: 64, y: 0}
-        - {x: 0, y: 64}
-        - {x: -64, y: 0}
-      physicsShape:
-      - - {x: 0, y: -64}
-        - {x: 64, y: 0}
-        - {x: 0, y: 64}
-        - {x: -64, y: 0}
+      outline: []
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f35291be5c4f12246b01919211b7de78
-      internalID: -617809735
+      spriteID: c74ade1eadb05114eb7bdeac7f308217
+      internalID: 197267031
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: beachboy walk cycle feet_5
+      name: beachboy walk cycle arms_5
       rect:
         serializedVersion: 2
         x: 640
@@ -291,26 +251,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: -64}
-        - {x: 64, y: 0}
-        - {x: 0, y: 64}
-        - {x: -64, y: 0}
-      physicsShape:
-      - - {x: 0, y: -64}
-        - {x: 64, y: 0}
-        - {x: 0, y: 64}
-        - {x: -64, y: 0}
+      outline: []
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c44aa02b6b045b843bbb816d5d9d3611
-      internalID: 1340188616
+      spriteID: a304bc521e2eea54598d3a9766d7669a
+      internalID: 1788538652
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: beachboy walk cycle feet_6
+      name: beachboy walk cycle arms_6
       rect:
         serializedVersion: 2
         x: 768
@@ -320,26 +272,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: -64}
-        - {x: 64, y: 0}
-        - {x: 0, y: 64}
-        - {x: -64, y: 0}
-      physicsShape:
-      - - {x: 0, y: -64}
-        - {x: 64, y: 0}
-        - {x: 0, y: 64}
-        - {x: -64, y: 0}
+      outline: []
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: adaa3626eceac064ca0adc8b19c49c2d
-      internalID: 2115874065
+      spriteID: 49b965743f33c5a4a8c29b6b30db17bf
+      internalID: -1353672306
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: beachboy walk cycle feet_7
+      name: beachboy walk cycle arms_7
       rect:
         serializedVersion: 2
         x: 896
@@ -349,20 +293,12 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: -64}
-        - {x: 64, y: 0}
-        - {x: 0, y: 64}
-        - {x: -64, y: 0}
-      physicsShape:
-      - - {x: 0, y: -64}
-        - {x: 64, y: 0}
-        - {x: 0, y: 64}
-        - {x: -64, y: 0}
+      outline: []
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 960198ad2cb68284d972b7d2360cdaf4
-      internalID: 1783207645
+      spriteID: 2e834a66b2b5b8547a9ea6dd0246fc62
+      internalID: 1517099218
       vertices: []
       indices: 
       edges: []
@@ -378,14 +314,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      beachboy walk cycle feet_0: -140168263
-      beachboy walk cycle feet_1: -2023687025
-      beachboy walk cycle feet_2: -777708525
-      beachboy walk cycle feet_3: 245487406
-      beachboy walk cycle feet_4: -617809735
-      beachboy walk cycle feet_5: 1340188616
-      beachboy walk cycle feet_6: 2115874065
-      beachboy walk cycle feet_7: 1783207645
+      beachboy walk cycle arms_0: 2102963437
+      beachboy walk cycle arms_1: 686028898
+      beachboy walk cycle arms_2: -177638354
+      beachboy walk cycle arms_3: -882747771
+      beachboy walk cycle arms_4: 197267031
+      beachboy walk cycle arms_5: 1788538652
+      beachboy walk cycle arms_6: -1353672306
+      beachboy walk cycle arms_7: 1517099218
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
