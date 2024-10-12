@@ -13,7 +13,6 @@ public class Operator : Person
     public bool inMission = true;
     public float maxSpeed = 10f;
     [NonSerialized] public Rigidbody2D rbComp;
-    [NonSerialized] public FixedJoint2D weaponJoint;
     [Space(10)]
     public float baseHealth;
     public float baseArmour;
@@ -71,15 +70,16 @@ public class Operator : Person
     public void InitComponents()//Get all of the components of the operator and assign them to variables
     {
         rbComp = GetComponent<Rigidbody2D>();
-        weaponJoint = GetComponent<FixedJoint2D>();
     }
     public void WeaponThrow()
     {
         activeWeapon.transform.SetParent(null);//un-parents the weapon
         activeWeapon.weaponCollider.enabled = true;//Enable the weapons collider
-        weaponJoint.connectedBody = rbComp;//sets the joint to be connected to the operators rigidbody
+        activeWeapon.weaponSpriteRenderer.sortingOrder = 1;
         float wielderFacing = rotTarget.eulerAngles.z;//get the facing of the arms
         Vector2 throwDirection = new(Mathf.Cos(wielderFacing * Mathf.Deg2Rad), Mathf.Sin(wielderFacing * Mathf.Deg2Rad));//generate a vector from the facing
+        activeWeapon.weaponRB = activeWeapon.AddComponent<Rigidbody2D>();
+        activeWeapon.weaponRB.gravityScale = 0;
         activeWeapon.weaponRB.mass = activeWeapon.weaponMass;//set the rigidbody mass to be the preset mass of the weapon;
         activeWeapon.weaponRB.AddForce(throwDirection * effectiveStrength, ForceMode2D.Impulse);//add the force to the object, taking the operators strength into effect
         activeWeapon.weaponRB.AddTorque(UnityEngine.Random.Range(0f,1f));//add a slight spin to the item
@@ -87,8 +87,6 @@ public class Operator : Person
         StartCoroutine(activeWeapon.CheckForStop());//start the timer to disable the collider again
         StartCoroutine(activeWeapon.ThrowFrictionCalc());//start the friction function
         activeWeapon = null;//set the active weapon to none
-
-
     }
     public void SetMissionUI()//TODO: needs further functionality and reworking
     {

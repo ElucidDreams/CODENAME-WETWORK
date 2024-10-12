@@ -9,11 +9,10 @@ using static GameConstants;
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(BoxCollider2D))]
-[RequireComponent(typeof(Rigidbody2D))]
 public abstract class Weapon : MonoBehaviour
 {
     [NonSerialized] public Animator weaponAnimator;
-    [NonSerialized] public SpriteRenderer weaponSprite;
+    [NonSerialized] public SpriteRenderer weaponSpriteRenderer;
     [NonSerialized] public BoxCollider2D weaponCollider;
     [NonSerialized] public Rigidbody2D weaponRB;
     [Header("General Weapon Properties")]
@@ -35,7 +34,7 @@ public abstract class Weapon : MonoBehaviour
     public virtual void InitWeapon()
     {
         weaponAnimator = GetComponent<Animator>();
-        weaponSprite = GetComponent<SpriteRenderer>();
+        weaponSpriteRenderer = GetComponent<SpriteRenderer>();
         weaponCollider = GetComponent<BoxCollider2D>();
         weaponRB = GetComponent<Rigidbody2D>();
         weaponCollider.enabled = false;
