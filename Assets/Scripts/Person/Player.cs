@@ -52,11 +52,12 @@ public class Player : Operator
     // Start is called before the first frame update
     void Start()
     {
+        rotTarget = reticleTransform;
         SetMissionUI();
         InitEffectiveValues();
         InitSkills();
         InitComponents();
-        rotTarget = reticleTransform;
+        
     }
 
     // Update is called once per frame

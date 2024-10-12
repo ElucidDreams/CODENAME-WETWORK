@@ -18,6 +18,8 @@ public abstract class Weapon : MonoBehaviour
     [NonSerialized] public Rigidbody2D weaponRB;
     [Header("General Weapon Properties")]
     public WeaponType weaponType;
+    public Sprite heldSprite;
+    public Sprite worldSprite;
     public float checkDelay = 0.1f;
     [Space(10)]
     [Header("Throwing Properties")]
@@ -62,7 +64,6 @@ public abstract class Weapon : MonoBehaviour
         yield return new WaitForSeconds(0.01f);
         weaponRB.drag = groundedFriction;
         weaponRB.angularDrag = groundedFriction;
-        
     }
 
     void OnCollisionEnter2D(Collision2D collision)

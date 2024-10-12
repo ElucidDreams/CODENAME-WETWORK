@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BodyAnimController : MonoBehaviour
@@ -29,25 +30,28 @@ public class BodyAnimController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        
-        headTransform.rotation = RotateToPoint(headTransform, target.position);
-        armsTransform.rotation = RotateToPoint(armsTransform, target.position);
-        parentOperator.transformComp.rotation = armsTransform.rotation;
+    {   
+        RotateToFacePoint(headTransform, target.position);
+        RotateToFacePoint(armsTransform, target.position);
         if (parentOperator.motionVec.magnitude > rotDeadZone)
         {
-            legTransform.rotation = Quaternion.Euler(0, 0, (-1 * (Mathf.Atan2(parentOperator.motionVec.x, parentOperator.motionVec.y) * Mathf.Rad2Deg)-90));
+            legTransform.rotation = Quaternion.Euler(0, 0, (-1 * (Mathf.Atan2(parentOperator.motionVec.x, parentOperator.motionVec.y) * Mathf.Rad2Deg) - 90));
         }
         if (parentOperator.motionVec != Vector2.zero)
         {
             legAnimator.SetFloat("motion", parentOperator.motionVec.magnitude / parentOperator.maxSpeed * 2);
+            armsAnimator.SetFloat("ArmsMotion", parentOperator.motionVec.magnitude/parentOperator.maxSpeed * 2);
         }
+        armsAnimator.SetBool("Armed",parentOperator.activeWeapon != null);
     }
 
-    public Quaternion RotateToPoint(Transform t, Vector2 point)//Rotate 't' to face towards 'point'
+    public void RotateToFacePoint(Transform t, Vector2 point)//Rotate 't' to face towards 'point'
     {
         Vector2 difference = (Vector3)point - t.position;//get a vector of the difference of the two points
-        float angle = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;// Calculate the angle between the two points using the differnce and convert it to degrees from radians
-        return Quaternion.Euler(0, 0, angle);//sets the rotation of the transformation to the new angle.
+        if (difference.magnitude > rotDeadZone)
+        {
+            float angle = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;// Calculate the angle between the two points using the difference and convert it to degrees from radians
+            t.rotation = Quaternion.Euler(0, 0, angle);//sets the rotation of the transformation to the new angle.
+        }
     }
 }

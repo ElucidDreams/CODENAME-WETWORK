@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeWeapon : MonoBehaviour
+public class MeleeWeapon : Weapon
 {
     // Start is called before the first frame update
     void Start()
     {
+        InitWeapon();
         
     }
 
@@ -14,5 +15,14 @@ public class MeleeWeapon : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public override void Attack()
+    {
+
+    }
+    public override void Reload()
+    {
+
     }
 }
