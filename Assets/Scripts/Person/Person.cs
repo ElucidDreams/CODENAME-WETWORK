@@ -31,16 +31,21 @@ public class Person : MonoBehaviour
         foreach (GameObject set in g)
         {
             FaceElements f = set.GetComponent<FaceElements>();
-            personFace.faces.Add(f);
+            if (faction.IdCheck(f.setFaction))
+            {
+                Debug.Log("Added face");
+                personFace.faces.Add(f);
+            }
         }
-        try{
+        try
+        {
             personFace.emptyImage = (GameObject)Resources.Load("Prefabs/Classless Prefabs/EmptyImage");
         }
-        catch(Exception e)
+        catch (Exception e)
         {
             Debug.LogError("Empty Sprite prefab has been moved from its hard-linked position");
             Debug.LogException(e);
         }
-        personFace.GenerateFace(faction, UICard.imageParent);
+        personFace.GenerateFace(UICard.imageParent);
     }
 }

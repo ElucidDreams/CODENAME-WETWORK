@@ -17,7 +17,7 @@ public class TestFaceGenerator : MonoBehaviour
 
     int elementsLen;
 
-
+    /*
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +34,7 @@ public class TestFaceGenerator : MonoBehaviour
         }
 
         updateFace();
+        
     }
 
     // Update is called once per frame
@@ -62,4 +63,5 @@ public class TestFaceGenerator : MonoBehaviour
     {
         return UnityEngine.Random.Range(0, arr.Length);
     }
+    */
 }
