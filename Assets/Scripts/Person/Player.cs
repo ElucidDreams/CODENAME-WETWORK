@@ -39,12 +39,8 @@ public class Player : Operator
         _lookAction.Enable();
         _defaultPlayerActions.TopDown.Attack.Enable();
         _defaultPlayerActions.TopDown.Throw.Enable();
-        _defaultPlayerActions.TopDown.Save.Enable();
-        _defaultPlayerActions.TopDown.Load.Enable();
         _defaultPlayerActions.TopDown.Attack.performed += OnAttack;
         _defaultPlayerActions.TopDown.Throw.performed += OnThrow;
-        _defaultPlayerActions.TopDown.Save.performed += OnSave;
-        _defaultPlayerActions.TopDown.Load.performed += OnLoad;
     }
 
     private void OnDisable()//disables actions for input
@@ -53,12 +49,8 @@ public class Player : Operator
         _lookAction.Disable();
         _defaultPlayerActions.TopDown.Attack.Disable();
         _defaultPlayerActions.TopDown.Throw.Disable();
-        _defaultPlayerActions.TopDown.Save.Disable();
-        _defaultPlayerActions.TopDown.Load.Disable();
         _defaultPlayerActions.TopDown.Attack.performed -= OnAttack;
         _defaultPlayerActions.TopDown.Throw.performed -= OnThrow;
-        _defaultPlayerActions.TopDown.Save.performed -= OnSave;
-        _defaultPlayerActions.TopDown.Load.performed -= OnLoad;
     }
     // Start is called before the first frame update
     Player()
@@ -113,15 +105,5 @@ public class Player : Operator
         {
             WeaponThrow();
         }
-    }
-    
-    public void OnSave(InputAction.CallbackContext context)
-    {
-        
-    }
-
-    public void OnLoad(InputAction.CallbackContext context)
-    {
-        
     }
 }

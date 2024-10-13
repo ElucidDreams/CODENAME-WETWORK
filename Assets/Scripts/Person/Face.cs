@@ -12,40 +12,68 @@ using UnityEngine.UI;
 public class Face : MonoBehaviour
 {
     public List<FaceElements> faces;
-    FaceElements elementSet;
+    FaceElements set;
     [HideInInspector] public GameObject emptyImage;
     List<Sprite> sprites;
-
+    [HideInInspector] public bool hasGenerated = false;
+    [HideInInspector] public int setSelector;
+    [HideInInspector] public List<int> faceIndices;
+    [HideInInspector] public List<int> colorIndices;
     int elementsLen;
 
-    public void GenerateFace(Faction faction, RectTransform spawnPoint)
+    public void GenerateFace(RectTransform spawnPoint)
     {
-        List<FaceElements> factionSet = new();
-        foreach (FaceElements set in faces)
+        if (!hasGenerated)
         {
-            if (faction.IdCheck(set.setFaction))
+            hasGenerated = true;
+            int elementUpperLimit = faces.Count;
+            setSelector = UnityEngine.Random.Range(0, elementUpperLimit);
+            set = faces[setSelector];
+            List<Image> imageHolders = new();
+            elementsLen = set.parts.Length;
+            foreach (FaceElements.PartStruct sprites in set.parts)//Create sprite renderers to hold the items of the face
             {
-                factionSet.Add(set);
+                GameObject newObject = Instantiate(emptyImage, spawnPoint);
+                imageHolders.Add(newObject.GetComponent<Image>());
+            }
+            imageHolders.Reverse();
+            for (int i = 0; i < elementsLen; i++)
+            {
+                int faceIndex = GenerateSelector(set.parts.ElementAt(i).part);
+                Sprite itemSprite = set.parts.ElementAt(i).part[faceIndex];
+                imageHolders[i].sprite = itemSprite;
+                faceIndices.Add(faceIndex);
+                if (set.partsToBeColored[i] == true)
+                {
+                    int colorIndex = GenerateSelector(set.colors.ElementAt(i).color);
+                    imageHolders[i].color = set.colors.ElementAt(i).color[colorIndex];
+                    colorIndices.Add(colorIndex);
+                }
             }
         }
-        int elementUpperLimit = factionSet.Count;
-        int elementSelector = UnityEngine.Random.Range(0,elementUpperLimit);
-        elementSet = factionSet[elementSelector];
-        List<Image> imageHolders = new();
-        elementsLen = elementSet.elements.Length;
-        foreach (FaceElements.ElementsStruct sprites in elementSet.elements)//Create sprite renderers to hold the items of the face
+    }
+
+    public void GenerateFace(List<int> fIndex, List<int> cIndex, RectTransform spawnPoint)
+    {
+        if (hasGenerated)
         {
-            GameObject newObject = Instantiate(emptyImage,spawnPoint);
-            imageHolders.Add(newObject.GetComponent<Image>());
-        }
-        imageHolders.Reverse();
-        for (int i = 0; i < elementsLen; i++)
-        {
-            Sprite itemSprite = elementSet.elements.ElementAt(i).element[GenerateSelector(elementSet.elements.ElementAt(i).element)];
-            imageHolders[i].sprite = itemSprite;
-            if (elementSet.elementsToBeColored[i] == true)
+            set = faces[setSelector];
+            List<Image> imageHolders = new();
+            elementsLen = set.parts.Length;
+            foreach (FaceElements.PartStruct sprites in set.parts)//Create sprite renderers to hold the items of the face
             {
-                imageHolders[i].color = elementSet.colors.ElementAt(i).color[GenerateSelector(elementSet.colors.ElementAt(i).color)];
+                GameObject newObject = Instantiate(emptyImage, spawnPoint);
+                imageHolders.Add(newObject.GetComponent<Image>());
+            }
+            imageHolders.Reverse();
+            for (int i = 0; i < elementsLen; i++)
+            {
+                Sprite itemSprite = set.parts.ElementAt(i).part[fIndex[i]];
+                imageHolders[i].sprite = itemSprite;
+                if (set.partsToBeColored[i] == true)
+                {
+                    imageHolders[i].color = set.colors.ElementAt(i).color[cIndex[i]];
+                }
             }
         }
     }
@@ -53,5 +81,10 @@ public class Face : MonoBehaviour
     int GenerateSelector<T>(T[] arr)
     {
         return UnityEngine.Random.Range(0, arr.Length);
+    }
+
+    public void Save()
+    {
+        
     }
 }
