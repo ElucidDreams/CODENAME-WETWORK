@@ -286,8 +286,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1377399902}
+  m_Children: []
   m_Father: {fileID: 682022224}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &291269830
@@ -1095,7 +1094,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 8f723f2f882961844a5a5f690b5c5246, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1241,7 +1240,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
 --- !u!114 &1051612824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1450,7 +1449,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 291269829}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1377399903
 MonoBehaviour:
@@ -2484,6 +2483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faces: []
+  emptyImage: {fileID: 0}
 --- !u!114 &2060782466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2503,17 +2503,17 @@ MonoBehaviour:
   isPayroll: 0
   salary: 0
   personReputation: 0
+  personFace: {fileID: 0}
   UICard: {fileID: 1638720276}
-  Level: 1
+  level: 0
   inMission: 1
   maxSpeed: 10
+  rbComp: {fileID: 0}
   baseHealth: 10
-  baseArmour: 10
   baseSpeed: 50
   baseStrength: 10
   baseAccuracy: 10
   effectiveHealth: 0
-  effectiveArmour: 0
   effectiveSpeed: 0
   effectiveStrength: 0
   effectiveAccuracy: 0
@@ -2521,10 +2521,13 @@ MonoBehaviour:
   - {fileID: 8588547017605383371, guid: a0650987f1f4e8e4f8ef6b183201b175, type: 3}
   - {fileID: 4824262591714562283, guid: ea4f183c403b1fb45acf3d3b658043cc, type: 3}
   activeWeapon: {fileID: 1377399903}
+  armTransform: {fileID: 291269829}
   rotTarget: {fileID: 1006006262}
   motionVec: {x: 0, y: 0}
   rating: 0
   reticleTransform: {fileID: 1006006262}
+  movementInput: {x: 0, y: 0}
+  movementVector: {x: 0, y: 0}
 --- !u!50 &2060782467
 Rigidbody2D:
   serializedVersion: 4
@@ -2655,22 +2658,23 @@ MonoBehaviour:
   isPayroll: 0
   salary: 0
   personReputation: 0
+  personFace: {fileID: 0}
   UICard: {fileID: 0}
-  Level: 0
+  level: 0
   inMission: 1
   maxSpeed: 10
+  rbComp: {fileID: 0}
   baseHealth: 1
-  baseArmour: 1
   baseSpeed: 50
   baseStrength: 1
   baseAccuracy: 1
   effectiveHealth: 0
-  effectiveArmour: 0
   effectiveSpeed: 0
   effectiveStrength: 0
   effectiveAccuracy: 0
   skills: []
   activeWeapon: {fileID: 0}
+  armTransform: {fileID: 1918502142}
   rotTarget: {fileID: 552276206}
   motionVec: {x: 0, y: 0}
   rating: 0
@@ -2687,6 +2691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faces: []
+  emptyImage: {fileID: 0}
 --- !u!255 &2137249172
 FixedJoint2D:
   m_ObjectHideFlags: 0
@@ -2821,6 +2826,7 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 1218999511}
   - {fileID: 519420032}
+  - {fileID: 1377399902}
   - {fileID: 2060782463}
   - {fileID: 2137249169}
   - {fileID: 1006006262}

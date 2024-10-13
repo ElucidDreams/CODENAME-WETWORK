@@ -17,7 +17,7 @@ public class Person : MonoBehaviour
     public float salary;
     [Space(10)]
     public float personReputation;
-    [NonSerialized] public Face personFace;
+    [HideInInspector] public Face personFace;
     public PersonCard UICard;
     public void SpawnFace()
     {

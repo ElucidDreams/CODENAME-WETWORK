@@ -9,19 +9,19 @@ using UnityEngine;
 public class Operator : Person
 {
     [Header("Operator Properties")]
-    public int Level; 
+    public int level; 
     public bool inMission = true;
     public float maxSpeed = 10f;
-    [NonSerialized] public Rigidbody2D rbComp;
+    [HideInInspector] public Rigidbody2D rbComp;
     [Space(10)]
     public float baseHealth;
-    public float baseArmour;
+    //public float baseArmour;
     public float baseSpeed;
     public float baseStrength;
     public float baseAccuracy;
     [Space(10)]
     public float effectiveHealth;
-    public float effectiveArmour;
+    //public float effectiveArmour;
     public float effectiveSpeed;
     public float effectiveStrength;
     public float effectiveAccuracy;
@@ -29,6 +29,7 @@ public class Operator : Person
     [SerializeReference]
     public OperatorSkill[] skills;
     public Weapon activeWeapon;
+    public Transform armTransform; 
     public Transform rotTarget;
     public Vector2 motionVec; 
     [Space(10)]
@@ -44,13 +45,14 @@ public class Operator : Person
         InitEffectiveValues();
         InitSkills();
         InitComponents();
+        //StartCoroutine(DebugTick());
     }
 
     public void InitEffectiveValues()//set all of the effective values to the base values
     {
         //Initialize effective values
         effectiveHealth = baseHealth;
-        effectiveArmour = baseArmour;
+        //effectiveArmour = baseArmour;
         effectiveSpeed = baseSpeed;
         effectiveStrength = baseStrength;
         effectiveAccuracy = baseAccuracy;
@@ -70,13 +72,18 @@ public class Operator : Person
     public void InitComponents()//Get all of the components of the operator and assign them to variables
     {
         rbComp = GetComponent<Rigidbody2D>();
+        if (activeWeapon != null)
+        {
+            activeWeapon.gameObject.transform.SetParent(armTransform);
+            activeWeapon.gameObject.transform.position = Vector3.zero;
+        }
     }
     public void WeaponThrow()
     {
         activeWeapon.transform.SetParent(null);//un-parents the weapon
         activeWeapon.weaponCollider.enabled = true;//Enable the weapons collider
         activeWeapon.weaponSpriteRenderer.sortingOrder = 1;
-        float wielderFacing = rotTarget.eulerAngles.z;//get the facing of the arms
+        float wielderFacing = armTransform.eulerAngles.z;//get the facing of the arms
         Vector2 throwDirection = new(Mathf.Cos(wielderFacing * Mathf.Deg2Rad), Mathf.Sin(wielderFacing * Mathf.Deg2Rad));//generate a vector from the facing
         activeWeapon.weaponRB = activeWeapon.AddComponent<Rigidbody2D>();
         activeWeapon.weaponRB.gravityScale = 0;
@@ -93,5 +100,13 @@ public class Operator : Person
         SpawnFace();//generate the face in the UI
         UICard.nameText.text = givenName + " " + familyName;//set the name text
         UICard.factionText.text = faction.factionID.ToString();//set the faction text
+    }
+
+    IEnumerator DebugTick()
+    {
+        Debug.Log("Rot target facing: " + rotTarget.eulerAngles.z);
+        Debug.Log("Arms facing:" + armTransform.eulerAngles.z);
+        yield return new WaitForSeconds(1f);
+        StartCoroutine(DebugTick());
     }
 }

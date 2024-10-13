@@ -30,7 +30,6 @@ public abstract class Weapon : MonoBehaviour
 
     public abstract void Attack();
     public abstract void Reload();
-
     public virtual void InitWeapon()
     {
         weaponAnimator = GetComponent<Animator>();

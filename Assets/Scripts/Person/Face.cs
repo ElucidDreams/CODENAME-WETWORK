@@ -13,7 +13,7 @@ public class Face : MonoBehaviour
 {
     public List<FaceElements> faces;
     FaceElements elementSet;
-    [NonSerialized] public GameObject emptyImage;
+    [HideInInspector] public GameObject emptyImage;
     List<Sprite> sprites;
 
     int elementsLen;
