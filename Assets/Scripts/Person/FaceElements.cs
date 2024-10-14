@@ -26,5 +26,6 @@ public class FaceElements : MonoBehaviour
     public ColorStruct[] colors;
     [Tooltip("Match to the number of elements and toggle what elements you want colored")]
     public bool[] partsToBeColored;
-
+    [Tooltip("Use this to set which component determines the appearance of the head from top down. \nONLY SET ONE TO BE TRUE AND SAME LENGTH AS NUMBER OF PART CATEGORIES")]
+    public bool[] distinctiveComponent;
 }

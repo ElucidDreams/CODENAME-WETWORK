@@ -110,3 +110,4 @@ MonoBehaviour:
     - {r: 0.83107865, g: 0.8679245, b: 0.8611371, a: 1}
     - {r: 0.70980394, g: 0.76159316, b: 0.85882354, a: 1}
   partsToBeColored: 000000
+  distinctiveComponent: 000001

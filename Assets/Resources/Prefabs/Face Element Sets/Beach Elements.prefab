@@ -45,21 +45,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   setFaction: 2
-  elements:
-  - element:
+  parts:
+  - part:
     - {fileID: 21300000, guid: 10f4d42c172f56d42ae52b07098735bd, type: 3}
     - {fileID: 21300000, guid: 1c31ee416df35c548bd8fa93495464a6, type: 3}
     - {fileID: 21300000, guid: ce7858e28637ab54abfc926c6f42a90e, type: 3}
     - {fileID: 21300000, guid: 443ae8659ab4e9249970f625de2f54ae, type: 3}
-  - element:
+  - part:
     - {fileID: 21300000, guid: fd0f50d81cdce0546b17b59f3221d028, type: 3}
     - {fileID: 21300000, guid: ee1fc7f934a24964b9519a0e5aafca0b, type: 3}
     - {fileID: 21300000, guid: c4a568d3e9c05a2488d07a6d8c76f5a1, type: 3}
-  - element:
+  - part:
     - {fileID: 21300000, guid: 115ecce42db9af44db6aff1daa80b936, type: 3}
     - {fileID: 21300000, guid: 31f702e97182ee24fb7cdaedc06732d7, type: 3}
     - {fileID: 21300000, guid: f55036e2398ad6a439b3abddee86be95, type: 3}
-  - element:
+  - part:
     - {fileID: 21300000, guid: 91c79d8890ee4e14cbf59509c08437ce, type: 3}
     - {fileID: 21300000, guid: 47ef3f5818e9e354394a45aef94384a2, type: 3}
     - {fileID: 21300000, guid: abf4292d4eea2fa47b4ce0a4ba0ccae3, type: 3}
@@ -83,4 +83,5 @@ MonoBehaviour:
     - {r: 1, g: 0.69321233, b: 0.4666667, a: 1}
     - {r: 1, g: 0.4666667, b: 0.5996824, a: 1}
   - color: []
-  elementsToBeColored: 01000100
+  partsToBeColored: 01000100
+  distinctiveComponent: 01000000

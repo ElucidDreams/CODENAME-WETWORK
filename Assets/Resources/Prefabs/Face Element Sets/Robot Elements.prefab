@@ -45,26 +45,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   setFaction: 1
-  elements:
-  - element:
+  parts:
+  - part:
     - {fileID: 21300000, guid: 7f310201557a4bc4ea76bda49afaa9e5, type: 3}
     - {fileID: 21300000, guid: d36c5761e76f1cf488616aea31782ab7, type: 3}
     - {fileID: 21300000, guid: b411201c46a5cb0458faf3e3b04074de, type: 3}
     - {fileID: 21300000, guid: 8a14cfec5d742f84e908b70dfc35f2a1, type: 3}
     - {fileID: 21300000, guid: 3121aa0232a48784a83dbfdb6a36d5ca, type: 3}
     - {fileID: 21300000, guid: 05392ae4954ebdf43a3907652f239847, type: 3}
-  - element:
+  - part:
     - {fileID: 21300000, guid: 328db3789ff7ff549a37d47ab2e1bdf3, type: 3}
     - {fileID: 21300000, guid: 7244151462cfc0f4bbb6bb62eb876612, type: 3}
     - {fileID: 21300000, guid: 8fe2626f1a9b8254aa90d9c581acd760, type: 3}
     - {fileID: 21300000, guid: 45a17a3c4f616864a9e62b5c23fd72d2, type: 3}
-  - element:
+  - part:
     - {fileID: 21300000, guid: 05240f19434bb3048982fb9a6b30b927, type: 3}
     - {fileID: 21300000, guid: 5b8078964924b3a4b8e726d5a2d8109e, type: 3}
     - {fileID: 21300000, guid: a5abf73c030b7c34f8559359cc2ddc0d, type: 3}
     - {fileID: 21300000, guid: f049c4921894eb64baf10d3fc776789b, type: 3}
     - {fileID: 21300000, guid: b5311163e89fc8e4a88ef34cae9dbcec, type: 3}
-  - element:
+  - part:
     - {fileID: 21300000, guid: 26869a505bb7a3e40a59b1f32092364f, type: 3}
   colors:
   - color:
@@ -91,4 +91,5 @@ MonoBehaviour:
     - {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 1}
     - {r: 0.83107865, g: 0.8679245, b: 0.8611371, a: 1}
     - {r: 0.70980394, g: 0.76159316, b: 0.85882354, a: 1}
-  elementsToBeColored: 01000001
+  partsToBeColored: 00000000
+  distinctiveComponent: 01000000

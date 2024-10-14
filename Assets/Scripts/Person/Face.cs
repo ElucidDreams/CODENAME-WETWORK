@@ -19,16 +19,23 @@ public class Face : MonoBehaviour
     [HideInInspector] public int setSelector;
     [HideInInspector] public List<int> faceIndices;
     [HideInInspector] public List<int> colorIndices;
+    [HideInInspector] public bool[] toColorArr;
+    [HideInInspector] public bool[] distinctiveComponent;
+    [HideInInspector] public RectTransform savedSpawnPoint;
     int elementsLen;
 
     public void GenerateFace(RectTransform spawnPoint)
     {
         if (!hasGenerated)
         {
+            savedSpawnPoint = spawnPoint;
             hasGenerated = true;
             int elementUpperLimit = faces.Count;
             setSelector = UnityEngine.Random.Range(0, elementUpperLimit);
             set = faces[setSelector];
+            distinctiveComponent = set.distinctiveComponent;
+            Debug.Log("set len at assignment: " + distinctiveComponent.Length);
+            toColorArr = set.partsToBeColored;
             List<Image> imageHolders = new();
             elementsLen = set.parts.Length;
             foreach (FaceElements.PartStruct sprites in set.parts)//Create sprite renderers to hold the items of the face
@@ -51,9 +58,13 @@ public class Face : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            RecreateFace(faceIndices, colorIndices, savedSpawnPoint);
+        }
     }
 
-    public void GenerateFace(List<int> fIndex, List<int> cIndex, RectTransform spawnPoint)
+    public void RecreateFace(List<int> fIndex, List<int> cIndex, RectTransform spawnPoint)
     {
         if (hasGenerated)
         {
@@ -85,6 +96,6 @@ public class Face : MonoBehaviour
 
     public void Save()
     {
-        
+
     }
 }

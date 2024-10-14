@@ -33,7 +33,6 @@ public class Person : MonoBehaviour
             FaceElements f = set.GetComponent<FaceElements>();
             if (faction.IdCheck(f.setFaction))
             {
-                Debug.Log("Added face");
                 personFace.faces.Add(f);
             }
         }
