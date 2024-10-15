@@ -165,9 +165,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcc2a710cd96ada4ebbdd5c5f18925d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponName: Baseball Bat
   weaponType: 0
-  heldSprite: {fileID: 21300000, guid: 56ca29839f13f634698d0782349da6f0, type: 3}
-  worldSprite: {fileID: -743601259473008446, guid: b51020accf82f6c4d8cbbe3995de5474, type: 3}
+  armsSet: {fileID: 11400000, guid: 40989e8fc3c79e5438f43086f7f819a1, type: 2}
   checkDelay: 0.1
   weaponMass: 1
   velocityThreshold: 0.1

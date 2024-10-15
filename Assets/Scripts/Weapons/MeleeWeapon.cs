@@ -19,7 +19,7 @@ public class MeleeWeapon : Weapon
 
     public override void Attack()
     {
-
+        isAttacking = true;
     }
     public override void Reload()
     {

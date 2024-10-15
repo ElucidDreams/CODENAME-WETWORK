@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Rendering;
 using static GameConstants;
 
@@ -11,14 +12,15 @@ using static GameConstants;
 [RequireComponent(typeof(BoxCollider2D))]
 public abstract class Weapon : MonoBehaviour
 {
+    public string weaponName;
+    public bool isAttacking = false;
     [NonSerialized] public Animator weaponAnimator;
     [NonSerialized] public SpriteRenderer weaponSpriteRenderer;
     [NonSerialized] public BoxCollider2D weaponCollider;
     [NonSerialized] public Rigidbody2D weaponRB;
     [Header("General Weapon Properties")]
     public WeaponType weaponType;
-    public Sprite heldSprite;
-    public Sprite worldSprite;
+    public MissionArmsSet armsSet;
     public float checkDelay = 0.1f;
     [Space(10)]
     [Header("Throwing Properties")]

@@ -10,7 +10,7 @@ public class Sharpshooter : OperatorSkill
     
     public override void RunSkill()
     {
-        SkillUser.effectiveAccuracy = SkillUser.baseAccuracy + staticBump + (levelBump * Level);
+        skillUser.effectiveAccuracy = skillUser.baseAccuracy + staticBump + (levelBump * level);
     }
 
     public override bool RunSkill(float difficulty)

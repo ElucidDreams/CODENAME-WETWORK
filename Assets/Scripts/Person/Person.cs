@@ -10,15 +10,15 @@ public class Person : MonoBehaviour
     [Header("Person Properties")]
     public string givenName;
     public string familyName;
-    public Faction faction;//TODO implement faction
-    [Space(10)]
     public bool isHired;
     public bool isPayroll;
     public float salary;
-    [Space(10)]
-    public float personReputation;
-    [HideInInspector] public Face personFace;
+    [Space(5)]
     public PersonCard UICard;
+    public Faction faction;//TODO implement faction
+    [HideInInspector] public float personReputation;
+    [HideInInspector] public Face personFace;
+
     public void SpawnFace()
     {
         if (UICard == null)

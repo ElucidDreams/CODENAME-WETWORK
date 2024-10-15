@@ -34,7 +34,6 @@ public class Face : MonoBehaviour
             setSelector = UnityEngine.Random.Range(0, elementUpperLimit);
             set = faces[setSelector];
             distinctiveComponent = set.distinctiveComponent;
-            Debug.Log("set len at assignment: " + distinctiveComponent.Length);
             toColorArr = set.partsToBeColored;
             List<Image> imageHolders = new();
             elementsLen = set.parts.Length;
