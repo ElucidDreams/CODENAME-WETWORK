@@ -45,7 +45,7 @@ Animator:
   m_GameObject: {fileID: 1687391046676677216}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4743e4a175a8f9e44b829c22e761861d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -166,6 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Baseball Bat
+  isAttacking: 0
   weaponType: 0
   armsSet: {fileID: 11400000, guid: 40989e8fc3c79e5438f43086f7f819a1, type: 2}
   checkDelay: 0.1

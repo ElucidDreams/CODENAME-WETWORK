@@ -9,7 +9,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: ArmsMotion
+    m_ConditionEvent: Motion
     m_EventTreshold: 0.5
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 20665224132238491}
@@ -92,7 +92,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: ArmsMotion
+    m_ConditionEvent: Motion
     m_EventTreshold: 0.5
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8498877639039098565}
@@ -117,7 +117,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: ArmsMotion
+    m_ConditionEvent: Motion
     m_EventTreshold: 0.5
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8498877639039098565}
@@ -142,7 +142,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: ArmsMotion
+    m_ConditionEvent: Motion
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 20665224132238491}
@@ -220,14 +220,8 @@ AnimatorController:
   m_Name: BeachUnarmedAnimator
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: ArmsMotion
+  - m_Name: Motion
     m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: Armed
-    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -282,7 +276,7 @@ AnimatorState:
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 7078aad0bcc1f7d4698b673b9ed4f0b1, type: 2}
   m_Tag: 
-  m_SpeedParameter: ArmsMotion
+  m_SpeedParameter: Motion
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 

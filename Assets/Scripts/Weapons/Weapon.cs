@@ -18,6 +18,7 @@ public abstract class Weapon : MonoBehaviour
     [NonSerialized] public SpriteRenderer weaponSpriteRenderer;
     [NonSerialized] public BoxCollider2D weaponCollider;
     [NonSerialized] public Rigidbody2D weaponRB;
+    [NonSerialized] public Operator wielder;
     [Header("General Weapon Properties")]
     public WeaponType weaponType;
     public MissionArmsSet armsSet;
@@ -30,17 +31,39 @@ public abstract class Weapon : MonoBehaviour
     public float groundedFriction = 10f;
     [NonSerialized] public bool inAir = false;
 
+    public void Start()
+    {
+        InitWeapon();
+    }
     public abstract void Attack();
     public abstract void Reload();
+    public abstract void ThrowWeapon();
+    
     public virtual void InitWeapon()
     {
+        
         weaponAnimator = GetComponent<Animator>();
         weaponSpriteRenderer = GetComponent<SpriteRenderer>();
         weaponCollider = GetComponent<BoxCollider2D>();
         weaponRB = GetComponent<Rigidbody2D>();
         weaponCollider.enabled = false;
     }
-
+    public void BaseAttackLogic()
+    {
+        isAttacking = true;
+        weaponAnimator.SetTrigger("Attack");
+        wielder.armsAnimator.SetTrigger("Attack");
+    }
+    public void BaseThrowLogic()
+    {
+        weaponAnimator.SetTrigger("Throw");
+    }
+    
+    public IEnumerator SetWielder()
+    {
+        yield return new WaitForEndOfFrame();
+        wielder = gameObject.transform.parent.GetComponentInParent<Operator>();
+    }
     public IEnumerator CheckForStop()
     {
         while (weaponRB.velocity.magnitude > velocityThreshold)
@@ -65,7 +88,6 @@ public abstract class Weapon : MonoBehaviour
         weaponRB.drag = groundedFriction;
         weaponRB.angularDrag = groundedFriction;
     }
-
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (inAir)

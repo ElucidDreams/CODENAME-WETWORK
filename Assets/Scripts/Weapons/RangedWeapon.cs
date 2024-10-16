@@ -9,13 +9,13 @@ public class RangedWeapon : Weapon
     public GameObject hitEffect;
 
     // Start is called before the first frame update
-    void Start()
+    new void Start()
     {
-        InitWeapon();
+        base.Start();
     }
 
     // Update is called once per frame
-    void Update()
+    new void Update()
     {
 
     }
@@ -27,5 +27,11 @@ public class RangedWeapon : Weapon
 
     public override void Reload()
     {
+        throw new System.NotImplementedException();
+    }
+
+    public override void ThrowWeapon()
+    {
+        throw new System.NotImplementedException();
     }
 }

@@ -43,7 +43,7 @@ public class Operator : Person
     SpriteRenderer headSpriteRenderer;
     public GameObject armsObject;
     Transform armsTransform;
-    Animator armsAnimator;
+    public Animator armsAnimator;
     public GameObject legObject;
     Transform legTransform;
     Animator legAnimator;
@@ -99,6 +99,7 @@ public class Operator : Person
         {
             activeWeapon.gameObject.transform.SetParent(armTransform);
             activeWeapon.gameObject.transform.position = Vector3.zero;
+            activeWeapon.wielder = this;
         }
         headTransform = headObject.GetComponent<Transform>();
         headSpriteRenderer = headObject.GetComponent<SpriteRenderer>();
@@ -155,11 +156,9 @@ public class Operator : Person
         }
         if (motionVec.magnitude > 0.03f)
         {
-            legAnimator.SetFloat("motion", (motionVec.magnitude / maxSpeed) * 2);
-            armsAnimator.SetFloat("ArmsMotion", (motionVec.magnitude / maxSpeed) * 2);
+            legAnimator.SetFloat("Motion", (motionVec.magnitude / maxSpeed) * 2);
+            armsAnimator.SetFloat("Motion", (motionVec.magnitude / maxSpeed) * 2);
         }
-        
-        armsAnimator.SetBool("Armed", activeWeapon.name.CompareTo("Unnamed") == 0);
     }
     public void RotateToFacePoint(Transform t, Vector2 point)//Rotate 't' to face towards 'point'
     {

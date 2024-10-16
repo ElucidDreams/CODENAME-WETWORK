@@ -5,24 +5,28 @@ using UnityEngine;
 public class MeleeWeapon : Weapon
 {
     // Start is called before the first frame update
-    void Start()
+    public new void Start()
     {
-        InitWeapon();
-        
+        base.Start();
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        
+        weaponAnimator.SetFloat("Motion", (wielder.motionVec.magnitude / wielder.maxSpeed) * 2);
     }
 
     public override void Attack()
     {
-        isAttacking = true;
+        BaseAttackLogic();
+
     }
     public override void Reload()
     {
 
+    }
+    public override void ThrowWeapon()
+    {
+        BaseThrowLogic();
     }
 }
