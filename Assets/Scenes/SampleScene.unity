@@ -152,8 +152,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1377399907}
+  m_Children: []
   m_Father: {fileID: 2060782463}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &291269830
@@ -1231,11 +1230,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcc2a710cd96ada4ebbdd5c5f18925d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1377399907 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8941706138231769962, guid: 354ed346342f6ef45b7f79e13d03be55, type: 3}
-  m_PrefabInstance: {fileID: 2406176663565319845}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1501543581
 GameObject:
   m_ObjectHideFlags: 0
@@ -1983,6 +1977,7 @@ MonoBehaviour:
   rbComp: {fileID: 0}
   headObject: {fileID: 1046521757}
   armsObject: {fileID: 291269828}
+  armsAnimator: {fileID: 0}
   legObject: {fileID: 444842357}
   rotDeadZone: 0.1
   reticleTransform: {fileID: 1006006262}
@@ -2143,6 +2138,7 @@ MonoBehaviour:
   rbComp: {fileID: 0}
   headObject: {fileID: 303025900}
   armsObject: {fileID: 1918502141}
+  armsAnimator: {fileID: 0}
   legObject: {fileID: 1501543581}
   rotDeadZone: 0.1
 --- !u!114 &2137249171
@@ -2299,7 +2295,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 291269829}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1687391046676677216, guid: 354ed346342f6ef45b7f79e13d03be55, type: 3}
       propertyPath: m_Name
@@ -2553,3 +2549,4 @@ SceneRoots:
   - {fileID: 1051612826}
   - {fileID: 1578065548}
   - {fileID: 7417380132182707795}
+  - {fileID: 2406176663565319845}

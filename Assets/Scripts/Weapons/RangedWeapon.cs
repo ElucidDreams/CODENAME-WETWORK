@@ -15,7 +15,7 @@ public class RangedWeapon : Weapon
     }
 
     // Update is called once per frame
-    new void Update()
+    void Update()
     {
 
     }

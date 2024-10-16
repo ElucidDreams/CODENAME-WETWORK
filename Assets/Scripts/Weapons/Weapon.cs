@@ -59,11 +59,6 @@ public abstract class Weapon : MonoBehaviour
         weaponAnimator.SetTrigger("Throw");
     }
     
-    public IEnumerator SetWielder()
-    {
-        yield return new WaitForEndOfFrame();
-        wielder = gameObject.transform.parent.GetComponentInParent<Operator>();
-    }
     public IEnumerator CheckForStop()
     {
         while (weaponRB.velocity.magnitude > velocityThreshold)
