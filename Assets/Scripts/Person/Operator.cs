@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using Unity.VisualScripting.ReorderableList;
+using UnityEditor.EditorTools;
 using UnityEditor.UIElements;
 using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
@@ -30,7 +31,8 @@ public class Operator : Person
     #endregion
     [SerializeReference] public OperatorSkill[] skills;
     public Weapon activeWeapon;
-    Weapon defaultWeapon; //Ensure this is set to the unarmed weapon 
+    [Tooltip("Ensure this is set to the unarmed weapon")]
+    public Weapon defaultWeapon;
     public Transform armTransform;
     public Transform rotTarget;
     [HideInInspector] public Vector2 motionVec;
@@ -125,7 +127,10 @@ public class Operator : Person
             activeWeapon.inAir = true;//set the object to be in the air
             StartCoroutine(activeWeapon.CheckForStop());//start the timer to disable the collider again
             StartCoroutine(activeWeapon.ThrowFrictionCalc());//start the friction function
-            activeWeapon = defaultWeapon;//set the active weapon to none
+            activeWeapon.wielder = null;
+            Weapon unarmed = Instantiate(defaultWeapon,armsTransform);
+            activeWeapon = unarmed;//set the active weapon to none
+            
             SetArms();//Make the arms match the weapon
         }
         else
