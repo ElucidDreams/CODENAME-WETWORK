@@ -99,9 +99,16 @@ public class Operator : Person
         rbComp = GetComponent<Rigidbody2D>();
         if (activeWeapon != null)
         {
+            Debug.Log("Weapon not null");
             activeWeapon.gameObject.transform.SetParent(armTransform);//set the weapon object to be a child of the arms transform
+            Debug.Log("pre move: "+activeWeapon.gameObject.transform.position);
             activeWeapon.gameObject.transform.position = Vector3.zero;//set the position to be directly on top of the arms transform
+            Debug.Log("post move: "+activeWeapon.gameObject.transform.position);
             activeWeapon.wielder = this;//set the weapons wielder to be this operator
+        }
+        else{
+            Weapon unarmed = Instantiate(defaultWeapon,armsTransform);
+            activeWeapon = unarmed;
         }
         headTransform = headObject.GetComponent<Transform>();
         headSpriteRenderer = headObject.GetComponent<SpriteRenderer>();
