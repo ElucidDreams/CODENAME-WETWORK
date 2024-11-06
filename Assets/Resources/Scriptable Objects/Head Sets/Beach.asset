@@ -16,7 +16,7 @@ MonoBehaviour:
   heads:
   - {fileID: 21300000, guid: ff7e3a5e6af68864b83d4f4481ff2b76, type: 3}
   - {fileID: 21300000, guid: d2c67f5ea547f5d4e8a3dadc4743b9f9, type: 3}
-  - {fileID: -1233236010, guid: b29fd8a7e405c5043a95222d000287dc, type: 3}
+  - {fileID: 21300000, guid: 7c67f60c4f04d9641a489cdc202bf0f3, type: 3}
   - {fileID: 21300000, guid: f9d3d7c72d324a34fab2361c50f828b5, type: 3}
   colors:
   - {r: 1, g: 0, b: 0, a: 1}

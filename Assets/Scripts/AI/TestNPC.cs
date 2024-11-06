@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
-
+[System.Serializable]
 public class TestNPC : MonoBehaviour
 {
     public Transform navTarget;//TODO: Nav Target is currently public and set to reticule, needs actual implementation.

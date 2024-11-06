@@ -6,12 +6,13 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Rendering;
 using static GameConstants;
-
+[System.Serializable]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(BoxCollider2D))]
 public abstract class Weapon : MonoBehaviour
 {
+    public string weaponID;
     public string weaponName;
     public bool isAttacking = false;
     [NonSerialized] public Animator weaponAnimator;
@@ -26,6 +27,7 @@ public abstract class Weapon : MonoBehaviour
     [Space(10)]
     [Header("Throwing Properties")]
     public float weaponMass = 1f;
+    public float weaponSpeed = 1f;
     public float velocityThreshold = 0.1f;
     public float hangTimeMax = 1f;
     public float groundedFriction = 10f;
@@ -35,13 +37,22 @@ public abstract class Weapon : MonoBehaviour
     {
         InitWeapon();
     }
+    public void Awake()
+    {
+        StartCoroutine(UpdateWeapon());
+    }
     public abstract void Attack();
     public abstract void Reload();
     public abstract void ThrowWeapon();
-    
+
+    public IEnumerator UpdateWeapon()
+    {
+        yield return new WaitUntil(() => weaponAnimator != null);
+        weaponAnimator.SetFloat("Speed", weaponSpeed * wielder.baseAcceleration / 50);
+        wielder.armsAnimator.SetFloat("Speed", weaponSpeed * wielder.baseAcceleration / 50);
+    }
     public virtual void InitWeapon()
     {
-        
         weaponAnimator = GetComponent<Animator>();
         weaponSpriteRenderer = GetComponent<SpriteRenderer>();
         weaponCollider = GetComponent<BoxCollider2D>();
@@ -50,15 +61,18 @@ public abstract class Weapon : MonoBehaviour
     }
     public void BaseAttackLogic()
     {
-        isAttacking = true;
-        weaponAnimator.SetTrigger("Attack");
-        wielder.armsAnimator.SetTrigger("Attack");
+        //isAttacking = true;
+        if (weaponAnimator.IsInTransition(0) == false && wielder.armsAnimator.IsInTransition(0) == false)
+        {
+            weaponAnimator.SetTrigger("Attack");
+            wielder.armsAnimator.SetTrigger("Attack");
+        }
     }
     public void BaseThrowLogic()
     {
         weaponAnimator.SetTrigger("Throw");
     }
-    
+
     public IEnumerator CheckForStop()
     {
         while (weaponRB.velocity.magnitude > velocityThreshold)
@@ -70,7 +84,7 @@ public abstract class Weapon : MonoBehaviour
     public IEnumerator ThrowFrictionCalc()
     {
         float hangTimeCounter = 0f;
-        while(inAir)
+        while (inAir)
         {
             yield return new WaitForSeconds(checkDelay);
             hangTimeCounter += checkDelay;

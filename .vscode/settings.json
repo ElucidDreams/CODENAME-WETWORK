@@ -59,6 +59,8 @@
     "dotnet.defaultSolution": "CODENAME-WETWORK.sln",
     "cSpell.words": [
         "Hitscan",
-        "Rigidbody"
+        "Newtonsoft",
+        "Rigidbody",
+        "UGUI"
     ]
 }

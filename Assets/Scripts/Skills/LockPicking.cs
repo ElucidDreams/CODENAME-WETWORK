@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static GameConstants;
-
+[System.Serializable]
 public class LockPicking : OperatorSkill
 {
     public override void RunSkill()

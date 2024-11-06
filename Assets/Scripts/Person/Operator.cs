@@ -6,6 +6,7 @@ using Unity.VisualScripting.ReorderableList;
 using UnityEditor.EditorTools;
 using UnityEditor.UIElements;
 using UnityEngine;
+[System.Serializable]
 [RequireComponent(typeof(Rigidbody2D))]
 public class Operator : Person
 {
@@ -55,19 +56,20 @@ public class Operator : Person
     #endregion
 
     // Start is called before the first frame update
-    public void Start()
+    public new void Start()
     {
-        if (UICard != null)
-        {
-            SetMissionUI();
-        }
+        base.Start();
         InitEffectiveValues();
         InitSkills();
         InitComponents();
         currentHealth = effectiveHealth;
-        SetHead();
+        StartCoroutine(SetHead());
         SetArms();
         //StartCoroutine(DebugTick());
+    }
+    public void Awake()
+    {
+        
     }
     void Update()
     {
@@ -96,26 +98,24 @@ public class Operator : Person
     }
     public void InitComponents()//Get all of the components of the operator and assign them to variables
     {
-        rbComp = GetComponent<Rigidbody2D>();
-        if (activeWeapon != null)
-        {
-            Debug.Log("Weapon not null");
-            activeWeapon.gameObject.transform.SetParent(armTransform);//set the weapon object to be a child of the arms transform
-            Debug.Log("pre move: "+activeWeapon.gameObject.transform.position);
-            activeWeapon.gameObject.transform.position = Vector3.zero;//set the position to be directly on top of the arms transform
-            Debug.Log("post move: "+activeWeapon.gameObject.transform.position);
-            activeWeapon.wielder = this;//set the weapons wielder to be this operator
-        }
-        else{
-            Weapon unarmed = Instantiate(defaultWeapon,armsTransform);
-            activeWeapon = unarmed;
-        }
         headTransform = headObject.GetComponent<Transform>();
         headSpriteRenderer = headObject.GetComponent<SpriteRenderer>();
         armsTransform = armsObject.GetComponent<Transform>();
         armsAnimator = armsObject.GetComponent<Animator>();
         legTransform = legObject.GetComponent<Transform>();
         legAnimator = legObject.GetComponent<Animator>();
+        rbComp = GetComponent<Rigidbody2D>();
+        if (activeWeapon != null)
+        {
+            activeWeapon.gameObject.transform.SetParent(armTransform);//set the weapon object to be a child of the arms transform
+            activeWeapon.gameObject.transform.position = Vector3.zero;//set the position to be directly on top of the arms transform
+            activeWeapon.wielder = this;//set the weapons wielder to be this operator
+        }
+        else{
+            Weapon unarmed = Instantiate(defaultWeapon,armsTransform);
+            activeWeapon = unarmed;
+        }
+        
     }
     public void WeaponThrow()
     {
@@ -144,12 +144,6 @@ public class Operator : Person
         {
             Debug.Log("Cannot throw unarmed");
         }
-    }
-    public void SetMissionUI()//TODO: needs further functionality and reworking
-    {
-        SpawnFace();//generate the face in the UI
-        UICard.nameText.text = givenName + " " + familyName;//set the name text
-        UICard.factionText.text = faction.factionID.ToString();//set the faction text
     }
     IEnumerator DebugTick()
     {
@@ -186,21 +180,24 @@ public class Operator : Person
             t.rotation = Quaternion.Euler(0, 0, angle);//sets the rotation of the transformation to the new angle.
         }
     }
-    void SetHead()
+    IEnumerator SetHead()
     {
+        yield return new WaitUntil(() => distinctiveComponent.Length != 0);
         MissionHeadSet[] g = Resources.LoadAll<MissionHeadSet>("Scriptable Objects/Head Sets");//load all of the heads sets
         foreach (MissionHeadSet set in g)
         {
-            if (faction.IdCheck(set.setFaction))//check for the set that matches the player faction
+            
+            if (faction == set.setFaction)//check for the set that matches the player faction
             {
                 //TODO implement a system for if there are multiple face sets for the same faction to ensure indexing is consistent. 
-                for (int index = 0; index < personFace.distinctiveComponent.Length; index++)//create an index that is the length of distinctiveComponent and then iterate through until you reach a value that is true
+                for (int index = 0; index < distinctiveComponent.Length; index++)//create an index that is the length of distinctiveComponent and then iterate through until you reach a value that is true
                 {
-                    if(personFace.distinctiveComponent[index] == true)
+                    if(distinctiveComponent[index] == true)
                     {
-                        Sprite headSprite = set.heads[personFace.faceIndices[index]];//use the index to get which index of faceIndices is for the distinctive component, then use that new index to select to the set.heads sprite
-                        Color headColor = set.colors[personFace.colorIndices[index]];//Same as above but for colors
-                        if (personFace.toColorArr[index])//check if the component should be colored or not, and if so colors it
+                        Debug.Log(headSpriteRenderer.gameObject.name);
+                        Sprite headSprite = set.heads[faceIndices[index]];//use the index to get which index of faceIndices is for the distinctive component, then use that new index to select to the set.heads sprite
+                        Color headColor = set.colors[colorIndices[index]];//Same as above but for colors
+                        if (toColorArr[index])//check if the component should be colored or not, and if so colors it
                         {
                             headSpriteRenderer.color = headColor;
                         }
@@ -215,7 +212,7 @@ public class Operator : Person
         MissionArmsSet armsSet = activeWeapon.armsSet;//get the arm set from the weapon
         foreach(MissionArmsSet.FactionalArms factionArm in armsSet.arms)//check through all of the faction-AnimatorController pairs for a faction that matches the operator and apply the corresponding animator to the arms animator
         {
-            if(faction.IdCheck(factionArm.faction))
+            if(faction == factionArm.faction)
             {
                 armsAnimator.runtimeAnimatorController = factionArm.animatorController;
             }

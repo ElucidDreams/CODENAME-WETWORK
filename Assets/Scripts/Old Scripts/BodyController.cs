@@ -6,7 +6,7 @@ using UnityEngine;
 using static GameConstants;
 
 public class BodyController : MonoBehaviour
-{
+{/*
     Transform target;
     Operator parentOperator;
 
@@ -94,4 +94,5 @@ public class BodyController : MonoBehaviour
             }
         }
     }
+    */
 }

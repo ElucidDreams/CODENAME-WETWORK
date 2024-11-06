@@ -4,6 +4,7 @@ using UnityEditor.EditorTools;
 using UnityEngine;
 using static GameConstants;
 // Does not need to be saved as it is saved as a prefab and loaded in the person script. 
+[System.Serializable]
 public class FaceElements : MonoBehaviour
 {    
     [System.Serializable]
@@ -18,7 +19,7 @@ public class FaceElements : MonoBehaviour
         [SerializeField] public Color[] color;//the array of different colors for that particular part
     }
     [Tooltip("Use this to designate the Faction of this set of face elements")]
-    public GameConstants.AvailableFactions setFaction;
+    public GameConstants.Faction setFaction;
     
     [Tooltip("Higher position in the editor correlates to higher in the render order")]
     public PartStruct[] parts;//The array of part types that construct the face (i.e eyes, face shape, mouth)
