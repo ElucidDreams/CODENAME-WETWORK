@@ -1,11 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using AYellowpaper.SerializedCollections;
+using Newtonsoft.Json;
 using Unity.VisualScripting;
 using Unity.VisualScripting.ReorderableList;
 using UnityEditor.EditorTools;
 using UnityEditor.UIElements;
 using UnityEngine;
+using static GameConstants;
 [System.Serializable]
 [RequireComponent(typeof(Rigidbody2D))]
 public class Operator : Person
@@ -32,8 +35,7 @@ public class Operator : Person
     #endregion
     [SerializeReference] public OperatorSkill[] skills;
     public Weapon activeWeapon;
-    [Tooltip("Ensure this is set to the unarmed weapon")]
-    public Weapon defaultWeapon;
+    public SerializedDictionary<WeaponType,RuntimeAnimatorController> weaponArmAnimators;
     public Transform armTransform;
     public Transform rotTarget;
     [HideInInspector] public Vector2 motionVec;
@@ -54,6 +56,8 @@ public class Operator : Person
     public float rotDeadZone = 0.1f;
 
     #endregion
+    
+    
 
     // Start is called before the first frame update
     public new void Start()
@@ -105,20 +109,13 @@ public class Operator : Person
         legTransform = legObject.GetComponent<Transform>();
         legAnimator = legObject.GetComponent<Animator>();
         rbComp = GetComponent<Rigidbody2D>();
-        if (activeWeapon != null)
-        {
-            activeWeapon.gameObject.transform.SetParent(armTransform);//set the weapon object to be a child of the arms transform
-            activeWeapon.gameObject.transform.position = Vector3.zero;//set the position to be directly on top of the arms transform
-            activeWeapon.wielder = this;//set the weapons wielder to be this operator
-        }
-        else{
-            Weapon unarmed = Instantiate(defaultWeapon,armsTransform);
-            activeWeapon = unarmed;
-        }
-        
+        activeWeapon.gameObject.transform.SetParent(armTransform);//set the weapon object to be a child of the arms transform
+        activeWeapon.gameObject.transform.position = Vector3.zero;//set the position to be directly on top of the arms transform
+        activeWeapon.wielder = this;//set the weapons wielder to be this operator
     }
     public void WeaponThrow()
     {
+        /*
         if (activeWeapon.weaponName != "Unarmed")//Check if the player has the unarmed weapon
         {
             activeWeapon.transform.SetParent(null);//un-parents the weapon
@@ -137,13 +134,13 @@ public class Operator : Person
             activeWeapon.wielder = null;
             Weapon unarmed = Instantiate(defaultWeapon,armsTransform);
             activeWeapon = unarmed;//set the active weapon to none
-            
             SetArms();//Make the arms match the weapon
         }
         else
         {
             Debug.Log("Cannot throw unarmed");
         }
+        */
     }
     IEnumerator DebugTick()
     {
@@ -186,7 +183,6 @@ public class Operator : Person
         MissionHeadSet[] g = Resources.LoadAll<MissionHeadSet>("Scriptable Objects/Head Sets");//load all of the heads sets
         foreach (MissionHeadSet set in g)
         {
-            
             if (faction == set.setFaction)//check for the set that matches the player faction
             {
                 //TODO implement a system for if there are multiple face sets for the same faction to ensure indexing is consistent. 
@@ -209,13 +205,6 @@ public class Operator : Person
     }
     void SetArms()
     {
-        MissionArmsSet armsSet = activeWeapon.armsSet;//get the arm set from the weapon
-        foreach(MissionArmsSet.FactionalArms factionArm in armsSet.arms)//check through all of the faction-AnimatorController pairs for a faction that matches the operator and apply the corresponding animator to the arms animator
-        {
-            if(faction == factionArm.faction)
-            {
-                armsAnimator.runtimeAnimatorController = factionArm.animatorController;
-            }
-        }
+
     }
 }

@@ -1443,6 +1443,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 40989e8fc3c79e5438f43086f7f819a1, type: 2}
     - target: {fileID: 4692713649504886767, guid: 354ed346342f6ef45b7f79e13d03be55, type: 3}
+      propertyPath: weaponType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4692713649504886767, guid: 354ed346342f6ef45b7f79e13d03be55, type: 3}
       propertyPath: weaponSpeed
       value: 1.25
       objectReference: {fileID: 0}
@@ -1777,7 +1781,7 @@ GameObject:
   - component: {fileID: 1576605636}
   - component: {fileID: 1576605635}
   m_Layer: 0
-  m_Name: Person
+  m_Name: BeachNPCBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1844,7 +1848,10 @@ MonoBehaviour:
   skills:
   - {fileID: 8588547017605383371, guid: a0650987f1f4e8e4f8ef6b183201b175, type: 3}
   activeWeapon: {fileID: 159780837}
-  defaultWeapon: {fileID: 1533155861}
+  weaponArmAnimators:
+    _serializedList:
+    - Key: 0
+      Value: {fileID: 0}
   armTransform: {fileID: 506451434}
   rotTarget: {fileID: 2060782463}
   motionVec: {x: 0, y: 0}
@@ -2690,7 +2697,8 @@ MonoBehaviour:
   - {fileID: 8588547017605383371, guid: a0650987f1f4e8e4f8ef6b183201b175, type: 3}
   - {fileID: 4824262591714562283, guid: ea4f183c403b1fb45acf3d3b658043cc, type: 3}
   activeWeapon: {fileID: 1377399903}
-  defaultWeapon: {fileID: 4692713649504886767, guid: aa319584f8475294eae01063eaed4d9b, type: 3}
+  weaponArmAnimators:
+    _serializedList: []
   armTransform: {fileID: 291269829}
   rotTarget: {fileID: 1006006262}
   motionVec: {x: 0, y: 0}
@@ -2856,7 +2864,8 @@ MonoBehaviour:
   skills:
   - {fileID: 4824262591714562283, guid: ea4f183c403b1fb45acf3d3b658043cc, type: 3}
   activeWeapon: {fileID: 1533155861}
-  defaultWeapon: {fileID: 4692713649504886767, guid: aa319584f8475294eae01063eaed4d9b, type: 3}
+  weaponArmAnimators:
+    _serializedList: []
   armTransform: {fileID: 1918502142}
   rotTarget: {fileID: 552276206}
   motionVec: {x: 0, y: 0}
@@ -3010,6 +3019,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 40989e8fc3c79e5438f43086f7f819a1, type: 2}
     - target: {fileID: 4692713649504886767, guid: 354ed346342f6ef45b7f79e13d03be55, type: 3}
+      propertyPath: weaponType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4692713649504886767, guid: 354ed346342f6ef45b7f79e13d03be55, type: 3}
       propertyPath: weaponSpeed
       value: 1.25
       objectReference: {fileID: 0}
@@ -3097,6 +3110,10 @@ PrefabInstance:
     - target: {fileID: 1687391046676677216, guid: aa319584f8475294eae01063eaed4d9b, type: 3}
       propertyPath: m_Name
       value: Unarmed
+      objectReference: {fileID: 0}
+    - target: {fileID: 4692713649504886767, guid: aa319584f8475294eae01063eaed4d9b, type: 3}
+      propertyPath: weaponType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8941706138231769962, guid: aa319584f8475294eae01063eaed4d9b, type: 3}
       propertyPath: m_LocalPosition.x
