@@ -10,7 +10,8 @@ public class GameConstants : MonoBehaviour
     {
         Army = 1,
         Robot = 2,
-        Beach = 3
+        Beach = 3,
+        Wizard = 4
     }
     [Serializable]
     public enum AvailableSkills

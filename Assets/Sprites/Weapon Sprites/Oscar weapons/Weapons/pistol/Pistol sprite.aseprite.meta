@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 65ff915a1fe17bc49989d955a2f12096
+guid: 6229ea475aac42140bee7e7c5aea9442
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -132,7 +132,7 @@ ScriptedImporter:
       y: 4
       width: 14
       height: 6
-    spriteID: fa374d245aa1185459c65502706cfe3e
+    spriteID: b8b6e5a6ac2dcb646abb1b788a5e4b09
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -152,7 +152,7 @@ ScriptedImporter:
       y: 42
       width: 16
       height: 6
-    spriteID: 82ab9245fec307b4aac7645b9efebd05
+    spriteID: a01aa01ef85253a48b1a91fb43189e44
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -172,7 +172,7 @@ ScriptedImporter:
       y: 24
       width: 18
       height: 10
-    spriteID: 60858dc3c4b2bb74f9d047d3714888d1
+    spriteID: 241e6c24f472e714f8bb958f26369830
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -192,7 +192,7 @@ ScriptedImporter:
       y: 4
       width: 20
       height: 12
-    spriteID: 0414087d166f26542a07774f14063906
+    spriteID: 1ea1554a4ad0eb049851c37003bf6fbd
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -218,7 +218,7 @@ ScriptedImporter:
         y: 61
         width: 14
         height: 6
-      spriteId: fa374d245aa1185459c65502706cfe3e
+      spriteId: b8b6e5a6ac2dcb646abb1b788a5e4b09
     - name: Pistol sprite_Frame_1
       frameIndex: 1
       additiveSortOrder: 0
@@ -227,7 +227,7 @@ ScriptedImporter:
         y: 61
         width: 16
         height: 6
-      spriteId: 82ab9245fec307b4aac7645b9efebd05
+      spriteId: a01aa01ef85253a48b1a91fb43189e44
     - name: Pistol sprite_Frame_2
       frameIndex: 2
       additiveSortOrder: 0
@@ -236,7 +236,7 @@ ScriptedImporter:
         y: 59
         width: 18
         height: 10
-      spriteId: 60858dc3c4b2bb74f9d047d3714888d1
+      spriteId: 241e6c24f472e714f8bb958f26369830
     - name: Pistol sprite_Frame_3
       frameIndex: 3
       additiveSortOrder: 0
@@ -245,7 +245,7 @@ ScriptedImporter:
         y: 58
         width: 20
         height: 12
-      spriteId: 0414087d166f26542a07774f14063906
+      spriteId: 1ea1554a4ad0eb049851c37003bf6fbd
     linkedCells: []
     parentIndex: -1
   platformSettings: []
