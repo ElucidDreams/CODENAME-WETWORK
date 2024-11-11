@@ -95,5 +95,4 @@ public class Player : MonoBehaviour
     {
         operatorComp.WeaponThrow();
     }
-    
 }

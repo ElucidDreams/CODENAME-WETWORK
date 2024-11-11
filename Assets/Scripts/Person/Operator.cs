@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using AYellowpaper.SerializedCollections;
 using Newtonsoft.Json;
 using Unity.VisualScripting;
@@ -13,36 +14,29 @@ using static GameConstants;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Operator : Person
 {
-    #region Operator Properties
     [Header("Operator Properties")]
     public int level = 1; 
     public bool inMission = true;
     public float maxSpeed = 10f;
     public float rating = 0;
-
-    #region Operator Stats
     public float baseHealth;
     //public float baseArmour;
     public float baseAcceleration;
     public float baseStrength;
     public float baseAccuracy;
     [HideInInspector] public float effectiveHealth;
-    [HideInInspector] public float currentHealth;
+    public float currentHealth;
     //[HideInInspector] public float effectiveArmour;
     [HideInInspector] public float effectiveSpeed;
     [HideInInspector]public float effectiveStrength;
     [HideInInspector] public float effectiveAccuracy;
-    #endregion
     [SerializeReference] public OperatorSkill[] skills;
     public Weapon activeWeapon;
-    public SerializedDictionary<WeaponType,RuntimeAnimatorController> weaponArmAnimators;
+    public Weapon unarmedWeapon;
     public Transform armTransform;
     public Transform rotTarget;
     [HideInInspector] public Vector2 motionVec;
     [HideInInspector] public Rigidbody2D rbComp;
-    #endregion
-    #region Body Controller
-    #region Body part variables
     public GameObject headObject;
     Transform headTransform;
     SpriteRenderer headSpriteRenderer;
@@ -52,12 +46,8 @@ public class Operator : Person
     public GameObject legObject;
     Transform legTransform;
     Animator legAnimator;
-    #endregion
     public float rotDeadZone = 0.1f;
 
-    #endregion
-    
-    
 
     // Start is called before the first frame update
     public new void Start()
@@ -109,38 +99,29 @@ public class Operator : Person
         legTransform = legObject.GetComponent<Transform>();
         legAnimator = legObject.GetComponent<Animator>();
         rbComp = GetComponent<Rigidbody2D>();
-        activeWeapon.gameObject.transform.SetParent(armTransform);//set the weapon object to be a child of the arms transform
-        activeWeapon.gameObject.transform.position = Vector3.zero;//set the position to be directly on top of the arms transform
-        activeWeapon.wielder = this;//set the weapons wielder to be this operator
+        if (activeWeapon == null)
+        {
+            activeWeapon = Instantiate(unarmedWeapon,armsTransform);
+        }
+        activeWeapon.PickupWeapon(this);
+        SetArms();
     }
     public void WeaponThrow()
     {
-        /*
-        if (activeWeapon.weaponName != "Unarmed")//Check if the player has the unarmed weapon
+        if (activeWeapon.weaponID != WeaponType.Unarmed)//Check if the player has the unarmed weapon
         {
-            activeWeapon.transform.SetParent(null);//un-parents the weapon
-            activeWeapon.weaponCollider.enabled = true;//Enable the weapons collider
-            activeWeapon.weaponSpriteRenderer.sortingOrder = 1;
-            float wielderFacing = armTransform.eulerAngles.z;//get the facing of the arms
-            Vector2 throwDirection = new(Mathf.Cos(wielderFacing * Mathf.Deg2Rad), Mathf.Sin(wielderFacing * Mathf.Deg2Rad));//generate a vector from the facing
-            activeWeapon.weaponRB = activeWeapon.AddComponent<Rigidbody2D>();//add a rigid body here to ensure that the weapon can have physics but not interfere with the player (Joints where not plausible with the current implementation)
-            activeWeapon.weaponRB.gravityScale = 0;//Deactivate gravity on the weapon
-            activeWeapon.weaponRB.mass = activeWeapon.weaponMass;//set the rigidbody mass to be the preset mass of the weapon;
-            activeWeapon.weaponRB.AddForce(throwDirection * effectiveStrength, ForceMode2D.Impulse);//add the force to the object, taking the operators strength into effect
-            activeWeapon.weaponRB.AddTorque(UnityEngine.Random.Range(0f,1f));//add a slight spin to the item
-            activeWeapon.inAir = true;//set the object to be in the air
-            StartCoroutine(activeWeapon.CheckForStop());//start the timer to disable the collider again
-            StartCoroutine(activeWeapon.ThrowFrictionCalc());//start the friction function
-            activeWeapon.wielder = null;
-            Weapon unarmed = Instantiate(defaultWeapon,armsTransform);
-            activeWeapon = unarmed;//set the active weapon to none
-            SetArms();//Make the arms match the weapon
+            activeWeapon.ThrowWeapon();
+            activeWeapon = Instantiate(unarmedWeapon,armsTransform);
+            SetArms();
         }
         else
         {
             Debug.Log("Cannot throw unarmed");
         }
-        */
+    }
+    public void WeaponPickup()
+    {
+
     }
     IEnumerator DebugTick()
     {
@@ -205,6 +186,6 @@ public class Operator : Person
     }
     void SetArms()
     {
-
+        armsAnimator.runtimeAnimatorController = activeWeapon.armsAnimators[faction];
     }
 }
