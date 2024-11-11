@@ -12,34 +12,31 @@ using static GameConstants;
 [RequireComponent(typeof(BoxCollider2D))]
 public abstract class Weapon : MonoBehaviour
 {
-    public string weaponID;
+    public WeaponType weaponID;
+    [Tooltip("The readable name of the weapon")]
     public string weaponName;
+    
+    [NonSerialized] public SpriteRenderer worldSpriteRenderer;
+    [NonSerialized] public BoxCollider2D pickupCollider;
+    [NonSerialized] public Rigidbody2D worldRB;
+    
     public bool isAttacking = false;
-    [NonSerialized] public Animator weaponAnimator;
-    [NonSerialized] public SpriteRenderer weaponSpriteRenderer;
-    [NonSerialized] public BoxCollider2D weaponCollider;
-    [NonSerialized] public Rigidbody2D weaponRB;
-    [NonSerialized] public Operator wielder;
-    [Header("General Weapon Properties")]
-    public WeaponType weaponType;
-    public MissionArmsSet armsSet;
     public float checkDelay = 0.1f;
-    [Space(10)]
-    [Header("Throwing Properties")]
     public float weaponMass = 1f;
     public float weaponSpeed = 1f;
     public float velocityThreshold = 0.1f;
     public float hangTimeMax = 1f;
     public float groundedFriction = 10f;
+
     [NonSerialized] public bool inAir = false;
 
     public void Start()
     {
-        InitWeapon();
+        //InitWeapon();
     }
     public void Awake()
     {
-        StartCoroutine(UpdateWeapon());
+        //StartCoroutine(UpdateWeapon());
     }
     public abstract void Attack();
     public abstract void Reload();
@@ -47,42 +44,56 @@ public abstract class Weapon : MonoBehaviour
 
     public IEnumerator UpdateWeapon()
     {
+        throw new System.NotImplementedException();
+        /*
         yield return new WaitUntil(() => weaponAnimator != null);
         weaponAnimator.SetFloat("Speed", weaponSpeed * wielder.baseAcceleration / 50);
         wielder.armsAnimator.SetFloat("Speed", weaponSpeed * wielder.baseAcceleration / 50);
+        */
     }
     public virtual void InitWeapon()
     {
+        throw new System.NotImplementedException();
+        /*
         weaponAnimator = GetComponent<Animator>();
         weaponSpriteRenderer = GetComponent<SpriteRenderer>();
         weaponCollider = GetComponent<BoxCollider2D>();
         weaponRB = GetComponent<Rigidbody2D>();
         weaponCollider.enabled = false;
+        */
     }
     public void BaseAttackLogic()
     {
+        throw new System.NotImplementedException();
+        /*
         //isAttacking = true;
         if (weaponAnimator.IsInTransition(0) == false && wielder.armsAnimator.IsInTransition(0) == false)
         {
             weaponAnimator.SetTrigger("Attack");
             wielder.armsAnimator.SetTrigger("Attack");
         }
+        */
     }
     public void BaseThrowLogic()
     {
-        weaponAnimator.SetTrigger("Throw");
+        throw new System.NotImplementedException();
     }
 
     public IEnumerator CheckForStop()
     {
-        while (weaponRB.velocity.magnitude > velocityThreshold)
+        throw new System.NotImplementedException();
+        /*
+        while (worldRB.velocity.magnitude > velocityThreshold)
         {
             yield return new WaitForSeconds(checkDelay);
         }
-        weaponCollider.enabled = false;
+        pickupCollider.enabled = false;
+        */
     }
     public IEnumerator ThrowFrictionCalc()
     {
+        throw new System.NotImplementedException();
+        /*
         float hangTimeCounter = 0f;
         while (inAir)
         {
@@ -94,14 +105,18 @@ public abstract class Weapon : MonoBehaviour
             }
         }
         yield return new WaitForSeconds(0.01f);
-        weaponRB.drag = groundedFriction;
-        weaponRB.angularDrag = groundedFriction;
+        worldRB.drag = groundedFriction;
+        worldRB.angularDrag = groundedFriction;
+        */
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
+        throw new System.NotImplementedException();
+        /*
         if (inAir)
         {
             inAir = false;
         }
+        */
     }
 }

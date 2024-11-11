@@ -21,8 +21,8 @@ public class RangedWeapon : Weapon
     }
     public override void Attack()
     {
-        weaponAnimator.SetTrigger("Fire");
-        Instantiate(muzzleEffect,muzzle.position, Quaternion.Euler(0,0,0));
+        //weaponAnimator.SetTrigger("Fire");
+        //Instantiate(muzzleEffect,muzzle.position, Quaternion.Euler(0,0,0));
     }
 
     public override void Reload()

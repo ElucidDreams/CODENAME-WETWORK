@@ -13,10 +13,12 @@ public class MeleeWeapon : Weapon
     // Update is called once per frame
     public void Update()
     {
+        /*
         if (wielder != null)
         {
             weaponAnimator.SetFloat("Motion", (wielder.motionVec.magnitude / wielder.maxSpeed) * 2);
         }
+        */
     }
 
     public override void Attack()

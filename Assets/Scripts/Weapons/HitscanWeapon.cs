@@ -18,11 +18,13 @@ public class HitscanWeapon : RangedWeapon
 
     public override void Attack()
     {
+        /*
         base.Attack();
         RaycastHit2D hit = Physics2D.Raycast(muzzle.position, muzzle.up);
         if (hit.collider != null)
         {
             Instantiate(hitEffect, hit.point, Quaternion.Euler(0,0,0));
         }
+        */
     }
 }

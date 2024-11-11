@@ -61,6 +61,7 @@
         "Hitscan",
         "Newtonsoft",
         "Rigidbody",
-        "UGUI"
+        "UGUI",
+        "Yellowpaper"
     ]
 }
