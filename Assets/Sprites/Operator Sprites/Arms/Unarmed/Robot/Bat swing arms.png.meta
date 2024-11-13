@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f3a75149d8699dd49ac3c8cde77ad119
+guid: fd72227e2b68b474589cbab1788ed663
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,7 +136,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: robot walk cycle arms_0
+      name: Bat swing arms_0
       rect:
         serializedVersion: 2
         x: 0
@@ -150,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8353e2604b8a01438a6b92da104f18b
-      internalID: 841930399
+      spriteID: debe25631ad02ec4aa1c63555119674f
+      internalID: -633827793
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot walk cycle arms_1
+      name: Bat swing arms_1
       rect:
         serializedVersion: 2
         x: 128
@@ -171,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b501805277554f943a51f092b2fbf0db
-      internalID: 1919313732
+      spriteID: fc280652700cad347836cbf685e5e232
+      internalID: -1184907825
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot walk cycle arms_2
+      name: Bat swing arms_2
       rect:
         serializedVersion: 2
         x: 256
@@ -192,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 195fc9a0eca75e143b11d8f25b37df4e
-      internalID: -1766253759
+      spriteID: abf42a99de8838f41a04e5081313bd12
+      internalID: 510484411
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot walk cycle arms_3
+      name: Bat swing arms_3
       rect:
         serializedVersion: 2
         x: 384
@@ -213,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e9369c13cd40df49b2cbf2f89fa114e
-      internalID: -853554945
+      spriteID: dccd351872b1da642b5c0b18b7ed708a
+      internalID: 2100319631
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot walk cycle arms_4
+      name: Bat swing arms_4
       rect:
         serializedVersion: 2
         x: 512
@@ -234,14 +234,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95c2562e64529b440999fc44a08f1df2
-      internalID: 976698241
+      spriteID: f51569cc4b08ab946bd8437f41f4534a
+      internalID: 1229797053
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot walk cycle arms_5
+      name: Bat swing arms_5
       rect:
         serializedVersion: 2
         x: 640
@@ -255,14 +255,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c26815f41ca7b74c835853beb9a66e9
-      internalID: -852442100
+      spriteID: 9c18b89f08ccec8479ac5b0300e8b029
+      internalID: 1096990574
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot walk cycle arms_6
+      name: Bat swing arms_6
       rect:
         serializedVersion: 2
         x: 768
@@ -276,14 +276,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1faa032b4a3ffa945b3552cb24bc5b79
-      internalID: 2097793522
+      spriteID: c262833cb05f5a44f8f85fe47c1b302d
+      internalID: 723686195
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot walk cycle arms_7
+      name: Bat swing arms_7
       rect:
         serializedVersion: 2
         x: 896
@@ -297,8 +297,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21699665b53fbcf4ea0e1af9ce632951
-      internalID: -646717989
+      spriteID: d5431f5b56f19e94099987be6b46be20
+      internalID: -1213737542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bat swing arms_8
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6112cd7d57083e0458001b5024b7b90a
+      internalID: -825600224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bat swing arms_9
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8b41cbec5cf4544daad3f2e4c161d49
+      internalID: -1903168569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bat swing arms_10
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d506ba83cf7a144b9f4c0d7c1e42542
+      internalID: -597151652
       vertices: []
       indices: 
       edges: []
@@ -314,14 +377,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      robot walk cycle arms_0: 841930399
-      robot walk cycle arms_1: 1919313732
-      robot walk cycle arms_2: -1766253759
-      robot walk cycle arms_3: -853554945
-      robot walk cycle arms_4: 976698241
-      robot walk cycle arms_5: -852442100
-      robot walk cycle arms_6: 2097793522
-      robot walk cycle arms_7: -646717989
+      Bat swing arms_0: -633827793
+      Bat swing arms_1: -1184907825
+      Bat swing arms_10: -597151652
+      Bat swing arms_2: 510484411
+      Bat swing arms_3: 2100319631
+      Bat swing arms_4: 1229797053
+      Bat swing arms_5: 1096990574
+      Bat swing arms_6: 723686195
+      Bat swing arms_7: -1213737542
+      Bat swing arms_8: -825600224
+      Bat swing arms_9: -1903168569
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

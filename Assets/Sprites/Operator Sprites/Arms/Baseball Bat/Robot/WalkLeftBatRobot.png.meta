@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f3a75149d8699dd49ac3c8cde77ad119
+guid: 524bd15f0fdd1e840ba6f2e6c3c82eb3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,7 +136,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: robot walk cycle arms_0
+      name: WalkLeftBatRobot_0
       rect:
         serializedVersion: 2
         x: 0
@@ -150,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8353e2604b8a01438a6b92da104f18b
-      internalID: 841930399
+      spriteID: f48578729faeb54499b997595df4b0e4
+      internalID: -1730883334
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot walk cycle arms_1
+      name: WalkLeftBatRobot_1
       rect:
         serializedVersion: 2
         x: 128
@@ -171,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b501805277554f943a51f092b2fbf0db
-      internalID: 1919313732
+      spriteID: 4da8fd30d4c0a3249881c5d9b68553be
+      internalID: -1751195481
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot walk cycle arms_2
+      name: WalkLeftBatRobot_2
       rect:
         serializedVersion: 2
         x: 256
@@ -192,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 195fc9a0eca75e143b11d8f25b37df4e
-      internalID: -1766253759
+      spriteID: 4afdd28d44f33244c9a6e4779dde0f5b
+      internalID: -1729362939
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot walk cycle arms_3
+      name: WalkLeftBatRobot_3
       rect:
         serializedVersion: 2
         x: 384
@@ -213,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e9369c13cd40df49b2cbf2f89fa114e
-      internalID: -853554945
+      spriteID: 39365c65d728fbd4688ab5a7a6fce265
+      internalID: 379667934
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot walk cycle arms_4
+      name: WalkLeftBatRobot_4
       rect:
         serializedVersion: 2
         x: 512
@@ -234,14 +234,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95c2562e64529b440999fc44a08f1df2
-      internalID: 976698241
+      spriteID: 2f8dd22fb218e624d93d8aaab7c6c7f4
+      internalID: 1517685579
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot walk cycle arms_5
+      name: WalkLeftBatRobot_5
       rect:
         serializedVersion: 2
         x: 640
@@ -255,14 +255,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c26815f41ca7b74c835853beb9a66e9
-      internalID: -852442100
+      spriteID: ff1dbb22f5a03da42989e3db167e5388
+      internalID: -576168777
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot walk cycle arms_6
+      name: WalkLeftBatRobot_6
       rect:
         serializedVersion: 2
         x: 768
@@ -276,14 +276,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1faa032b4a3ffa945b3552cb24bc5b79
-      internalID: 2097793522
+      spriteID: c4933392a2abd91499471afadf6810c7
+      internalID: 202145222
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot walk cycle arms_7
+      name: WalkLeftBatRobot_7
       rect:
         serializedVersion: 2
         x: 896
@@ -297,8 +297,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21699665b53fbcf4ea0e1af9ce632951
-      internalID: -646717989
+      spriteID: 59b05c50bda5b374abf5aa6edd7bc07f
+      internalID: 1778881861
       vertices: []
       indices: 
       edges: []
@@ -314,14 +314,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      robot walk cycle arms_0: 841930399
-      robot walk cycle arms_1: 1919313732
-      robot walk cycle arms_2: -1766253759
-      robot walk cycle arms_3: -853554945
-      robot walk cycle arms_4: 976698241
-      robot walk cycle arms_5: -852442100
-      robot walk cycle arms_6: 2097793522
-      robot walk cycle arms_7: -646717989
+      WalkLeftBatRobot_0: -1730883334
+      WalkLeftBatRobot_1: -1751195481
+      WalkLeftBatRobot_2: -1729362939
+      WalkLeftBatRobot_3: 379667934
+      WalkLeftBatRobot_4: 1517685579
+      WalkLeftBatRobot_5: -576168777
+      WalkLeftBatRobot_6: 202145222
+      WalkLeftBatRobot_7: 1778881861
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
