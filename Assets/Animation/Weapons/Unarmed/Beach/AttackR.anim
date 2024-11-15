@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AttackL
+  m_Name: AttackR
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,7 +21,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -695968338, guid: b83d9f93defbe224f8381bdd7f07ec18, type: 3}
+      value: {fileID: 798664870, guid: 03506c78a5c2f4d48bb8e62018c15142, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,7 +44,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -695968338, guid: b83d9f93defbe224f8381bdd7f07ec18, type: 3}
+    - {fileID: 798664870, guid: 03506c78a5c2f4d48bb8e62018c15142, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

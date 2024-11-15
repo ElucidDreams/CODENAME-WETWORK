@@ -279,7 +279,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Melee Template
+  m_Name: Unarmed_Beach
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Attack

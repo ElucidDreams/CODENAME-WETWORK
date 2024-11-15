@@ -69,7 +69,6 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         movementInput = moveAction.ReadValue<Vector2>();//reads the movement inputs
-        Debug.Log(movementInput);
         movementVector = movementInput * operatorComp.effectiveSpeed;//multiplies the input by the speed of the character
         operatorComp.rbComp.AddForce(movementVector);//adds said force to the objects rigidbody
         if (operatorComp.rbComp.velocity.magnitude > operatorComp.maxSpeed)//checks if the speed is exceeding the maximum speed of the character

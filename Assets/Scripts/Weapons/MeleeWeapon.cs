@@ -10,12 +10,6 @@ public class MeleeWeapon : Weapon
 
     }
 
-    // Update is called once per frame
-    public void Update()
-    {
-
-    }
-
     public override void Attack()
     {
         wielder.armsAnimator.SetTrigger("Attack");

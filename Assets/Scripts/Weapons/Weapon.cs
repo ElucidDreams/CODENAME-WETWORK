@@ -36,7 +36,8 @@ public abstract class Weapon : MonoBehaviour
 
     public void Start()
     {
-        Initialize();
+        worldSpriteRenderer = GetComponent<SpriteRenderer>();
+        throwCollider = GetComponent<BoxCollider2D>();
     }
 
     public abstract void Attack();
@@ -44,7 +45,7 @@ public abstract class Weapon : MonoBehaviour
     public void ThrowWeapon()
     {
         transform.SetParent(null);//un-parents the weapon
-        wielder = null;
+        
         throwCollider.enabled = true;//Enable the weapons collider
         worldSpriteRenderer.enabled = true;
         worldSpriteRenderer.sortingOrder = 1;
@@ -58,19 +59,9 @@ public abstract class Weapon : MonoBehaviour
         worldRB.AddForce(throwDirection * wielder.effectiveStrength, ForceMode2D.Impulse);//add the force to the object, taking the operators strength into effect
         worldRB.AddTorque(UnityEngine.Random.Range(0f,1f));//add a slight spin to the item
         inAir = true;//set the object to be in the air
-
+        wielder = null;
         StartCoroutine(CheckForStop());//start the timer to disable the collider again
         StartCoroutine(ThrowFrictionCalc());//start the friction function
-    }
-
-    public void PickupWeapon(Operator parent)
-    {
-        if (worldRB != null){Destroy(worldRB);}
-        transform.SetParent(parent.transform);
-        wielder = parent;
-        throwCollider.enabled = false;
-        worldSpriteRenderer.enabled = false;
-        transform.SetPositionAndRotation(Vector3.zero, Quaternion.Euler(Vector3.zero));
     }
 
     public void Initialize()

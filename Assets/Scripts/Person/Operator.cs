@@ -32,7 +32,7 @@ public class Operator : Person
     [HideInInspector] public float effectiveAccuracy;
     [SerializeReference] public OperatorSkill[] skills;
     public Weapon activeWeapon;
-    public Weapon unarmedWeapon;
+    public GameObject unarmedWeapon;
     public Transform armTransform;
     public Transform rotTarget;
     [HideInInspector] public Vector2 motionVec;
@@ -101,9 +101,9 @@ public class Operator : Person
         rbComp = GetComponent<Rigidbody2D>();
         if (activeWeapon == null)
         {
-            activeWeapon = Instantiate(unarmedWeapon,armsTransform);
+            activeWeapon = Instantiate(unarmedWeapon,armsTransform).GetComponent<Weapon>();
         }
-        activeWeapon.PickupWeapon(this);
+        PickupWeapon(activeWeapon);
         SetArms();
     }
     public void WeaponThrow()
@@ -111,7 +111,8 @@ public class Operator : Person
         if (activeWeapon.weaponID != WeaponType.Unarmed)//Check if the player has the unarmed weapon
         {
             activeWeapon.ThrowWeapon();
-            activeWeapon = Instantiate(unarmedWeapon,armsTransform);
+            activeWeapon = Instantiate(unarmedWeapon,armsTransform).GetComponent<Weapon>();
+            PickupWeapon(activeWeapon);
             SetArms();
         }
         else
@@ -119,9 +120,15 @@ public class Operator : Person
             Debug.Log("Cannot throw unarmed");
         }
     }
-    public void WeaponPickup()
+    public void PickupWeapon(Weapon weapon)
     {
-
+        weapon.Initialize();
+        if (weapon.worldRB != null){Destroy(weapon.worldRB);}
+        weapon.transform.SetParent(transform);
+        weapon.wielder = this;
+        weapon.throwCollider.enabled = false;
+        weapon.worldSpriteRenderer.enabled = false;
+        weapon.transform.SetPositionAndRotation(Vector3.zero, Quaternion.Euler(Vector3.zero));
     }
     IEnumerator DebugTick()
     {
