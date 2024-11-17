@@ -312,6 +312,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &357797443 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4866828478425659004, guid: 354ed346342f6ef45b7f79e13d03be55, type: 3}
+  m_PrefabInstance: {fileID: 1907731216}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc2a710cd96ada4ebbdd5c5f18925d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &395528589
 GameObject:
   m_ObjectHideFlags: 0
@@ -1779,6 +1790,99 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8322522017008957130, guid: 239fb73f5e32b8d44b0013c0486bebfb, type: 3}
   m_PrefabInstance: {fileID: 7491901289759017234}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1907731216
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1213036955941585675, guid: 354ed346342f6ef45b7f79e13d03be55, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213036955941585675, guid: 354ed346342f6ef45b7f79e13d03be55, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213036955941585675, guid: 354ed346342f6ef45b7f79e13d03be55, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213036955941585675, guid: 354ed346342f6ef45b7f79e13d03be55, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213036955941585675, guid: 354ed346342f6ef45b7f79e13d03be55, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213036955941585675, guid: 354ed346342f6ef45b7f79e13d03be55, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213036955941585675, guid: 354ed346342f6ef45b7f79e13d03be55, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213036955941585675, guid: 354ed346342f6ef45b7f79e13d03be55, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213036955941585675, guid: 354ed346342f6ef45b7f79e13d03be55, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213036955941585675, guid: 354ed346342f6ef45b7f79e13d03be55, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866828478425659004, guid: 354ed346342f6ef45b7f79e13d03be55, type: 3}
+      propertyPath: armsAnimators._serializedList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866828478425659004, guid: 354ed346342f6ef45b7f79e13d03be55, type: 3}
+      propertyPath: armsAnimators._serializedList.Array.data[1].Key
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866828478425659004, guid: 354ed346342f6ef45b7f79e13d03be55, type: 3}
+      propertyPath: armsAnimators._serializedList.Array.data[2].Key
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866828478425659004, guid: 354ed346342f6ef45b7f79e13d03be55, type: 3}
+      propertyPath: armsAnimators._serializedList.Array.data[3].Key
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866828478425659004, guid: 354ed346342f6ef45b7f79e13d03be55, type: 3}
+      propertyPath: armsAnimators._serializedList.Array.data[4].Key
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866828478425659004, guid: 354ed346342f6ef45b7f79e13d03be55, type: 3}
+      propertyPath: armsAnimators._serializedList.Array.data[1].Value
+      value: 
+      objectReference: {fileID: 9100000, guid: 5a0babf440f9c4540ad031c8b00cc657, type: 2}
+    - target: {fileID: 4866828478425659004, guid: 354ed346342f6ef45b7f79e13d03be55, type: 3}
+      propertyPath: armsAnimators._serializedList.Array.data[2].Value
+      value: 
+      objectReference: {fileID: 9100000, guid: 5a0babf440f9c4540ad031c8b00cc657, type: 2}
+    - target: {fileID: 4866828478425659004, guid: 354ed346342f6ef45b7f79e13d03be55, type: 3}
+      propertyPath: armsAnimators._serializedList.Array.data[3].Value
+      value: 
+      objectReference: {fileID: 9100000, guid: 5a0babf440f9c4540ad031c8b00cc657, type: 2}
+    - target: {fileID: 4866828478425659004, guid: 354ed346342f6ef45b7f79e13d03be55, type: 3}
+      propertyPath: armsAnimators._serializedList.Array.data[4].Value
+      value: 
+      objectReference: {fileID: 9100000, guid: 5a0babf440f9c4540ad031c8b00cc657, type: 2}
+    - target: {fileID: 8431165537570400784, guid: 354ed346342f6ef45b7f79e13d03be55, type: 3}
+      propertyPath: m_Name
+      value: BaseballBat
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 354ed346342f6ef45b7f79e13d03be55, type: 3}
 --- !u!1 &1918502141
 GameObject:
   m_ObjectHideFlags: 0
@@ -2029,7 +2133,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0.5
+  m_LinearDrag: 10
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -2118,19 +2222,19 @@ MonoBehaviour:
   level: 1
   inMission: 1
   maxSpeed: 10
-  rating: 40
-  baseHealth: 40
+  rating: 1
+  baseHealth: 100
   baseAcceleration: 40
-  baseStrength: 40
-  baseAccuracy: 40
+  baseStrength: 10
+  baseAccuracy: 1
   effectiveHealth: 0
   currentHealth: 0
   effectiveSpeed: 0
   effectiveStrength: 0
   effectiveAccuracy: 0
   skills: []
-  activeWeapon: {fileID: 0}
-  unarmedWeapon: {fileID: 0}
+  activeWeapon: {fileID: 357797443}
+  unarmedWeapon: {fileID: 66415828917388126, guid: aa319584f8475294eae01063eaed4d9b, type: 3}
   armTransform: {fileID: 291269829}
   rotTarget: {fileID: 0}
   motionVec: {x: 0, y: 0}
@@ -2213,7 +2317,7 @@ MonoBehaviour:
   maxSpeed: 40
   rating: 1
   baseHealth: 40
-  baseAcceleration: 40
+  baseAcceleration: 10
   baseStrength: 40
   baseAccuracy: 40
   effectiveHealth: 0
@@ -2224,7 +2328,7 @@ MonoBehaviour:
   skills:
   - {fileID: 4824262591714562283, guid: ea4f183c403b1fb45acf3d3b658043cc, type: 3}
   activeWeapon: {fileID: 0}
-  unarmedWeapon: {fileID: 0}
+  unarmedWeapon: {fileID: 66415828917388126, guid: aa319584f8475294eae01063eaed4d9b, type: 3}
   armTransform: {fileID: 1918502142}
   rotTarget: {fileID: 552276206}
   motionVec: {x: 0, y: 0}
@@ -2472,3 +2576,4 @@ SceneRoots:
   - {fileID: 1006006262}
   - {fileID: 1051612826}
   - {fileID: 1206983945}
+  - {fileID: 1907731216}
