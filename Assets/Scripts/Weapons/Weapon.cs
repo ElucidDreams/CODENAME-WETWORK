@@ -23,7 +23,6 @@ public abstract class Weapon : MonoBehaviour
     public BoxCollider2D throwCollider;
     [HideInInspector] public Rigidbody2D worldRB;
     public Operator wielder;
-    
     public bool isAttacking = false;
     public float checkDelay = 0.1f;
     public float weaponMass = 1f;
@@ -31,15 +30,13 @@ public abstract class Weapon : MonoBehaviour
     public float velocityThreshold = 0.1f;
     public float hangTimeMax = 1f;
     public float groundedFriction = 10f;
-
-    [HideInInspector] public bool inAir = false;
+    public bool inAir = false;
 
     public void Start()
     {
         worldSpriteRenderer = GetComponent<SpriteRenderer>();
         throwCollider = GetComponent<BoxCollider2D>();
     }
-
     public abstract void Attack();
     public abstract void Reload();
     public void ThrowWeapon()
@@ -63,7 +60,6 @@ public abstract class Weapon : MonoBehaviour
         StartCoroutine(CheckForStop());//start the timer to disable the collider again
         StartCoroutine(ThrowFrictionCalc());//start the friction function
     }
-
     public void Initialize()
     {
         worldSpriteRenderer = GetComponent<SpriteRenderer>();
@@ -71,20 +67,20 @@ public abstract class Weapon : MonoBehaviour
     }
     public IEnumerator CheckForStop()
     {
-        yield return new WaitUntil(() => worldRB.velocity.magnitude > velocityThreshold);
-        throwCollider.enabled = false;
+        yield return new WaitUntil(() => worldRB.velocity.magnitude < velocityThreshold);
+        throwCollider.isTrigger = true;
     }
     public IEnumerator ThrowFrictionCalc()
     {
         float hangTimeCounter = 0f;
         while (inAir)
         {
-            yield return new WaitForSeconds(checkDelay);
-            hangTimeCounter += checkDelay;
             if (hangTimeCounter > hangTimeMax)
             {
                 inAir = false;
             }
+            yield return new WaitForSeconds(checkDelay);
+            hangTimeCounter += checkDelay;
         }
         yield return new WaitForSeconds(0.01f);
         worldRB.drag = groundedFriction;

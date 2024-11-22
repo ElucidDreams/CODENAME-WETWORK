@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
 {
     public Operator operatorComp; 
     [Header("Player Properties")]
+    public InteractSensor reticleSensor; 
     public Transform reticleTransform;
     [HideInInspector] private Vector2 aimPoint;
     [NonSerialized] public Vector2 movementInput;
@@ -41,17 +42,22 @@ public class Player : MonoBehaviour
         lookAction.Enable();
         defaultPlayerActions.TopDown.Attack.Enable();
         defaultPlayerActions.TopDown.Throw.Enable();
+        defaultPlayerActions.TopDown.Interact.Enable();
         defaultPlayerActions.TopDown.Attack.performed += OnAttack;
         defaultPlayerActions.TopDown.Throw.performed += OnThrow;
+        defaultPlayerActions.TopDown.Interact.performed += OnInteract;
     }
+
     private void OnDisable()//disables actions for input
     {
         moveAction.Disable();
         lookAction.Disable();
         defaultPlayerActions.TopDown.Attack.Disable();
         defaultPlayerActions.TopDown.Throw.Disable();
+        defaultPlayerActions.TopDown.Interact.Disable();
         defaultPlayerActions.TopDown.Attack.performed -= OnAttack;
         defaultPlayerActions.TopDown.Throw.performed -= OnThrow;
+        defaultPlayerActions.TopDown.Interact.performed -= OnInteract;
     }
     // Start is called before the first frame update
     public void Start()
@@ -93,5 +99,20 @@ public class Player : MonoBehaviour
     public void OnThrow(InputAction.CallbackContext context)
     {
         operatorComp.WeaponThrow();
+    }
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        Debug.Log("Interact Called");
+        Debug.Log(operatorComp.sensor.item.name);
+        Debug.Log(reticleSensor.item.name);
+        if (operatorComp.sensor.item == reticleSensor.item)
+        {
+            Debug.Log("Item match");
+            if (operatorComp.sensor.item.CompareTag("Weapon"))
+            {
+                Debug.Log("Item is weapon");
+                operatorComp.PickupWeapon(operatorComp.sensor.item.GetComponent<Weapon>());
+            }
+        }
     }
 }

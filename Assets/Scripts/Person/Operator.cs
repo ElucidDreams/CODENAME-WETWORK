@@ -37,6 +37,8 @@ public class Operator : Person
     public Transform rotTarget;
     [HideInInspector] public Vector2 motionVec;
     [HideInInspector] public Rigidbody2D rbComp;
+    public InteractSensor sensor; 
+
     public GameObject headObject;
     Transform headTransform;
     SpriteRenderer headSpriteRenderer;
@@ -126,6 +128,7 @@ public class Operator : Person
         if (weapon.worldRB != null){Destroy(weapon.worldRB);}
         weapon.transform.SetParent(transform);
         weapon.wielder = this;
+        weapon.throwCollider.isTrigger = false;
         weapon.throwCollider.enabled = false;
         weapon.worldSpriteRenderer.enabled = false;
         weapon.transform.SetPositionAndRotation(Vector3.zero, Quaternion.Euler(Vector3.zero));

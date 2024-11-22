@@ -7,7 +7,7 @@ public class MeleeWeapon : Weapon
     // Start is called before the first frame update
     public new void Start()
     {
-
+        base.Start();
     }
 
     public override void Attack()
