@@ -102,15 +102,12 @@ public class Player : MonoBehaviour
     }
     public void OnInteract(InputAction.CallbackContext context)
     {
-        Debug.Log("Interact Called");
-        Debug.Log(operatorComp.sensor.item.name);
-        Debug.Log(reticleSensor.item.name);
         if (operatorComp.sensor.item == reticleSensor.item)
         {
-            Debug.Log("Item match");
             if (operatorComp.sensor.item.CompareTag("Weapon"))
             {
-                Debug.Log("Item is weapon");
+                Destroy(operatorComp.activeWeapon.gameObject);
+                operatorComp.activeWeapon = null;
                 operatorComp.PickupWeapon(operatorComp.sensor.item.GetComponent<Weapon>());
             }
         }

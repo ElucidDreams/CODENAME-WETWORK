@@ -12,7 +12,6 @@ public class InteractSensor : MonoBehaviour
     {
         pickupCollider = GetComponent<CircleCollider2D>();
         pickupCollider.isTrigger = true;
-        StartCoroutine(ItemDebug());
     }
     void OnTriggerEnter2D(Collider2D collider)
     {

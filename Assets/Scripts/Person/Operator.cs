@@ -60,7 +60,6 @@ public class Operator : Person
         InitComponents();
         currentHealth = effectiveHealth;
         StartCoroutine(SetHead());
-        SetArms();
         //StartCoroutine(DebugTick());
     }
     public void Awake()
@@ -106,17 +105,15 @@ public class Operator : Person
             activeWeapon = Instantiate(unarmedWeapon,armsTransform).GetComponent<Weapon>();
         }
         PickupWeapon(activeWeapon);
-        SetArms();
     }
     public void WeaponThrow()
     {
         if (activeWeapon.weaponID != WeaponType.Unarmed)//Check if the player has the unarmed weapon
         {
             activeWeapon.ThrowWeapon();
-            Weapon temp = Instantiate(unarmedWeapon,armsTransform).GetComponent<Weapon>();
-            PickupWeapon(temp);
-            activeWeapon = temp;
-            SetArms();
+            activeWeapon = Instantiate(unarmedWeapon,armsTransform).GetComponent<Weapon>();
+            PickupWeapon(activeWeapon);
+            
         }
         else
         {
@@ -125,6 +122,8 @@ public class Operator : Person
     }
     public void PickupWeapon(Weapon weapon)
     {
+        Debug.Log(activeWeapon);
+        if (activeWeapon == null){activeWeapon = weapon;}
         weapon.Initialize();
         if (weapon.worldRB != null){Destroy(weapon.worldRB);}
         weapon.transform.SetParent(transform);
@@ -132,7 +131,8 @@ public class Operator : Person
         weapon.throwCollider.isTrigger = false;
         weapon.throwCollider.enabled = false;
         weapon.worldSpriteRenderer.enabled = false;
-        weapon.transform.SetPositionAndRotation(Vector3.zero, Quaternion.Euler(Vector3.zero));
+        weapon.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.Euler(Vector3.zero));
+        SetArms();
     }
     IEnumerator DebugTick()
     {
@@ -198,5 +198,6 @@ public class Operator : Person
     void SetArms()
     {
         armsAnimator.runtimeAnimatorController = activeWeapon.armsAnimators[faction];
+        Debug.Log("Set Arms Called. Active weapon is " + activeWeapon.weaponName);
     }
 }

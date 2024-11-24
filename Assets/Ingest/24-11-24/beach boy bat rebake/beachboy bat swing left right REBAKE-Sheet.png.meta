@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 524bd15f0fdd1e840ba6f2e6c3c82eb3
+guid: 802f7980a36cae14d92264a809489aa5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,7 +136,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WalkLeftBatRobot_0
+      name: beachboy bat swing left right REBAKE-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -150,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f48578729faeb54499b997595df4b0e4
-      internalID: -1730883334
+      spriteID: 0517b15e8c7d44c4087ecd64e4b27d38
+      internalID: -170571178
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkLeftBatRobot_1
+      name: beachboy bat swing left right REBAKE-Sheet_1
       rect:
         serializedVersion: 2
         x: 128
@@ -171,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4da8fd30d4c0a3249881c5d9b68553be
-      internalID: -1751195481
+      spriteID: 55c2c454d6b1adf47ada7b6e93953092
+      internalID: 1436749206
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkLeftBatRobot_2
+      name: beachboy bat swing left right REBAKE-Sheet_2
       rect:
         serializedVersion: 2
         x: 256
@@ -192,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4afdd28d44f33244c9a6e4779dde0f5b
-      internalID: -1729362939
+      spriteID: 426d42df0a6b7b54a87a6bc1292a5207
+      internalID: -931610364
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkLeftBatRobot_3
+      name: beachboy bat swing left right REBAKE-Sheet_3
       rect:
         serializedVersion: 2
         x: 384
@@ -213,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39365c65d728fbd4688ab5a7a6fce265
-      internalID: 379667934
+      spriteID: 60efbe8bc8a4ded49972bbe1db01b609
+      internalID: 2059245914
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkLeftBatRobot_4
+      name: beachboy bat swing left right REBAKE-Sheet_4
       rect:
         serializedVersion: 2
         x: 512
@@ -234,71 +234,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f8dd22fb218e624d93d8aaab7c6c7f4
-      internalID: 1517685579
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WalkLeftBatRobot_5
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ff1dbb22f5a03da42989e3db167e5388
-      internalID: -576168777
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WalkLeftBatRobot_6
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c4933392a2abd91499471afadf6810c7
-      internalID: 202145222
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WalkLeftBatRobot_7
-      rect:
-        serializedVersion: 2
-        x: 896
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 59b05c50bda5b374abf5aa6edd7bc07f
-      internalID: 1778881861
+      spriteID: 34e52e3e4b9b6b64ea2a2d2197b92f17
+      internalID: 2146504636
       vertices: []
       indices: 
       edges: []
@@ -314,14 +251,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      WalkLeftBatRobot_0: -1730883334
-      WalkLeftBatRobot_1: -1751195481
-      WalkLeftBatRobot_2: -1729362939
-      WalkLeftBatRobot_3: 379667934
-      WalkLeftBatRobot_4: 1517685579
-      WalkLeftBatRobot_5: -576168777
-      WalkLeftBatRobot_6: 202145222
-      WalkLeftBatRobot_7: 1778881861
+      beachboy bat swing left right REBAKE-Sheet_0: -170571178
+      beachboy bat swing left right REBAKE-Sheet_1: 1436749206
+      beachboy bat swing left right REBAKE-Sheet_2: -931610364
+      beachboy bat swing left right REBAKE-Sheet_3: 2059245914
+      beachboy bat swing left right REBAKE-Sheet_4: 2146504636
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
