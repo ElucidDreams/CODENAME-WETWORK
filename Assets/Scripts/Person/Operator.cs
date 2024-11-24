@@ -113,8 +113,9 @@ public class Operator : Person
         if (activeWeapon.weaponID != WeaponType.Unarmed)//Check if the player has the unarmed weapon
         {
             activeWeapon.ThrowWeapon();
-            activeWeapon = Instantiate(unarmedWeapon,armsTransform).GetComponent<Weapon>();
-            PickupWeapon(activeWeapon);
+            Weapon temp = Instantiate(unarmedWeapon,armsTransform).GetComponent<Weapon>();
+            PickupWeapon(temp);
+            activeWeapon = temp;
             SetArms();
         }
         else

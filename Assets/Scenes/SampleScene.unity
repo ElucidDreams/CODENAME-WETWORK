@@ -2255,7 +2255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   operatorComp: {fileID: 0}
-  reticleSensor: {fileID: 0}
+  reticleSensor: {fileID: 1006006264}
   reticleTransform: {fileID: 1006006262}
 --- !u!50 &2060782467
 Rigidbody2D:
@@ -2376,7 +2376,7 @@ MonoBehaviour:
   rotTarget: {fileID: 0}
   motionVec: {x: 0, y: 0}
   rbComp: {fileID: 0}
-  sensor: {fileID: 0}
+  sensor: {fileID: 1004225373}
   headObject: {fileID: 1046521757}
   armsObject: {fileID: 291269828}
   armsAnimator: {fileID: 0}

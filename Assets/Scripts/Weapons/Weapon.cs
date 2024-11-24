@@ -42,14 +42,11 @@ public abstract class Weapon : MonoBehaviour
     public void ThrowWeapon()
     {
         transform.SetParent(null);//un-parents the weapon
-        
         throwCollider.enabled = true;//Enable the weapons collider
         worldSpriteRenderer.enabled = true;
         worldSpriteRenderer.sortingOrder = 1;
-
         float wielderFacing = wielder.armTransform.eulerAngles.z;//get the facing of the arms
         Vector2 throwDirection = new(Mathf.Cos(wielderFacing * Mathf.Deg2Rad), Mathf.Sin(wielderFacing * Mathf.Deg2Rad));//generate a vector from the facing
-
         worldRB = gameObject.AddComponent<Rigidbody2D>();//add a rigid body here to ensure that the weapon can have physics but not interfere with the player (Joints where not plausible with the current implementation)
         worldRB.gravityScale = 0;//Deactivate gravity on the weapon
         worldRB.mass = weaponMass;//set the rigidbody mass to be the preset mass of the weapon;
