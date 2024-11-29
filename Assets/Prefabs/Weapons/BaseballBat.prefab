@@ -52,6 +52,8 @@ MonoBehaviour:
     _serializedList:
     - Key: 3
       Value: {fileID: 9100000, guid: 5a0babf440f9c4540ad031c8b00cc657, type: 2}
+    - Key: 2
+      Value: {fileID: 9100000, guid: a06f9f7c767de3c4ab0e3f1086c71730, type: 2}
   throwCollider: {fileID: 3989706178892774176}
   worldRB: {fileID: 0}
   wielder: {fileID: 0}
