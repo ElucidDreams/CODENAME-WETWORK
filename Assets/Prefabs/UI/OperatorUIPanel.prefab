@@ -203,8 +203,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 1764dad1bde28f444a13b99089ba8622, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -228,6 +228,7 @@ MonoBehaviour:
   imageParent: {fileID: 3660821582826874244}
   nameText: {fileID: 7231714884109554365}
   factionText: {fileID: 7056872557550357290}
+  _person: {fileID: 0}
 --- !u!1 &6202000897291964262
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,8 +428,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 078078622b3ccfa4cbfc9ac29b370448, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

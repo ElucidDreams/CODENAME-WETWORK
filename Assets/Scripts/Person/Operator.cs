@@ -15,7 +15,7 @@ using static GameConstants;
 public class Operator : Person
 {
     [Header("Operator Properties")]
-    public int level = 1; 
+    public int level = 1;
     public bool inMission = true;
     public float maxSpeed = 10f;
     public float rating = 0;
@@ -28,7 +28,7 @@ public class Operator : Person
     public float currentHealth;
     //[HideInInspector] public float effectiveArmour;
     [HideInInspector] public float effectiveSpeed;
-    [HideInInspector]public float effectiveStrength;
+    [HideInInspector] public float effectiveStrength;
     [HideInInspector] public float effectiveAccuracy;
     [SerializeReference] public OperatorSkill[] skills;
     public Weapon activeWeapon;
@@ -37,7 +37,7 @@ public class Operator : Person
     public Transform rotTarget;
     [HideInInspector] public Vector2 motionVec;
     [HideInInspector] public Rigidbody2D rbComp;
-    public InteractSensor sensor; 
+    public InteractSensor sensor;
 
     public GameObject headObject;
     Transform headTransform;
@@ -64,7 +64,7 @@ public class Operator : Person
     }
     public void Awake()
     {
-        
+
     }
     void Update()
     {
@@ -82,7 +82,7 @@ public class Operator : Person
     public void InitSkills()//run all of the skills the operator has that are not on demand skills
     {
         //Initialize all skills
-        foreach(OperatorSkill skill in skills)
+        foreach (OperatorSkill skill in skills)
         {
             skill.skillUser = this;
             if (!skill.onDemand)
@@ -102,7 +102,7 @@ public class Operator : Person
         rbComp = GetComponent<Rigidbody2D>();
         if (activeWeapon == null)
         {
-            activeWeapon = Instantiate(unarmedWeapon,armsTransform).GetComponent<Weapon>();
+            activeWeapon = Instantiate(unarmedWeapon, armsTransform).GetComponent<Weapon>();
         }
         PickupWeapon(activeWeapon);
     }
@@ -111,9 +111,9 @@ public class Operator : Person
         if (activeWeapon.weaponID != WeaponType.Unarmed)//Check if the player has the unarmed weapon
         {
             activeWeapon.ThrowWeapon();
-            activeWeapon = Instantiate(unarmedWeapon,armsTransform).GetComponent<Weapon>();
+            activeWeapon = Instantiate(unarmedWeapon, armsTransform).GetComponent<Weapon>();
             PickupWeapon(activeWeapon);
-            
+
         }
         else
         {
@@ -123,9 +123,9 @@ public class Operator : Person
     public void PickupWeapon(Weapon weapon)
     {
         Debug.Log(activeWeapon);
-        if (activeWeapon == null){activeWeapon = weapon;}
+        if (activeWeapon == null) { activeWeapon = weapon; }
         weapon.Initialize();
-        if (weapon.worldRB != null){Destroy(weapon.worldRB);}
+        if (weapon.worldRB != null) { Destroy(weapon.worldRB); }
         weapon.transform.SetParent(transform);
         weapon.wielder = this;
         weapon.throwCollider.isTrigger = false;
@@ -156,8 +156,8 @@ public class Operator : Person
         }
         else
         {
-            legAnimator.SetFloat("Motion",0);
-            armsAnimator.SetFloat("Motion",0);
+            legAnimator.SetFloat("Motion", 0);
+            armsAnimator.SetFloat("Motion", 0);
         }
     }
     public void RotateToFacePoint(Transform t, Vector2 point)//Rotate 't' to face towards 'point'
@@ -177,17 +177,22 @@ public class Operator : Person
         {
             if (faction == set.setFaction)//check for the set that matches the player faction
             {
+                Debug.Log(gameObject.name + "'s Distinctive component length is " + distinctiveComponent.Length);
+                Debug.Log(gameObject.name + "'s color indicies length is " + colorIndices.Count);
                 //TODO implement a system for if there are multiple face sets for the same faction to ensure indexing is consistent. 
                 for (int index = 0; index < distinctiveComponent.Length; index++)//create an index that is the length of distinctiveComponent and then iterate through until you reach a value that is true
                 {
-                    if(distinctiveComponent[index] == true)
+                    Debug.Log(gameObject.name + "'s current index is " + index);
+                    if (distinctiveComponent[index] == true)
                     {
-                        Debug.Log(headSpriteRenderer.gameObject.name);
                         Sprite headSprite = set.heads[faceIndices[index]];//use the index to get which index of faceIndices is for the distinctive component, then use that new index to select to the set.heads sprite
-                        Color headColor = set.colors[colorIndices[index]];//Same as above but for colors
-                        if (toColorArr[index])//check if the component should be colored or not, and if so colors it
+                        if (colorIndices.Count > 0)//check if any colors have been saved
                         {
-                            headSpriteRenderer.color = headColor;
+                            Color headColor = set.colors[colorIndices[index]];//Same as above but for colors
+                            if (toColorArr[index])//check if the component should be colored or not, and if so colors it
+                            {
+                                headSpriteRenderer.color = headColor;
+                            }
                         }
                         headSpriteRenderer.sprite = headSprite;//Set the head sprite renderer sprite to be the new sprite.  
                     }

@@ -14,10 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   setFaction: 2
   heads:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 80a27539185371d4bb7ecd6568df9a1e, type: 3}
+  - {fileID: 21300000, guid: 63a5a94af91d8234b9357d268d17a6bf, type: 3}
+  - {fileID: 21300000, guid: 203767dfeb31aca4ab1cdd153555af27, type: 3}
+  - {fileID: 21300000, guid: 543fc2e22159d0f499e615a8e16a7f47, type: 3}
+  - {fileID: 21300000, guid: 9e4429a8c2ec79d45b6a6f01371c5d4e, type: 3}
+  - {fileID: 21300000, guid: 4be5ea92d8d0ac04b987777ad7df39f7, type: 3}
   colors:
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
   - {r: 0, g: 0, b: 0, a: 0}
