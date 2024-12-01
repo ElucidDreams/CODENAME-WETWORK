@@ -22,8 +22,8 @@ public class GameConstants : MonoBehaviour
     [Serializable]
     public enum WeaponType
     {
-        Melee = 1,
-        Projectile = 2,
-        Hitscan = 3
+        Unarmed = 1,
+        BaseballBat = 2,
+        Pistol = 3,
     }
 }

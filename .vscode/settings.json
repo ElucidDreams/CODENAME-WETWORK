@@ -61,6 +61,8 @@
         "Hitscan",
         "Newtonsoft",
         "Rigidbody",
-        "UGUI"
-    ]
+        "UGUI",
+        "Yellowpaper"
+    ],
+    "workbench.colorTheme": "SynthWave '84"
 }

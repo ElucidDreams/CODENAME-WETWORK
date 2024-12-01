@@ -21,16 +21,11 @@ public class RangedWeapon : Weapon
     }
     public override void Attack()
     {
-        weaponAnimator.SetTrigger("Fire");
+        wielder.armsAnimator.SetTrigger("Fire");
         Instantiate(muzzleEffect,muzzle.position, Quaternion.Euler(0,0,0));
     }
 
     public override void Reload()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public override void ThrowWeapon()
     {
         throw new System.NotImplementedException();
     }

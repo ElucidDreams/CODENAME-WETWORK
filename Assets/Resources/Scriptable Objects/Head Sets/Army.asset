@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978ee1af5aefa1a4696222c5506c6133, type: 3}
   m_Name: Army
   m_EditorClassIdentifier: 
-  setFaction: 0
+  setFaction: 1
   heads:
   - {fileID: -743601259473008446, guid: b51020accf82f6c4d8cbbe3995de5474, type: 3}
   colors: []

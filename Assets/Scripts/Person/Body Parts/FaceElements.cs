@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.EditorTools;
 using UnityEngine;
 using static GameConstants;
 // Does not need to be saved as it is saved as a prefab and loaded in the person script. 

@@ -80,6 +80,15 @@ public partial class @DefaultPlayerActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""40495f8a-354d-4fd4-8ded-bbfae8472696"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -203,6 +212,17 @@ public partial class @DefaultPlayerActions: IInputActionCollection2, IDisposable
                     ""action"": ""Load"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""42144a7b-e92a-4587-888f-10a0bfeef8d0"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""M&K"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -239,6 +259,7 @@ public partial class @DefaultPlayerActions: IInputActionCollection2, IDisposable
         m_TopDown_Throw = m_TopDown.FindAction("Throw", throwIfNotFound: true);
         m_TopDown_Save = m_TopDown.FindAction("Save", throwIfNotFound: true);
         m_TopDown_Load = m_TopDown.FindAction("Load", throwIfNotFound: true);
+        m_TopDown_Interact = m_TopDown.FindAction("Interact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -306,6 +327,7 @@ public partial class @DefaultPlayerActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_TopDown_Throw;
     private readonly InputAction m_TopDown_Save;
     private readonly InputAction m_TopDown_Load;
+    private readonly InputAction m_TopDown_Interact;
     public struct TopDownActions
     {
         private @DefaultPlayerActions m_Wrapper;
@@ -316,6 +338,7 @@ public partial class @DefaultPlayerActions: IInputActionCollection2, IDisposable
         public InputAction @Throw => m_Wrapper.m_TopDown_Throw;
         public InputAction @Save => m_Wrapper.m_TopDown_Save;
         public InputAction @Load => m_Wrapper.m_TopDown_Load;
+        public InputAction @Interact => m_Wrapper.m_TopDown_Interact;
         public InputActionMap Get() { return m_Wrapper.m_TopDown; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -343,6 +366,9 @@ public partial class @DefaultPlayerActions: IInputActionCollection2, IDisposable
             @Load.started += instance.OnLoad;
             @Load.performed += instance.OnLoad;
             @Load.canceled += instance.OnLoad;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
         }
 
         private void UnregisterCallbacks(ITopDownActions instance)
@@ -365,6 +391,9 @@ public partial class @DefaultPlayerActions: IInputActionCollection2, IDisposable
             @Load.started -= instance.OnLoad;
             @Load.performed -= instance.OnLoad;
             @Load.canceled -= instance.OnLoad;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
         }
 
         public void RemoveCallbacks(ITopDownActions instance)
@@ -399,5 +428,6 @@ public partial class @DefaultPlayerActions: IInputActionCollection2, IDisposable
         void OnThrow(InputAction.CallbackContext context);
         void OnSave(InputAction.CallbackContext context);
         void OnLoad(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
 }

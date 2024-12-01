@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978ee1af5aefa1a4696222c5506c6133, type: 3}
   m_Name: Beach
   m_EditorClassIdentifier: 
-  setFaction: 2
+  setFaction: 3
   heads:
   - {fileID: 21300000, guid: ff7e3a5e6af68864b83d4f4481ff2b76, type: 3}
   - {fileID: 21300000, guid: d2c67f5ea547f5d4e8a3dadc4743b9f9, type: 3}
