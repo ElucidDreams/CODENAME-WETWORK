@@ -40,10 +40,13 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _Brick_Level: 0.74
+    - _Noise_Scale: 24.9
+    - _Red_Normal_Level: 0.8
     m_Colors:
     - _Brick_Dimensions: {r: 1, g: 1, b: 0, a: 0}
-    - _GridSize: {r: 64, g: 32, b: 0, a: 0}
+    - _GridSize: {r: 128, g: 64, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &4612589676681332422
 MonoBehaviour:
