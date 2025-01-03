@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: BrickMat
   m_Shader: {fileID: -6465566751694194690, guid: e29750047fbe79d4685c2e7466b0ecd5, type: 3}
-  m_Parent: {fileID: -876546973899608171, guid: e29750047fbe79d4685c2e7466b0ecd5, type: 3}
+  m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -23,6 +23,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Brick:
         m_Texture: {fileID: 2800000, guid: b044ca2c192dae64aa47ee956f426e6d, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -36,16 +40,64 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 3adeaf372f191f74fb7648fb3c7d5f25, type: 3}
+        m_Texture: {fileID: 2800000, guid: b044ca2c192dae64aa47ee956f426e6d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_1aa5bd1822a541c8914804e44eca7b07_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: dc045750175391d46b01e482a31c1b28, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_1ac8362882ac46918c62c94fa26c114b_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 7cf1f70d7f1f0204d906f8edd02bb776, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_65ba7cbb18f4419abb821387d80d0491_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: c9b77a2c0db859f4986d9b3d6c0c8f2b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_9c90f24aac59490080414e57850e8772_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 703114068766de743909473be42572d2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_fd72efd0074e450594f49733ad7bccfa_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: b044ca2c192dae64aa47ee956f426e6d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AlphaClip: 0
+    - _AlphaToMask: 0
+    - _Blend: 0
+    - _BlendOp: 0
     - _Brick_Level: 0.74
+    - _Cull: 2
+    - _Cutoff: 0.5
+    - _DstBlend: 0
+    - _DstBlendAlpha: 0
     - _Noise_Scale: 24.9
+    - _QueueOffset: 0
     - _Red_Normal_Level: 0.8
+    - _SampleGI: 0
+    - _SrcBlend: 1
+    - _SrcBlendAlpha: 1
+    - _Surface: 0
+    - _ZWrite: 1
     m_Colors:
+    - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Brick_Dimensions: {r: 1, g: 1, b: 0, a: 0}
+    - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _GridSize: {r: 128, g: 64, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &4612589676681332422

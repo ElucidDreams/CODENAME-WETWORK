@@ -33,6 +33,7 @@ public class Operator : Person
     [SerializeReference] public OperatorSkill[] skills;
     public Weapon activeWeapon;
     public GameObject unarmedWeapon;
+    public MeleeCollider meleeCollider;
     public Transform armTransform;
     public Transform rotTarget;
     [HideInInspector] public Vector2 motionVec;
@@ -50,7 +51,7 @@ public class Operator : Person
     Animator legAnimator;
     public float rotDeadZone = 0.1f;
 
-
+    #region Unity Methods
     // Start is called before the first frame update
     public new void Start()
     {
@@ -70,6 +71,8 @@ public class Operator : Person
     {
         BodyUpdate();
     }
+    #endregion
+    #region Initialization Methods 
     public void InitEffectiveValues()//set all of the effective values to the base values
     {
         //Initialize effective values
@@ -106,6 +109,8 @@ public class Operator : Person
         }
         PickupWeapon(activeWeapon);
     }
+    #endregion
+    #region Weapon Methods
     public void WeaponThrow()
     {
         if (activeWeapon.weaponID != WeaponType.Unarmed)//Check if the player has the unarmed weapon
@@ -122,7 +127,7 @@ public class Operator : Person
     }
     public void PickupWeapon(Weapon weapon)
     {
-        Debug.Log(activeWeapon);
+        //Debug.Log(activeWeapon);
         if (activeWeapon == null) { activeWeapon = weapon; }
         weapon.Initialize();
         if (weapon.worldRB != null) { Destroy(weapon.worldRB); }
@@ -133,14 +138,10 @@ public class Operator : Person
         weapon.worldSpriteRenderer.enabled = false;
         weapon.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.Euler(Vector3.zero));
         SetArms();
+        meleeCollider.parentWeapon = weapon;
     }
-    IEnumerator DebugTick()
-    {
-        Debug.Log("Rot target facing: " + rotTarget.eulerAngles.z);
-        Debug.Log("Arms facing:" + armTransform.eulerAngles.z);
-        yield return new WaitForSeconds(1f);
-        StartCoroutine(DebugTick());
-    }
+    #endregion
+    #region Body Methods
     public void BodyUpdate()
     {
         RotateToFacePoint(headTransform, rotTarget.position);//rotate the head to face the rotTarget
@@ -177,12 +178,12 @@ public class Operator : Person
         {
             if (faction == set.setFaction)//check for the set that matches the player faction
             {
-                Debug.Log(gameObject.name + "'s Distinctive component length is " + distinctiveComponent.Length);
-                Debug.Log(gameObject.name + "'s color indicies length is " + colorIndices.Count);
+                //Debug.Log(gameObject.name + "'s Distinctive component length is " + distinctiveComponent.Length);
+                //Debug.Log(gameObject.name + "'s color indicies length is " + colorIndices.Count);
                 //TODO implement a system for if there are multiple face sets for the same faction to ensure indexing is consistent. 
                 for (int index = 0; index < distinctiveComponent.Length; index++)//create an index that is the length of distinctiveComponent and then iterate through until you reach a value that is true
                 {
-                    Debug.Log(gameObject.name + "'s current index is " + index);
+                    //Debug.Log(gameObject.name + "'s current index is " + index);
                     if (distinctiveComponent[index] == true)
                     {
                         Sprite headSprite = set.heads[faceIndices[index]];//use the index to get which index of faceIndices is for the distinctive component, then use that new index to select to the set.heads sprite
@@ -203,6 +204,26 @@ public class Operator : Person
     void SetArms()
     {
         armsAnimator.runtimeAnimatorController = activeWeapon.armsAnimators[faction];
-        Debug.Log("Set Arms Called. Active weapon is " + activeWeapon.weaponName);
+        //Debug.Log("Set Arms Called. Active weapon is " + activeWeapon.weaponName);
+    }
+    #endregion
+    #region Debug Methods
+    IEnumerator DebugTick()
+    {
+        Debug.Log("Rot target facing: " + rotTarget.eulerAngles.z);
+        Debug.Log("Arms facing:" + armTransform.eulerAngles.z);
+        yield return new WaitForSeconds(1f);
+        StartCoroutine(DebugTick());
+    }
+    #endregion
+    
+    public void TakeDamage(Weapon weapon, float damage)
+    {
+        Debug.Log(gameObject.name + " has taken " + damage + " damage");
+        currentHealth -= damage;
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

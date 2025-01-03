@@ -8,7 +8,7 @@ public class PersonCard : MonoBehaviour
     public RectTransform imageParent;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI factionText;
-    public Person _person;
+    public Person person;
     void Start()
     {
         if (imageParent == null)
@@ -23,7 +23,7 @@ public class PersonCard : MonoBehaviour
         {
             Debug.LogWarning(gameObject.name + "'s factionText TMP is unset");
         }
-        if (_person == null)
+        if (person == null)
         {
             Debug.LogWarning(gameObject.name + "'s _person is unset");
         }
@@ -34,9 +34,9 @@ public class PersonCard : MonoBehaviour
     }
     public IEnumerator setElements()
     {
-         yield return new WaitUntil(() => _person.emptyImage != null);
-        _person.GenerateFace(imageParent);
-        nameText.text = _person.givenName + " " + _person.familyName;//set the name text
-        factionText.text = _person.faction.ToString();//set the faction text
+         yield return new WaitUntil(() => person.emptyImage != null);
+        person.GenerateFace(imageParent);
+        nameText.text = person.givenName + " " + person.familyName;//set the name text
+        factionText.text = person.faction.ToString();//set the faction text
     }
 }

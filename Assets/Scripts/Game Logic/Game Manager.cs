@@ -71,6 +71,15 @@ public class GameManager : MonoBehaviour
         SaveGM();
         SceneManager.LoadScene(sceneInt);
     }
+
+    public void WinTransition()
+    {
+        StartCoroutine(WinLevel());
+    }
+    public void LoseTransition()
+    {
+        StartCoroutine(LoseLevel());
+    }
     public IEnumerator WinLevel()
     {
         SceneManager.LoadScene("WinScene");

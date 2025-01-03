@@ -10,12 +10,25 @@ public class MeleeWeapon : Weapon
         base.Start();
     }
 
+    public void Update()
+    {
+
+    }
+
     public override void Attack()
     {
         wielder.armsAnimator.SetTrigger("Attack");
+        isAttacking = true;
+        StartCoroutine(IsAttacking());
     }
     public override void Reload()
     {
 
+    }
+
+    public IEnumerator IsAttacking()
+    {
+        yield return new WaitUntil(() => !wielder.armsAnimator.GetCurrentAnimatorStateInfo(0).IsName("AttackL") && !wielder.armsAnimator.GetCurrentAnimatorStateInfo(0).IsName("AttackR"));
+        isAttacking = false;
     }
 }

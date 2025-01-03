@@ -31,6 +31,7 @@ public abstract class Weapon : MonoBehaviour
     public float hangTimeMax = 1f;
     public float groundedFriction = 10f;
     public bool inAir = false;
+    public float weaponDamage = 1f;
 
     public void Start()
     {
