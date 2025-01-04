@@ -995,9 +995,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1006006262}
-  - component: {fileID: 1006006261}
   - component: {fileID: 1006006264}
   - component: {fileID: 1006006263}
+  - component: {fileID: 1006006265}
+  - component: {fileID: 1006006261}
   m_Layer: 0
   m_Name: Reticle
   m_TagString: Untagged
@@ -1012,7 +1013,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1006006259}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1120,6 +1121,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 0}
+--- !u!114 &1006006265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1006006259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87ede712e74f10849ae3bb1c3e3290e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backupAnimation: {fileID: 7400000, guid: 53f8dc4bafd78164e876f8b5887a4041, type: 2}
+  anim: {fileID: 0}
+  ReticuleAnimations:
+    _serializedList:
+    - Key: 2
+      Value: {fileID: 7400000, guid: 53f8dc4bafd78164e876f8b5887a4041, type: 2}
 --- !u!1 &1046521757
 GameObject:
   m_ObjectHideFlags: 0
@@ -1536,7 +1555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentWeapon: {fileID: 0}
   canAttack: 1
-  attackCooldown: 0.05
+  damageCooldown: 0.05
 --- !u!1 &1206983944
 GameObject:
   m_ObjectHideFlags: 0
@@ -2351,7 +2370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentWeapon: {fileID: 357797443}
   canAttack: 1
-  attackCooldown: 0.2
+  damageCooldown: 0.05
 --- !u!1 &1987348843
 GameObject:
   m_ObjectHideFlags: 0

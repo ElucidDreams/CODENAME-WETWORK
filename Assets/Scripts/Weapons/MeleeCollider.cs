@@ -20,32 +20,12 @@ public class MeleeCollider : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-
-        if (parentWeapon.wielder.armsAnimator.GetCurrentAnimatorStateInfo(0).IsName("AttackL") || parentWeapon.wielder.armsAnimator.GetCurrentAnimatorStateInfo(0).IsName("AttackR"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
-            if (other.gameObject.CompareTag("Enemy"))
+            if (canAttack)
             {
-                if (canAttack)
-                {
-                    StartCoroutine(DamageCooldown());
-                    other.gameObject.GetComponent<Operator>().TakeDamage(parentWeapon, parentWeapon.weaponDamage * parentWeapon.wielder.effectiveStrength);
-                }
-            }
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D other)
-    {
-
-        if (parentWeapon.wielder.armsAnimator.GetCurrentAnimatorStateInfo(0).IsName("AttackL") || parentWeapon.wielder.armsAnimator.GetCurrentAnimatorStateInfo(0).IsName("AttackR"))
-        {
-            if (other.gameObject.CompareTag("Enemy"))
-            {
-                if (canAttack)
-                {
-                    StartCoroutine(DamageCooldown());
-                    other.gameObject.GetComponent<Operator>().TakeDamage(parentWeapon, parentWeapon.weaponDamage * parentWeapon.wielder.effectiveStrength);
-                }
+                StartCoroutine(DamageCooldown());
+                other.gameObject.GetComponent<Operator>().TakeDamage(parentWeapon, parentWeapon.weaponDamage * parentWeapon.wielder.effectiveStrength);
             }
         }
     }

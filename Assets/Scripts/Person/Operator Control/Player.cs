@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static GameConstants;
 
 [System.Serializable]
 [RequireComponent(typeof(Operator))]
@@ -33,6 +34,7 @@ public class Player : MonoBehaviour
         {
             mainCamera = Camera.main;//establishes camera for world point conversions
         }
+        reticleTransform.gameObject.GetComponent<Reticule>().SetFaction(operatorComp.faction);//sets the reticle to the player faction
     }
     private void OnEnable()//enables actions for input
     {
