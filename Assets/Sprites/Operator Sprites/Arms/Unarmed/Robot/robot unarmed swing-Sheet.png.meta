@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e3e7f2a79a8a7e640b7eceaa29ea21f2
+guid: 02b41a1b8962ace458e21e9e0dcfecb9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,7 +136,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: robot walk cycle arms REBAKE-Sheet_0
+      name: robot unarmed swing-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -150,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 526309127723fb74981eb37e0dd3db97
-      internalID: -1805092357
+      spriteID: cdaf28f0f7477794ea3182f2edae4699
+      internalID: -1530990565
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot walk cycle arms REBAKE-Sheet_1
+      name: robot unarmed swing-Sheet_1
       rect:
         serializedVersion: 2
         x: 128
@@ -171,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54afc76d796ddcd4cba0485f7dab71f6
-      internalID: -1274874003
+      spriteID: b6d9e70fdbf1a5144b4a6a18194813a4
+      internalID: 627636631
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot walk cycle arms REBAKE-Sheet_2
+      name: robot unarmed swing-Sheet_2
       rect:
         serializedVersion: 2
         x: 256
@@ -192,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2290bf1b81ebf5a4d943a86152fcaac0
-      internalID: 835003358
+      spriteID: abafc292fef9bf442a30bafa148ce0e2
+      internalID: 726560478
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot walk cycle arms REBAKE-Sheet_3
+      name: robot unarmed swing-Sheet_3
       rect:
         serializedVersion: 2
         x: 384
@@ -213,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c946b009bfa7bd74f882b00786dc27a8
-      internalID: 901025980
+      spriteID: 2159cab134d93cb40a19c40ed53a6a08
+      internalID: -487153172
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot walk cycle arms REBAKE-Sheet_4
+      name: robot unarmed swing-Sheet_4
       rect:
         serializedVersion: 2
         x: 512
@@ -234,14 +234,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07af7649ef8f2e346b70e2d65e8d6d7d
-      internalID: 2093522853
+      spriteID: 5476bcf0e5ac19e47955f9ccb255222c
+      internalID: 1157633247
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot walk cycle arms REBAKE-Sheet_5
+      name: robot unarmed swing-Sheet_5
       rect:
         serializedVersion: 2
         x: 640
@@ -255,14 +255,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 281f8f23c9347a0479f290b956ae274f
-      internalID: 1744231392
+      spriteID: b32d7e57a87228f4e88268e6cafb57eb
+      internalID: -466025889
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot walk cycle arms REBAKE-Sheet_6
+      name: robot unarmed swing-Sheet_6
       rect:
         serializedVersion: 2
         x: 768
@@ -276,14 +276,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2cdf627212eb9045a68f1e507db65a3
-      internalID: 1264630125
+      spriteID: ae8fc845c86a94a4daef611cc79eaf76
+      internalID: 470397443
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot walk cycle arms REBAKE-Sheet_7
+      name: robot unarmed swing-Sheet_7
       rect:
         serializedVersion: 2
         x: 896
@@ -297,8 +297,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21291e9da419c814a8580af4561a3155
-      internalID: -1220997689
+      spriteID: d6c7621f67a64c244b9d53505b824d73
+      internalID: -1517515602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: robot unarmed swing-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b2b22c3825a02643b8a6e5a3def62fe
+      internalID: 1225888294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: robot unarmed swing-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1be75f7b27220c9498d0833777fed054
+      internalID: 771646005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: robot unarmed swing-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35e2a5dea2a5f99489e068def6965b35
+      internalID: -1817345918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: robot unarmed swing-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7520e7a303131649b5ed91ec3c3fd25
+      internalID: 1916435016
       vertices: []
       indices: 
       edges: []
@@ -314,14 +398,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      robot walk cycle arms REBAKE-Sheet_0: -1805092357
-      robot walk cycle arms REBAKE-Sheet_1: -1274874003
-      robot walk cycle arms REBAKE-Sheet_2: 835003358
-      robot walk cycle arms REBAKE-Sheet_3: 901025980
-      robot walk cycle arms REBAKE-Sheet_4: 2093522853
-      robot walk cycle arms REBAKE-Sheet_5: 1744231392
-      robot walk cycle arms REBAKE-Sheet_6: 1264630125
-      robot walk cycle arms REBAKE-Sheet_7: -1220997689
+      robot unarmed swing-Sheet_0: -1530990565
+      robot unarmed swing-Sheet_1: 627636631
+      robot unarmed swing-Sheet_10: -1817345918
+      robot unarmed swing-Sheet_11: 1916435016
+      robot unarmed swing-Sheet_2: 726560478
+      robot unarmed swing-Sheet_3: -487153172
+      robot unarmed swing-Sheet_4: 1157633247
+      robot unarmed swing-Sheet_5: -466025889
+      robot unarmed swing-Sheet_6: 470397443
+      robot unarmed swing-Sheet_7: -1517515602
+      robot unarmed swing-Sheet_8: 1225888294
+      robot unarmed swing-Sheet_9: 771646005
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

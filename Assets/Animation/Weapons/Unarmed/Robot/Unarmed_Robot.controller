@@ -97,7 +97,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 7ad22081de8d10d4ea6bf444c250be9e, type: 2}
+  m_Motion: {fileID: 7400000, guid: 9ed0d7823d485684ea13487fdb1444a8, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -178,7 +178,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: d31dbde7c6f838546bb4eacbe5805aab, type: 2}
+  m_Motion: {fileID: 7400000, guid: 51f14c3646d01b34d8dfabba52561940, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -190,7 +190,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Unarmed_Beach
+  m_Name: Unarmed_Robot
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Attack
@@ -246,7 +246,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 3f0ee317cc2b891449594a5a6ef28ca4, type: 2}
+  m_Motion: {fileID: 7400000, guid: 4eece31eaa18aaa4b803b5f0078ac6a6, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
