@@ -5,9 +5,9 @@ using static GameConstants;
 
 public class Reticule : MonoBehaviour
 {
-    public AnimationClip backupAnimation;
-    public Animation anim;
-    public AYellowpaper.SerializedCollections.SerializedDictionary<Faction, AnimationClip> ReticuleAnimations;
+    public RuntimeAnimatorController backupAnimation;
+    public Animator anim;
+    public AYellowpaper.SerializedCollections.SerializedDictionary<Faction, RuntimeAnimatorController> ReticuleAnimations;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,13 +24,12 @@ public class Reticule : MonoBehaviour
     {
         try
         {
-            anim.clip = ReticuleAnimations[faction];
+            anim.runtimeAnimatorController = ReticuleAnimations[faction];
         }
         catch (System.Exception e)
         {
             Debug.LogError($"Error setting reticule sprite: {e}");
-            anim.clip = backupAnimation;
+            anim.runtimeAnimatorController = backupAnimation;
         }
-        anim.Play();
     }
 }

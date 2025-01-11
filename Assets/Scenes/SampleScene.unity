@@ -999,6 +999,7 @@ GameObject:
   - component: {fileID: 1006006263}
   - component: {fileID: 1006006265}
   - component: {fileID: 1006006261}
+  - component: {fileID: 1006006266}
   m_Layer: 0
   m_Name: Reticle
   m_TagString: Untagged
@@ -1013,7 +1014,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1006006259}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1133,12 +1134,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ede712e74f10849ae3bb1c3e3290e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backupAnimation: {fileID: 7400000, guid: 53f8dc4bafd78164e876f8b5887a4041, type: 2}
-  anim: {fileID: 0}
+  backupAnimation: {fileID: 9100000, guid: b8eba8610dfcb9a4aa34dff9efae24d4, type: 2}
+  anim: {fileID: 1006006266}
   ReticuleAnimations:
     _serializedList:
     - Key: 2
-      Value: {fileID: 7400000, guid: 53f8dc4bafd78164e876f8b5887a4041, type: 2}
+      Value: {fileID: 9100000, guid: 0efc8960674569249b0383ee38e8ff17, type: 2}
+--- !u!95 &1006006266
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1006006259}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1046521757
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Rendering.Universal.Internal;
 [System.Serializable]
 public class TestNPC : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class TestNPC : MonoBehaviour
     NavMeshAgent agent;
     public Operator parentOperator;
     LineRenderer line;
+
+    public float outOfSightTime = 1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,5 +40,33 @@ public class TestNPC : MonoBehaviour
             parentOperator.motionVec = agent.velocity;
             agent.SetDestination(navTarget.position);
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            navTarget = other.transform;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            
+            Transform lastKnownPosition = new GameObject("LastKnownPosition").transform;
+            lastKnownPosition.position = other.transform.position;
+            lastKnownPosition.rotation = other.transform.rotation;
+            lastKnownPosition.localScale = other.transform.localScale;
+            StartCoroutine(MustHaveBeenTheWind(lastKnownPosition));
+        }
+    }
+
+    IEnumerator MustHaveBeenTheWind(Transform lkp)
+    {
+        yield return new WaitForSeconds(outOfSightTime);
+        navTarget = null;
+        Destroy(lkp.gameObject);
     }
 }
