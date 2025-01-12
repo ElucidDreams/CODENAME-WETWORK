@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4705644852021708397}
   - component: {fileID: 2803511228952135516}
   m_Layer: 0
-  m_Name: Kei Truck Prefab
+  m_Name: p_KeiTruck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -144,6 +144,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_OverrideArea: 1
-  m_Area: 0
+  m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
