@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e3e7f2a79a8a7e640b7eceaa29ea21f2
+guid: 40d86724ba4879447a00f27632280b2b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,7 +136,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: robot walk cycle arms REBAKE-Sheet_0
+      name: beachboy unarmed swing left-right-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -150,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 526309127723fb74981eb37e0dd3db97
-      internalID: -1805092357
+      spriteID: a8771781c5c8f024082ed4e3a191c1ed
+      internalID: 1013259668
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot walk cycle arms REBAKE-Sheet_1
+      name: beachboy unarmed swing left-right-Sheet_1
       rect:
         serializedVersion: 2
         x: 128
@@ -171,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54afc76d796ddcd4cba0485f7dab71f6
-      internalID: -1274874003
+      spriteID: e81ea63911ddf654a8ba3d15f3f7f5cf
+      internalID: -1545167998
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot walk cycle arms REBAKE-Sheet_2
+      name: beachboy unarmed swing left-right-Sheet_2
       rect:
         serializedVersion: 2
         x: 256
@@ -192,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2290bf1b81ebf5a4d943a86152fcaac0
-      internalID: 835003358
+      spriteID: 1aee5a0bcdfd899409ff10ad2c2776eb
+      internalID: -1429815669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot walk cycle arms REBAKE-Sheet_3
+      name: beachboy unarmed swing left-right-Sheet_3
       rect:
         serializedVersion: 2
         x: 384
@@ -213,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c946b009bfa7bd74f882b00786dc27a8
-      internalID: 901025980
+      spriteID: aa955b5a6cc651c4cbf3b1ae2bb4a33a
+      internalID: 1935487802
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robot walk cycle arms REBAKE-Sheet_4
+      name: beachboy unarmed swing left-right-Sheet_4
       rect:
         serializedVersion: 2
         x: 512
@@ -234,71 +234,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07af7649ef8f2e346b70e2d65e8d6d7d
-      internalID: 2093522853
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: robot walk cycle arms REBAKE-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 281f8f23c9347a0479f290b956ae274f
-      internalID: 1744231392
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: robot walk cycle arms REBAKE-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e2cdf627212eb9045a68f1e507db65a3
-      internalID: 1264630125
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: robot walk cycle arms REBAKE-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 896
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 21291e9da419c814a8580af4561a3155
-      internalID: -1220997689
+      spriteID: c7d1744c4abc2354097b5e449dd704eb
+      internalID: -266523743
       vertices: []
       indices: 
       edges: []
@@ -314,14 +251,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      robot walk cycle arms REBAKE-Sheet_0: -1805092357
-      robot walk cycle arms REBAKE-Sheet_1: -1274874003
-      robot walk cycle arms REBAKE-Sheet_2: 835003358
-      robot walk cycle arms REBAKE-Sheet_3: 901025980
-      robot walk cycle arms REBAKE-Sheet_4: 2093522853
-      robot walk cycle arms REBAKE-Sheet_5: 1744231392
-      robot walk cycle arms REBAKE-Sheet_6: 1264630125
-      robot walk cycle arms REBAKE-Sheet_7: -1220997689
+      beachboy unarmed swing left-right-Sheet_0: 1013259668
+      beachboy unarmed swing left-right-Sheet_1: -1545167998
+      beachboy unarmed swing left-right-Sheet_2: -1429815669
+      beachboy unarmed swing left-right-Sheet_3: 1935487802
+      beachboy unarmed swing left-right-Sheet_4: -266523743
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

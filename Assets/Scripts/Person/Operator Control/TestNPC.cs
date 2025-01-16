@@ -59,14 +59,23 @@ public class TestNPC : MonoBehaviour
             lastKnownPosition.position = other.transform.position;
             lastKnownPosition.rotation = other.transform.rotation;
             lastKnownPosition.localScale = other.transform.localScale;
-            StartCoroutine(MustHaveBeenTheWind(lastKnownPosition));
+            navTarget = lastKnownPosition;
+            MustHaveBeenTheWind(lastKnownPosition);
         }
     }
 
-    IEnumerator MustHaveBeenTheWind(Transform lkp)
+    public void MustHaveBeenTheWind(Transform lkp)
     {
-        yield return new WaitForSeconds(outOfSightTime);
-        navTarget = null;
+        float timer = 0;
+        while (timer < outOfSightTime)
+        {
+            timer += Time.deltaTime;
+            if (navTarget != lkp)
+            {
+                Destroy(lkp.gameObject);
+                return;
+            }
+        }
         Destroy(lkp.gameObject);
     }
 }
