@@ -149,8 +149,8 @@ MonoBehaviour:
     _serializedList:
     - Key: 3
       Value: {fileID: 9100000, guid: 88e440e40d910cf4b947ca2ab8b9dc25, type: 2}
-    - Key: 3
-      Value: {fileID: 9100000, guid: 88e440e40d910cf4b947ca2ab8b9dc25, type: 2}
+    - Key: 2
+      Value: {fileID: 9100000, guid: 05fc123ea8a99954a916c533ef0c9988, type: 2}
   throwCollider: {fileID: 1406887461257018865}
   worldRB: {fileID: 0}
   wielder: {fileID: 0}

@@ -52,7 +52,7 @@ public abstract class Weapon : MonoBehaviour
         worldRB.gravityScale = 0;//Deactivate gravity on the weapon
         worldRB.mass = weaponMass;//set the rigidbody mass to be the preset mass of the weapon;
         worldRB.AddForce(throwDirection * wielder.effectiveStrength, ForceMode2D.Impulse);//add the force to the object, taking the operators strength into effect
-        worldRB.AddTorque(UnityEngine.Random.Range(0f,1f));//add a slight spin to the item
+        worldRB.AddTorque(UnityEngine.Random.Range(0f, 1f));//add a slight spin to the item
         inAir = true;//set the object to be in the air
         wielder = null;
         StartCoroutine(CheckForStop());//start the timer to disable the collider again
@@ -88,7 +88,14 @@ public abstract class Weapon : MonoBehaviour
     {
         if (inAir)
         {
+            Debug.Log(collision.gameObject.name + " Hit");
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                Debug.Log("Damage");
+                collision.gameObject.GetComponent<Operator>().TakeDamage(this, weaponDamage * wielder.effectiveStrength);
+            }
             inAir = false;
         }
     }
 }
+
