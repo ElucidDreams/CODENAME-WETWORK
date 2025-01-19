@@ -39,7 +39,6 @@ public class Operator : Person
     [HideInInspector] public Vector2 motionVec;
     [HideInInspector] public Rigidbody2D rbComp;
     public InteractSensor sensor;
-
     public GameObject headObject;
     Transform headTransform;
     SpriteRenderer headSpriteRenderer;
@@ -50,6 +49,7 @@ public class Operator : Person
     Transform legTransform;
     Animator legAnimator;
     public float rotDeadZone = 0.1f;
+    public float rotationSpeed = 5f; 
 
     #region Unity Methods
     // Start is called before the first frame update
@@ -130,6 +130,7 @@ public class Operator : Person
         //Debug.Log(activeWeapon);
         if (activeWeapon == null) { activeWeapon = weapon; }
         weapon.Initialize();
+        weapon.SetTag(gameObject.tag);
         if (weapon.worldRB != null) { Destroy(weapon.worldRB); }
         weapon.transform.SetParent(transform);
         weapon.wielder = this;
@@ -144,8 +145,17 @@ public class Operator : Person
     #region Body Methods
     public void BodyUpdate()
     {
-        RotateToFacePoint(headTransform, rotTarget.position);//rotate the head to face the rotTarget
-        RotateToFacePoint(armsTransform, rotTarget.position);//rotate the arms to face the rotTarget
+        if (gameObject.tag == "Player")
+        {
+            RotateToFacePoint(headTransform, rotTarget.position);//rotate the head to face the rotTarget
+            RotateToFacePoint(armsTransform, rotTarget.position);//rotate the arms to face the rotTarget
+        }
+        else if (gameObject.tag == "Enemy")
+        {
+            StartCoroutine(SmoothRotateToFacePoint(headTransform, rotTarget.position));//rotate the head to face the rotTarget
+            StartCoroutine(SmoothRotateToFacePoint(armsTransform, rotTarget.position));//rotate the arms to face the rotTarget
+        }
+        
         if (motionVec.magnitude > rotDeadZone)//check if the operator is moving enough to to keep updating the leg rotation (avoids glitching at low speed)
         {
             legTransform.rotation = Quaternion.Euler(0, 0, (-1 * (Mathf.Atan2(motionVec.x, motionVec.y) * Mathf.Rad2Deg) - 90)); //Set the leg rotation to match the motion direction of the operator
@@ -169,6 +179,18 @@ public class Operator : Person
             float angle = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;// Calculate the angle between the two points using the difference and convert it to degrees from radians
             t.rotation = Quaternion.Euler(0, 0, angle);//sets the rotation of the transformation to the new angle.
         }
+    }
+    public IEnumerator SmoothRotateToFacePoint(Transform t, Vector2 point)//Rotate 't' to face towards 'point'
+    {
+        
+        Vector2 difference = (Vector3)point - t.position; // Get a vector of the difference of the two points
+        if (difference.magnitude > rotDeadZone)// Deadzone for avoiding rotation glitching
+        {
+            float angle = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg; // Calculate the angle between the two points using the difference and convert it to degrees from radians
+            Quaternion targetRotation = Quaternion.Euler(0, 0, angle); // Create a target rotation based on the calculated angle
+            t.rotation = Quaternion.Slerp(t.rotation, targetRotation, Time.deltaTime * rotationSpeed); // Smoothly interpolate between the current rotation and the target rotation
+        }
+        yield return new WaitForEndOfFrame();
     }
     IEnumerator SetHead()
     {

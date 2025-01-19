@@ -63,6 +63,7 @@
         "Hitscan",
         "Newtonsoft",
         "Rigidbody",
+        "Slerp",
         "UGUI",
         "Yellowpaper"
     ],

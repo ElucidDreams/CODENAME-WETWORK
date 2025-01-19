@@ -32,6 +32,11 @@ public abstract class Weapon : MonoBehaviour
     public float groundedFriction = 10f;
     public bool inAir = false;
     public float weaponDamage = 1f;
+    public enum AttackTag{
+        Player,
+        Enemy
+    }
+    public AttackTag aTag;
 
     public void Start()
     {
@@ -63,6 +68,17 @@ public abstract class Weapon : MonoBehaviour
         worldSpriteRenderer = GetComponent<SpriteRenderer>();
         throwCollider = GetComponent<BoxCollider2D>();
     }
+    public void SetTag(string invokingTag)
+    {
+        if (invokingTag == "Player")
+        {
+            aTag = AttackTag.Enemy;
+        }
+        else
+        {
+            aTag = AttackTag.Player;
+        }
+    }
     public IEnumerator CheckForStop()
     {
         yield return new WaitUntil(() => worldRB.velocity.magnitude < velocityThreshold);
@@ -89,7 +105,7 @@ public abstract class Weapon : MonoBehaviour
         if (inAir)
         {
             Debug.Log(collision.gameObject.name + " Hit");
-            if (collision.gameObject.CompareTag("Enemy"))
+            if (collision.gameObject.CompareTag(aTag.ToString()))
             {
                 Debug.Log("Damage");
                 collision.gameObject.GetComponent<Operator>().TakeDamage(this, weaponDamage * wielder.effectiveStrength);
@@ -97,5 +113,6 @@ public abstract class Weapon : MonoBehaviour
             inAir = false;
         }
     }
+
 }
 

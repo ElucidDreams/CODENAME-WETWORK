@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO.Pipes;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -14,6 +15,9 @@ public class TestNPC : MonoBehaviour
     public Operator parentOperator;
     LineRenderer line;
     public SplineContainer patrollingPath;
+    public List<Vector3> patrolVectors;
+    public List<GameObject> patrolPoints;
+    int index;
     public enum NPCStateEnum
     {
         Idle,
@@ -27,15 +31,32 @@ public class TestNPC : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        NPCState = NPCStateEnum.Patrolling;
         agent = GetComponent<NavMeshAgent>();
         parentOperator = GetComponent<Operator>();
         line = GetComponent<LineRenderer>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
-        //Transform ClosestPoint = null;
-        //float closestDistance = Mathf.Infinity;
-        //patrollingPath.Spline.Knots.
-        //navTarget = ClosestPoint;
+        float lowestDistance = Mathf.Infinity;
+     
+        foreach (BezierKnot knot in patrollingPath.Spline.Knots)
+        {
+            Vector3 tempPos = new Vector3(knot.Position.x,knot.Position.y,knot.Position.z) + patrollingPath.transform.position;
+            patrolVectors.Add(tempPos);
+        }
+        for (int i = 0; i < patrolVectors.Count; i++)
+        {
+            GameObject temp = new GameObject("PatrolPoint" + i);
+            temp.transform.position = patrolVectors[i];
+            patrolPoints.Add(temp);
+            float distance = Vector3.Distance(patrolPoints[i].transform.position, parentOperator.transform.position);
+            if (distance < lowestDistance)
+            {
+                index = i;
+                lowestDistance = distance;
+            }
+        }
+        navTarget = patrolPoints[index].transform;
     }
 
     // Update is called once per frame
@@ -83,14 +104,15 @@ public class TestNPC : MonoBehaviour
     }
     void Patrol()
     {
-        if (transform.position == navTarget.position)
+        if (agent.remainingDistance < 0.1f)
         {
-            //index++;
-            //if (index >= patrolPoints.Count)
-            //{
-            //    index = 0;
-            //}
-            //navTarget = patrolPoints[index];
+            Debug.Log("Reached Patrol Point");
+            index++;
+            if (index >= patrolPoints.Count)
+            {
+                index = 0;
+            }
+            navTarget = patrolPoints[index].transform;
         }
         if (navTarget != null)
         {
