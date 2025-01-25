@@ -25,5 +25,6 @@ public class GameConstants : MonoBehaviour
         Unarmed = 1,
         BaseballBat = 2,
         Pistol = 3,
+        Katana = 4
     }
 }

@@ -98,7 +98,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 7ad22081de8d10d4ea6bf444c250be9e, type: 2}
+  m_Motion: {fileID: 7400000, guid: 47e212cb2e16b274b91e8a294ca47254, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -127,7 +127,7 @@ AnimatorStateMachine:
     m_Position: {x: 200, y: 360, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8149336261366313721}
-    m_Position: {x: 460, y: 230, z: 0}
+    m_Position: {x: 450, y: 230, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5696421495127401868}
     m_Position: {x: -350, y: 230, z: 0}
@@ -242,7 +242,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: d31dbde7c6f838546bb4eacbe5805aab, type: 2}
+  m_Motion: {fileID: 7400000, guid: 86724360d15817b47a81ba8608a902dd, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -279,7 +279,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Melee Template
+  m_Name: Katana_Beach
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Attack
@@ -385,7 +385,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 3f0ee317cc2b891449594a5a6ef28ca4, type: 2}
+  m_Motion: {fileID: 7400000, guid: 2c0875864650c6b4db4dc9333d8eafe5, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -413,7 +413,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 6e72d86481e8204458b447713afe682f, type: 2}
+  m_Motion: {fileID: 7400000, guid: ddd5040afa93cdf4f913906ae74c552c, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -490,7 +490,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 93cd780ce81d08e44883ae0275754a00, type: 2}
+  m_Motion: {fileID: 7400000, guid: f25a8bf3409516e408a27928a56aee31, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -566,7 +566,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: c28d09cfd1b7eee4ea64bcaa1c3dfc9b, type: 2}
+  m_Motion: {fileID: 7400000, guid: c1b5a6172329c2a48af3af35d77f14c2, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -620,7 +620,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 7bc7645241324a1458ab88a1e20314d5, type: 2}
+  m_Motion: {fileID: 7400000, guid: edb4d7a2ea4b29442a89291ce1eeacf9, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

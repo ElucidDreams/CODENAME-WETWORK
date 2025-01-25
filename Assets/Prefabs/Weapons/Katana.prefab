@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1381577951284398374}
   - component: {fileID: 3989706178892774176}
   m_Layer: 0
-  m_Name: BaseballBat
+  m_Name: Katana
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,9 +51,9 @@ MonoBehaviour:
   armsAnimators:
     _serializedList:
     - Key: 3
-      Value: {fileID: 9100000, guid: 5a0babf440f9c4540ad031c8b00cc657, type: 2}
+      Value: {fileID: 9100000, guid: 9f3e96f6c56fb074aaf5dd229b6fd49f, type: 2}
     - Key: 2
-      Value: {fileID: 9100000, guid: a06f9f7c767de3c4ab0e3f1086c71730, type: 2}
+      Value: {fileID: 9100000, guid: 8fcdeb5e4debe54488ce6c2b7fa2ae7b, type: 2}
   throwCollider: {fileID: 3989706178892774176}
   worldRB: {fileID: 0}
   wielder: {fileID: 0}
@@ -108,7 +108,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1ca2680158b3c2f41ad525f3230535a0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4604c72b3f1b5604284c5eb97bc3d790, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -153,7 +153,7 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.00037646294, y: 0.09466551}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 0.9375, y: 0.875, z: 0.9375, w: 0.6875}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2, y: 2}
     newSize: {x: 2, y: 2}

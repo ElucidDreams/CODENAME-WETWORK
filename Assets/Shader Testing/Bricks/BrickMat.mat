@@ -98,7 +98,7 @@ Material:
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Brick_Dimensions: {r: 1, g: 1, b: 0, a: 0}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _GridSize: {r: 128, g: 64, b: 0, a: 0}
+    - _GridSize: {r: 512, g: 256, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &4612589676681332422
 MonoBehaviour:
