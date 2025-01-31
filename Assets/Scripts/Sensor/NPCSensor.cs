@@ -20,7 +20,7 @@ public class NPCSensor : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            parentNPC.NPCState = TestNPC.NPCStateEnum.Attacking;
+            parentNPC.inAttackRange = true;
         }
     }
 
@@ -28,7 +28,7 @@ public class NPCSensor : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            parentNPC.NPCState = TestNPC.NPCStateEnum.Chasing;
+            parentNPC.inAttackRange = false;
         }
     }
 }

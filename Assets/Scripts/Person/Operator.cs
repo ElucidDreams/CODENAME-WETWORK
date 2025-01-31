@@ -48,8 +48,11 @@ public class Operator : Person
     public GameObject legObject;
     Transform legTransform;
     Animator legAnimator;
+    public ParticleSystem hitParticles;
     public float rotDeadZone = 0.1f;
     public float rotationSpeed = 5f; 
+    public float knockbackForce = 10f;
+    public bool takingDamage = false;
 
     #region Unity Methods
     // Start is called before the first frame update
@@ -241,11 +244,19 @@ public class Operator : Person
     
     public void TakeDamage(Weapon weapon, float damage)
     {
+        takingDamage = true;
         Debug.Log(gameObject.name + " has taken " + damage + " damage");
         currentHealth -= damage;
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
         }
+        else{
+            
+            ParticleSystem tempParticles = Instantiate(hitParticles, transform.position, Quaternion.identity);
+            tempParticles.Play();
+            rbComp.AddForce((transform.position - weapon.transform.position).normalized * knockbackForce, ForceMode2D.Impulse);
+        }
+        takingDamage = false;
     }
 }

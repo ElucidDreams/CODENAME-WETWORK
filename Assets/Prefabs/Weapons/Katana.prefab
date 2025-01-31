@@ -46,14 +46,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcc2a710cd96ada4ebbdd5c5f18925d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponID: 2
-  weaponName: Baseball Bat
+  weaponID: 4
+  weaponName: Katana
   armsAnimators:
     _serializedList:
     - Key: 3
       Value: {fileID: 9100000, guid: 9f3e96f6c56fb074aaf5dd229b6fd49f, type: 2}
     - Key: 2
-      Value: {fileID: 9100000, guid: 8fcdeb5e4debe54488ce6c2b7fa2ae7b, type: 2}
+      Value: {fileID: 9100000, guid: 30da8d1ce26c46a4c935c08abd3df81a, type: 2}
   throwCollider: {fileID: 3989706178892774176}
   worldRB: {fileID: 0}
   wielder: {fileID: 0}
@@ -108,7 +108,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4604c72b3f1b5604284c5eb97bc3d790, type: 3}
+  m_Sprite: {fileID: -2463893090062442754, guid: b19150646c7b4d34c88e45d7d4ec9e0a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -153,9 +153,9 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.00037646294, y: 0.09466551}
   m_SpriteTilingProperty:
-    border: {x: 0.9375, y: 0.875, z: 0.9375, w: 0.6875}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: -2}
+    oldSize: {x: 0.08, y: 0.28}
     newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

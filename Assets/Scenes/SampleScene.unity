@@ -961,7 +961,7 @@ GameObject:
   - component: {fileID: 586901393}
   - component: {fileID: 586901392}
   m_Layer: 0
-  m_Name: Triangle
+  m_Name: SightSensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1026,7 +1026,8 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.5773587}
+    - - {x: 0.080529846, y: 0.58046055}
+      - {x: -0.07984114, y: 0.5803604}
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 0
@@ -2077,7 +2078,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1202311680}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -3678,8 +3679,11 @@ MonoBehaviour:
   armsObject: {fileID: 291269828}
   armsAnimator: {fileID: 0}
   legObject: {fileID: 444842357}
+  hitParticles: {fileID: 7822263860647984608, guid: f5a7688164d5d884aac348af066d4ee2, type: 3}
   rotDeadZone: 0.1
   rotationSpeed: 5
+  knockbackForce: 10
+  takingDamage: 0
 --- !u!1 &2072114651
 GameObject:
   m_ObjectHideFlags: 0
@@ -3922,8 +3926,11 @@ MonoBehaviour:
   armsObject: {fileID: 1918502141}
   armsAnimator: {fileID: 0}
   legObject: {fileID: 1501543581}
+  hitParticles: {fileID: 7822263860647984608, guid: f5a7688164d5d884aac348af066d4ee2, type: 3}
   rotDeadZone: 0.1
   rotationSpeed: 5
+  knockbackForce: 10
+  takingDamage: 0
 --- !u!255 &2137249172
 FixedJoint2D:
   m_ObjectHideFlags: 0
@@ -4033,7 +4040,9 @@ MonoBehaviour:
   patrolVectors: []
   patrolPoints: []
   NPCState: 0
+  NPCStatePrevious: 0
   outOfSightTime: 1
+  inAttackRange: 0
 --- !u!195 &2137249176
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4048,7 +4057,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

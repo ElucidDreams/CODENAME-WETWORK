@@ -27,41 +27,38 @@ public class TestNPC : MonoBehaviour
         Searching
     }
     public NPCStateEnum NPCState = NPCStateEnum.Idle;
+    public NPCStateEnum NPCStatePrevious = NPCStateEnum.Idle;
     public float outOfSightTime = 1f;
+    public bool inAttackRange = false;
     // Start is called before the first frame update
     void Start()
     {
-        NPCState = NPCStateEnum.Patrolling;
         agent = GetComponent<NavMeshAgent>();
         parentOperator = GetComponent<Operator>();
         line = GetComponent<LineRenderer>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
-        float lowestDistance = Mathf.Infinity;
-     
+
         foreach (BezierKnot knot in patrollingPath.Spline.Knots)
         {
-            Vector3 tempPos = new Vector3(knot.Position.x,knot.Position.y,knot.Position.z) + patrollingPath.transform.position;
+            Vector3 tempPos = new Vector3(knot.Position.x, knot.Position.y, knot.Position.z) + patrollingPath.transform.position;
             patrolVectors.Add(tempPos);
         }
         for (int i = 0; i < patrolVectors.Count; i++)
         {
-            GameObject temp = new GameObject("PatrolPoint" + i);
+            GameObject temp = new("PatrolPoint" + i);
             temp.transform.position = patrolVectors[i];
             patrolPoints.Add(temp);
-            float distance = Vector3.Distance(patrolPoints[i].transform.position, parentOperator.transform.position);
-            if (distance < lowestDistance)
-            {
-                index = i;
-                lowestDistance = distance;
-            }
         }
-        navTarget = patrolPoints[index].transform;
+        ClosestPatrolPoint();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        //agent.updatePosition = parentOperator.takingDamage;
+        //agent.updateRotation = parentOperator.takingDamage;
+        //Debug.Log("Distance is : " + agent.remainingDistance.ToString() + " and the NPC following state is: " + agent.hasPath.ToString());
         switch (NPCState)
         {
             case NPCStateEnum.Patrolling:
@@ -80,6 +77,9 @@ public class TestNPC : MonoBehaviour
     {
         if (navTarget != null)
         {
+            Vector3 targetPos = navTarget.position;
+            targetPos.z = agent.transform.position.z;
+            agent.SetDestination(targetPos);
             if (agent.hasPath)
             {
                 parentOperator.rotTarget.position = agent.path.corners[1];
@@ -89,7 +89,6 @@ public class TestNPC : MonoBehaviour
                 parentOperator.rotTarget.position = parentOperator.transform.position;
             }
             parentOperator.motionVec = agent.velocity;
-            agent.SetDestination(navTarget.position);
         }
     }
     void Attack()
@@ -130,7 +129,7 @@ public class TestNPC : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.CompareTag("Player"))
         {
             NPCState = NPCStateEnum.Chasing;
             navTarget = other.transform;
@@ -138,7 +137,7 @@ public class TestNPC : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.CompareTag("Player"))
         {
             NPCState = NPCStateEnum.Searching;
             Transform lastKnownPosition = new GameObject("LastKnownPosition").transform;
@@ -146,22 +145,33 @@ public class TestNPC : MonoBehaviour
             lastKnownPosition.rotation = other.transform.rotation;
             lastKnownPosition.localScale = other.transform.localScale;
             navTarget = lastKnownPosition;
-            MustHaveBeenTheWind(lastKnownPosition);
+            StartCoroutine(MustHaveBeenTheWind(lastKnownPosition));
         }
     }
-    public void MustHaveBeenTheWind(Transform lkp)
+    public IEnumerator MustHaveBeenTheWind(Transform lkp)
     {
-        float timer = 0;
-        while (timer < outOfSightTime)
+        agent.SetDestination(lkp.position);
+        yield return new WaitForSeconds(outOfSightTime);
+        if (NPCState == NPCStateEnum.Searching)
         {
-            timer += Time.deltaTime;
-            if (navTarget != lkp)
+            NPCState = NPCStateEnum.Patrolling;
+            ClosestPatrolPoint();
+        }
+        Destroy(lkp.gameObject);
+    }
+
+    public void ClosestPatrolPoint()
+    {
+        float lowestDistance = Mathf.Infinity;
+        for (int i = 0; i < patrolVectors.Count; i++)
+        {
+            float distance = Vector3.Distance(patrolPoints[i].transform.position, parentOperator.transform.position);
+            if (distance < lowestDistance)
             {
-                Destroy(lkp.gameObject);
-                return;
+                index = i;
+                lowestDistance = distance;
             }
         }
-        NPCState = NPCStateEnum.Patrolling;
-        Destroy(lkp.gameObject);
+        navTarget = patrolPoints[index].transform;
     }
 }
