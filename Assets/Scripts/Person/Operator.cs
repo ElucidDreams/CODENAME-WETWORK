@@ -27,7 +27,7 @@ public class Operator : Person
     [HideInInspector] public float effectiveHealth;
     public float currentHealth;
     //[HideInInspector] public float effectiveArmour;
-    [HideInInspector] public float effectiveSpeed;
+    public float effectiveSpeed;
     [HideInInspector] public float effectiveStrength;
     [HideInInspector] public float effectiveAccuracy;
     [SerializeReference] public OperatorSkill[] skills;
