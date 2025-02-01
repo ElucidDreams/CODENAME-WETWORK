@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6817036483203805293
+--- !u!1001 &6223624615109558578
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,19 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -5054112995520254611, guid: 5872726af837eb14a833864b8344388c, type: 3}
       propertyPath: m_Size.x
-      value: 0.50285566
+      value: 2.378719
       objectReference: {fileID: 0}
     - target: {fileID: -5054112995520254611, guid: 5872726af837eb14a833864b8344388c, type: 3}
       propertyPath: m_Size.y
-      value: 0.20626844
+      value: 1.0201283
       objectReference: {fileID: 0}
     - target: {fileID: -5054112995520254611, guid: 5872726af837eb14a833864b8344388c, type: 3}
       propertyPath: m_Offset.x
-      value: -0.00028558075
+      value: 0.3472438
       objectReference: {fileID: 0}
     - target: {fileID: -5054112995520254611, guid: 5872726af837eb14a833864b8344388c, type: 3}
       propertyPath: m_Offset.y
-      value: 0.101142295
+      value: 0.006510854
       objectReference: {fileID: 0}
     - target: {fileID: -5054112995520254611, guid: 5872726af837eb14a833864b8344388c, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
@@ -33,24 +33,8 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -5054112995520254611, guid: 5872726af837eb14a833864b8344388c, type: 3}
-      propertyPath: m_SpriteTilingProperty.border.w
-      value: 0.796875
-      objectReference: {fileID: 0}
-    - target: {fileID: -5054112995520254611, guid: 5872726af837eb14a833864b8344388c, type: 3}
-      propertyPath: m_SpriteTilingProperty.border.x
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: -5054112995520254611, guid: 5872726af837eb14a833864b8344388c, type: 3}
-      propertyPath: m_SpriteTilingProperty.border.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -5054112995520254611, guid: 5872726af837eb14a833864b8344388c, type: 3}
-      propertyPath: m_SpriteTilingProperty.border.z
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: -5054112995520254611, guid: 5872726af837eb14a833864b8344388c, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -5054112995520254611, guid: 5872726af837eb14a833864b8344388c, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
@@ -58,7 +42,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5054112995520254611, guid: 5872726af837eb14a833864b8344388c, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -5054112995520254611, guid: 5872726af837eb14a833864b8344388c, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
@@ -70,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 67581056105977477, guid: 5872726af837eb14a833864b8344388c, type: 3}
       propertyPath: m_Size.x
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 67581056105977477, guid: 5872726af837eb14a833864b8344388c, type: 3}
       propertyPath: m_Size.y
@@ -79,7 +63,7 @@ PrefabInstance:
     - target: {fileID: 67581056105977477, guid: 5872726af837eb14a833864b8344388c, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c067a382ac5fc9b46a8985847536a5d5, type: 3}
+      objectReference: {fileID: 21300000, guid: a8e95ebabb23a8048af9ff703b5546ac, type: 3}
     - target: {fileID: 67581056105977477, guid: 5872726af837eb14a833864b8344388c, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -126,7 +110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4762653727021378388, guid: 5872726af837eb14a833864b8344388c, type: 3}
       propertyPath: m_Name
-      value: p_Fence 1
+      value: p_Car1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
